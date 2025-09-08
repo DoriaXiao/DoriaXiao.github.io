@@ -3,8 +3,9 @@ title: "CV"
 permalink: /cv/
 ---
 
-You can **download my CV** here:
+You can view and download my curriculum vitae here:  
 
-- **DOCX:** [Xingyao_CV_080125.docx](/assets/cv/Xingyao_CV_080125.docx)
+- **PDF:** [Xingyao_CV_Sept.pdf](/assets/cv/Xingyao_CV_Sept..pdf)  
 
-If you prefer a PDF, export and add it to `assets/cv/`, then update this page.
+This file contains my full academic and professional record, including education, publications, research experience, teaching, and service.
+ 
