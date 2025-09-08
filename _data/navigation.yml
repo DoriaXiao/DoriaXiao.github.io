@@ -1,1 +1,20 @@
+main:
+  - title: "About"
+    url: /about/
+  - title: "Research"
+    url: /research/
+  - title: "Publications"
+    url: /publications/
+  - title: "Projects"
+    url: /projects/
+  - title: "Teaching"
+    url: /teaching/
+  - title: "Talks"
+    url: /talks/
+  - title: "Blog"
+    url: /blog/
+  - title: "CV"
+    url: /cv/
+  - title: "Contact"
+    url: /contact/
 
