@@ -3,11 +3,11 @@ title: "Publications"
 permalink: /publications/
 ---
 
-**Selected publications and manuscripts** (update links/DOIs as needed).
+**Selected publications and manuscripts**.
 
 **Accepted / Published**
-- Xiao, X., Rabe‑Hesketh, S., & Skrondal, A. (2025). *Bayesian identification and estimation of growth mixture models*. **Psychometrika**.  
-- Xue, M., Xiao, X., Liu, Y., & Wilson, M. (2025). *Automatic prompt engineering for automatic scoring*. **Journal of Educational Measurement**.  
+- Xiao, X., Rabe-Hesketh, S., & Skrondal, A. (2025). *Bayesian identification and estimation of growth mixture models*. [**Psychometrika**](https://www.cambridge.org/core/journals/psychometrika/article/bayesian-identification-and-estimation-of-growth-mixture-models/746CC431BCFE6303D9710DAC811537F8#metrics).
+- Xue, M., Liu, Y., Xiao, X., & Wilson, M. (2025). *Automatic prompt engineering for automatic scoring*. **Journal of Educational Measurement**.  
 - Xiao, X.*, Patz, R., & Wilson, M. (2025). *Integration of machine learning and human rater scores with Many‑Facet Rasch Model*. **BJM&SP** (accepted with minor revisions).  
 - Su, B., Xiao, X.*, Cheng, Y., Liu, C., & Yang, C. (2025). *Trajectories of depressive symptom among college students in China during COVID‑19*. **Suicide and Life‑Threatening Behavior** (in press).  
 - Cheng, Y., Xiao, X., Jackson, D., Shah, S. A., Abdus‑Sabur, F., Hira, A., ... & Barnett, M. (2025). *Competent but Anxious Smart Greenhouse Makers*. **J. Sci. Educ. & Tech.**  
