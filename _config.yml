@@ -31,16 +31,16 @@ author:
       url: "mailto:xiaoxg@berkeley.edu"
     - label: "Google Scholar"
       icon: "ai ai-google-scholar ai-fw"
-      url: "https://scholar.google.com/citations?user=YOURID"   # replace
+      url: "https://scholar.google.com/citations?user=Alm4A50AAAAJ&hl=en"   # replace
     - label: "ORCID"
       icon: "ai ai-orcid ai-fw"
-      url: "https://orcid.org/YOUR-ORCID"                        # replace
+      url: "https://orcid.org/0000-0001-8430-0438"                        # replace
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/DoriaXiao"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/YOURHANDLE/"             # replace
+      url: "https://www.linkedin.com/in/xingyao-doria-xiao-565b25170/"             # replace
 
 collections:
   posts:
