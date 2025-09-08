@@ -1,14 +1,16 @@
 title: "Xingyao (Doria) Xiao"
 name: "Xingyao (Doria) Xiao"
-navigation: main
 description: "Postdoctoral Fellow at Stanford | Psychometrics, Bayesian modeling, AI-integrated assessment"
-url: "https://DoriaXiao.github.io"   # change if needed
-baseurl: ""
 
-theme: null
+# Site URL
+url: "https://DoriaXiao.github.io"
+baseurl: ""   # leave blank, do not put quotes or triple quotes
+
+# Theme settings
 remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "default"
 
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -18,9 +20,7 @@ plugins:
   - jemoji
   - jekyll-remote-theme
 
-paginate: 5
-paginate_path: "/blog/page:num/"
-
+# Author profile (sidebar)
 author:
   name: "Xingyao (Doria) Xiao"
   avatar: "/assets/img/profile.jpg"
@@ -43,43 +43,29 @@ author:
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/xingyao-doria-xiao-565b25170/"             # replace
 
+# Collections
 collections:
   posts:
     output: true
 
-nav:
-  - title: "About"
-    url: /about/
-  - title: "Research"
-    url: /research/
-  - title: "Publications"
-    url: /publications/
-  - title: "Projects"
-    url: /projects/
-  - title: "Teaching"
-    url: /teaching/
-  - title: "Talks"
-    url: /talks/
-  - title: "Blog"
-    url: /blog/
-  - title: "CV"
-    url: /cv/
-  - title: "Contact"
-    url: /contact/
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "single"
+      author_profile: true
+      share: true
+      comments: false
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "single"
+      author_profile: true
 
-footer:
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope"
-      url: "mailto:xiaoxg@berkeley.edu"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/DoriaXiao"
-
-logo: "/assets/img/profile.jpg"
-breadcrumbs: true
-permalink: /:categories/:title/
-
+# Exclude from build
 exclude:
   - "node_modules"
   - "vendor"
