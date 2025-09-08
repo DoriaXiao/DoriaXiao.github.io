@@ -1,10 +1,36 @@
+title: "Xingyao (Doria) Xiao"
+name: "Xingyao (Doria) Xiao"
+description: "Postdoctoral Fellow at Stanford | Psychometrics, Bayesian modeling, AI-integrated assessment"
+
+# Site URL
+url: "https://DoriaXiao.github.io"
+baseurl: ""
+include:
+  - _pages
+
+# Show upcoming posts (e.g., talks) before the date occurs
+future: true
+timezone: America/Los_Angeles
+
+# Theme
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "default"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-include-cache
+  - jemoji
+  - jekyll-remote-theme
+
+# Author profile (sidebar)
 author:
   name: "Xingyao (Doria) Xiao"
-  avatar: "/assets/img/profile.jpg"
-  bio: >
-    Postdoctoral Fellow at Stanford. I develop methods in
-    psychometrics, Bayesian modeling, and AI-integrated assessment
-    to make measurement fair and interpretable across diverse contexts.
+  avatar: "/assets/img/profile.jpg"   # ensure this file exists
+  bio: "Postdoctoral Fellow at Stanford. Psychometrics, Bayesian modeling, and AI-integrated assessment for fair, interpretable measurement."
   location: "Stanford, CA"
   links:
     - label: "Email"
@@ -25,3 +51,36 @@ author:
     - label: "Stanford Profile"
       icon: "fas fa-fw fa-university"
       url: "https://profiles.stanford.edu/Doria_Xiao"
+    - label: "CV (PDF)"
+      icon: "fas fa-fw fa-file-alt"
+      url: "/assets/cv/Xingyao_CV_Sept.pdf"
+
+# Collections
+collections:
+  posts:
+    output: true
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "single"
+      author_profile: true
+      share: true
+      comments: false
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "single"
+      author_profile: true
+
+# Exclusions
+exclude:
+  - "node_modules"
+  - "vendor"
+  - "Gemfile.lock"
+  - "README.md"
+  - "LICENSE"
