@@ -1,7 +1,7 @@
 ---
 title: "[BEAR Seminar] When Growth Mixture Models Break"
 date: 2025-09-09
-categories: [events, talks]
+categories: [talks]
 ---
 
 I’m excited to be giving a **BEAR Seminar** talk at UC Berkeley:
