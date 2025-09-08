@@ -1,0 +1,87 @@
+title: "Xingyao (Doria) Xiao"
+name: "Xingyao (Doria) Xiao"
+description: "Postdoctoral Fellow at Stanford | Psychometrics, Bayesian modeling, AI-integrated assessment"
+url: "https://DoriaXiao.github.io"   # change if needed
+baseurl: ""
+
+theme: null
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "default"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-include-cache
+  - jemoji
+  - jekyll-remote-theme
+
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+author:
+  name: "Xingyao (Doria) Xiao"
+  avatar: "/assets/img/profile.jpg"
+  bio: "Postdoctoral Fellow at Stanford. Psychometrics, Bayesian growth models, and AI-integrated assessment."
+  location: "Stanford, CA"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:xiaoxg@berkeley.edu"
+    - label: "Google Scholar"
+      icon: "ai ai-google-scholar ai-fw"
+      url: "https://scholar.google.com/citations?user=YOURID"   # replace
+    - label: "ORCID"
+      icon: "ai ai-orcid ai-fw"
+      url: "https://orcid.org/YOUR-ORCID"                        # replace
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/DoriaXiao"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/YOURHANDLE/"             # replace
+
+collections:
+  posts:
+    output: true
+
+nav:
+  - title: "About"
+    url: /about/
+  - title: "Research"
+    url: /research/
+  - title: "Publications"
+    url: /publications/
+  - title: "Projects"
+    url: /projects/
+  - title: "Teaching"
+    url: /teaching/
+  - title: "Talks"
+    url: /talks/
+  - title: "Blog"
+    url: /blog/
+  - title: "CV"
+    url: /cv/
+  - title: "Contact"
+    url: /contact/
+
+footer:
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:xiaoxg@berkeley.edu"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/DoriaXiao"
+
+logo: "/assets/img/profile.jpg"
+breadcrumbs: true
+permalink: /:categories/:title/
+
+exclude:
+  - "node_modules"
+  - "vendor"
+  - "Gemfile.lock"
+  - "README.md"
+  - "LICENSE"
