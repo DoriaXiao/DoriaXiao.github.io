@@ -5,6 +5,8 @@ description: "Postdoctoral Fellow at Stanford | Psychometrics, Bayesian modeling
 # Site URL
 url: "https://DoriaXiao.github.io"
 baseurl: ""   # leave blank, do not put quotes or triple quotes
+include:
+  - _pages
 
 # Theme settings
 remote_theme: "mmistakes/minimal-mistakes"
