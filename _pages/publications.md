@@ -7,9 +7,9 @@ permalink: /publications/
 
 **Accepted / Published**
 - Xiao, X., Rabe-Hesketh, S., & Skrondal, A. (2025). *Bayesian identification and estimation of growth mixture models*. [**Psychometrika**](https://www.cambridge.org/core/journals/psychometrika/article/bayesian-identification-and-estimation-of-growth-mixture-models/746CC431BCFE6303D9710DAC811537F8#metrics).
-- Xue, M., Liu, Y., Xiao, X., & Wilson, M. (2025). *Automatic prompt engineering for automatic scoring*. **Journal of Educational Measurement**.  
+- Xue, M., Liu, Y., Xiao, X., & Wilson, M. (2025). *Automatic prompt engineering for automatic scoring*. **Journal of Educational Measurement**.
+- - Su, B., Xiao, X.*, Cheng, Y., Liu, C., & Yang, C. (2025). *Trajectories of depressive symptom among college students in China during COVID‑19*. **Suicide and Life‑Threatening Behavior**.  
 - Xiao, X.*, Patz, R., & Wilson, M. (2025). *Integration of machine learning and human rater scores with Many‑Facet Rasch Model*. **BJM&SP** (accepted with minor revisions).  
-- Su, B., Xiao, X.*, Cheng, Y., Liu, C., & Yang, C. (2025). *Trajectories of depressive symptom among college students in China during COVID‑19*. **Suicide and Life‑Threatening Behavior** (in press).  
 - Cheng, Y., Xiao, X., Jackson, D., Shah, S. A., Abdus‑Sabur, F., Hira, A., ... & Barnett, M. (2025). *Competent but Anxious Smart Greenhouse Makers*. **J. Sci. Educ. & Tech.**  
 - Wang, F., Zhu, X., Pi, L., Xiao, X., & Zhang, J. (2024). *Patterns of participation and performance in English online education*. **Education and Information Technologies**, 29, 15595–15619.  
 - Ma, J., Shen, Z., Wang, N., Xiao, X., & Zhang, J. (2023). *Developmental differences in children’s adaptation to vehicle distance and speed*. **Journal of Safety Research**, 88, 261–274.  
