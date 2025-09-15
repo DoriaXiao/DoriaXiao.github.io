@@ -29,6 +29,6 @@ Now published in [**Psychometrika**](https://www.cambridge.org/core/journals/psy
 ---
 
 ### Quick Links
-[📄 Download CV](/assets/cv/Xingyao_CV_Sept..pdf){: .btn }  
+[📄 Download CV](/assets/cv/Xingyao_CV_Sept.pdf){: .btn }  
 [🎓 Google Scholar](https://scholar.google.com/citations?user=Alm4A50AAAAJ&hl=en){: .btn .btn--primary }  
 [🔗 Stanford Profile](https://profiles.stanford.edu/Doria_Xiao){: .btn }
