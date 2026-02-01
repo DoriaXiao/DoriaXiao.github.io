@@ -15,16 +15,26 @@ timezone: America/Los_Angeles
 remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "default"
 
+# Plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-include-cache
+  - jemoji
+
 # Author profile (sidebar)
 author:
   name: "Xingyao (Doria) Xiao, Ph.D."
   avatar: "/assets/img/profile.jpg"
-  [cite_start]bio: "Postdoctoral Scholar at Stanford GSE researching statistical methodology for longitudinal and adaptive data." [cite: 1]
-  [cite_start]location: "San Francisco Bay Area" [cite: 1]
+  bio: "Postdoctoral Scholar at Stanford GSE researching statistical methodology for longitudinal and adaptive data."
+  location: "San Francisco Bay Area"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
-      [cite_start]url: "mailto:doriax@stanford.edu" [cite: 1]
+      url: "mailto:doriax@stanford.edu"
     - label: "Google Scholar"
       icon: "ai ai-google-scholar ai-fw"
       url: "https://scholar.google.com/citations?user=Alm4A50AAAAJ&hl=en"
@@ -36,4 +46,20 @@ author:
       url: "https://www.linkedin.com/in/xingyao-doria-xiao-565b25170/"
     - label: "CV (PDF)"
       icon: "fas fa-fw fa-file-alt"
-      [cite_start]url: "/assets/cv/Xingyao_CV_2026.pdf" [cite: 1]
+      url: "/assets/cv/Xingyao_CV_2026.pdf"
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "single"
+      author_profile: true
+      share: true
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "single"
+      author_profile: true
