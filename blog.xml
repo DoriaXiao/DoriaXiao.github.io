@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Doria Xiao - Blog</title>
+<link>https://doriaxiao.github.io/blog.html</link>
+<atom:link href="https://doriaxiao.github.io/blog.xml" rel="self" type="application/rss+xml"/>
+<description>Psychometrics, AI, and measurement</description>
+<generator>quarto-1.9.38</generator>
+<lastBuildDate>Sun, 01 Feb 2026 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>New Publication: Reliability of Hybrid Human-ML Scoring Systems</title>
+  <link>https://doriaxiao.github.io/posts/2026-02-01-hybrid-scoring-reliability/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>I am pleased to share that our new paper, <strong>“Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model,”</strong> has been published in the <em>British Journal of Mathematical and Statistical Psychology</em>.</p>
+<p>This research, conducted with co-authors Richard J. Patz and Mark R. Wilson, investigates the psychometric impact of integrating machine learning (ML) scoring into high-stakes assessment frameworks.</p>
+<section id="key-insights" class="level3">
+<h3 class="anchored" data-anchor-id="key-insights"><strong>Key Insights</strong></h3>
+<ul>
+<li><strong>Systematic Bias vs.&nbsp;Noise:</strong> We found that systematic rater bias, rather than random machine inconsistency, is the primary driver of estimation error in hybrid scoring systems.</li>
+<li><strong>Design Density:</strong> Increasing scoring matrix density (moving from isolated to complete designs) significantly stabilizes latent proficiency recovery.</li>
+<li><strong>Strategic Hybridization:</strong> Hybrid scoring yields the greatest reliability gains when human and ML raters possess <strong>opposing biases</strong>, allowing directional errors to cancel out.</li>
+<li><strong>Robust Modeling:</strong> For sparse scoring designs, the Partial Credit Model (PCM) with fixed thresholds often outperforms more complex Many-Facet variants by reducing over-parameterization.</li>
+</ul>
+</section>
+<section id="practical-application" class="level3">
+<h3 class="anchored" data-anchor-id="practical-application"><strong>Practical Application</strong></h3>
+<p>We applied these findings to real-world data from a “Problem Solving with Math” (PSM) assessment. Results confirmed that anchoring constructed-response items to selected-response metrics can effectively stabilize scales in sparse scoring environments.</p>
+<p><strong>Full Citation:</strong> Xiao, X., Patz, R. J., &amp; Wilson, M. R. (2026). Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model. <em>British Journal of Mathematical and Statistical Psychology</em>. <a href="https://doi.org/10.1111/bmsp.70034">https://doi.org/10.1111/bmsp.70034</a></p>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>Research</category>
+  <category>Publications</category>
+  <category>Psychometrics</category>
+  <category>Machine Learning</category>
+  <category>IRT</category>
+  <category>Many-Facet Rasch Model</category>
+  <guid>https://doriaxiao.github.io/posts/2026-02-01-hybrid-scoring-reliability/</guid>
+  <pubDate>Sun, 01 Feb 2026 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>New Publication: Trajectories of Depressive Symptoms During COVID-19</title>
+  <link>https://doriaxiao.github.io/posts/2025-09-15-sltb-publication/</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://doriaxiao.github.io/assets/img/sltb-publication.png" class="img-fluid figure-img"></p>
+<figcaption>Publication Cover</figcaption>
+</figure>
+</div>
+<p>I’m very excited to share that our article,<br>
+<strong>“Trajectories of Depressive Symptom Among College Students in China During the COVID-19 Pandemic: Association With Suicidal Ideation and Insomnia Symptoms,”</strong><br>
+has just been published in <em><a href="https://onlinelibrary.wiley.com/doi/10.1111/sltb.70051">Suicide and Life-Threatening Behavior</a></em> :contentReference<span data-index="0">oaicite:0</span>.</p>
+<p>This three-year, five-wave longitudinal study followed <strong>1,387 Chinese college students</strong> to better understand how depression evolved during the pandemic. Using <strong>growth mixture modeling (GMM)</strong>, we identified <strong>five distinct trajectories</strong> of depressive symptoms:</p>
+<ul>
+<li><strong>Resilient (24%)</strong> — consistently low symptoms<br>
+</li>
+<li><strong>Moderate-remission (46%)</strong> — moderate but improving over time<br>
+</li>
+<li><strong>Low-increasing (20%)</strong> — gradual worsening<br>
+</li>
+<li><strong>High-recovery (6%)</strong> — severe early, later recovered<br>
+</li>
+<li><strong>Moderate-increasing (4%)</strong> — moderate but worsening</li>
+</ul>
+<p>🔎 Importantly, these trajectories were not just statistical patterns — they <strong>predicted later risks of suicidal ideation and insomnia</strong>. Students in the increasing-symptom groups were at particularly high risk, underscoring the importance of <strong>early identification and targeted interventions</strong>.</p>
+<p>This study highlights the <strong>heterogeneity of mental health responses</strong> during COVID-19 and calls for more nuanced, trajectory-based approaches to supporting young people.</p>
+<hr>
+<p>📄 Full text available here: <a href="https://onlinelibrary.wiley.com/doi/10.1111/sltb.70051">https://onlinelibrary.wiley.com/doi/10.1111/sltb.70051</a></p>
+
+
+<!-- -->
+
+
+ ]]></description>
+  <guid>https://doriaxiao.github.io/posts/2025-09-15-sltb-publication/</guid>
+  <pubDate>Mon, 15 Sep 2025 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>BEAR Seminar Talk: When Growth Mixture Models Break</title>
+  <link>https://doriaxiao.github.io/posts/2025-09-10-bear-seminar-talk/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://doriaxiao.github.io/assets/img/dissertation-cele1.png" class="img-fluid" alt="Dissertation Celebration1"> <img src="https://doriaxiao.github.io/assets/img/dissertation-cele2.png" class="img-fluid" alt="Dissertation Celebration2"></p>
+<p>Yesterday I had the honor of presenting my dissertation,<br>
+<strong>“When Growth Mixture Models Break,”</strong> as a talk in the <a href="https://events.berkeley.edu/educ/event/304585-bear-seminar-when-growth-mixture-models-break"><strong>BEAR Seminar</strong></a> at the School of Education, University of California, Berkeley.</p>
+<p>I am deeply grateful to the <strong>Social Research Methodologies (SRM) cluster</strong>—my mentors, colleagues, and friends—who have shaped and supported me throughout this journey.</p>
+<p>The surprise celebration, complete with an SRM-themed cake 🎂, flowers 🌹, and cap 🎓, made the day even more special.</p>
+<p>Proud to be an <strong>SRM Bear 🐻</strong>, and excited to continue this work as I begin the next chapter at <strong>Stanford</strong>!</p>
+
+
+<!-- -->
+
+
+ ]]></description>
+  <guid>https://doriaxiao.github.io/posts/2025-09-10-bear-seminar-talk/</guid>
+  <pubDate>Wed, 10 Sep 2025 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>[BEAR Seminar] When Growth Mixture Models Break</title>
+  <link>https://doriaxiao.github.io/posts/2025-09-09-bear-seminar-gmm-break/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>I’m excited to be giving a <strong>BEAR Seminar</strong> talk at UC Berkeley:</p>
+<p><strong>When:</strong> Tuesday, September 9, 2025, at 2:00 p.m.<br>
+<strong>Where:</strong> Berkeley Way West 4310 and via <a href="https://berkeley.zoom.us/j/98195354723">Zoom</a><br>
+<strong>Event page:</strong> <a href="https://events.berkeley.edu/educ/event/304585-bear-seminar-when-growth-mixture-models-break">Berkeley Events Calendar</a></p>
+<hr>
+<section id="talk-overview" class="level3">
+<h3 class="anchored" data-anchor-id="talk-overview">Talk overview</h3>
+<p>Growth Mixture Models (GMMs) are widely used to capture unobserved heterogeneity in longitudinal data. But they are fragile: nonidentifiability can cause classes to collapse or merge, and common information criteria (like AIC or traditional DIC) often fail under skewed or multimodal likelihoods.</p>
+<p>In this talk, I’ll discuss posterior pathologies such as minuscule-class behavior, twinlike-class degeneracy, and stuck chains, and show why plug-in deviance penalties sometimes become negative. I’ll introduce diagnostics (moving-SD checks, Distinguishability Index) and argue that variance-based penalties (DIC_pV), WAIC, and LOO-CV align more closely with the marginal likelihood and provide more reliable guidance for class enumeration.</p>
+<hr>
+<p>If you’re nearby—or joining remotely—I’d love to see you there!</p>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <guid>https://doriaxiao.github.io/posts/2025-09-09-bear-seminar-gmm-break/</guid>
+  <pubDate>Tue, 09 Sep 2025 07:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Welcome</title>
+  <link>https://doriaxiao.github.io/posts/2025-09-08-welcome/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Hi there, and thanks for visiting my site!</p>
+<p>I’m Xingyao (Doria) Xiao, a postdoctoral scholar at Stanford. My research brings together <strong>psychometrics, Bayesian modeling, and AI</strong> to understand learning and improve assessment.</p>
+<p>I built this space to share what I’m working on, from new papers and projects to talks and teaching. I’ll also post occasional reflections on methods and the joys (and headaches!) of modeling complex data.</p>
+<p>Feel free to explore the pages above, and if anything catches your interest, I’d love to connect.</p>
+
+
+<!-- -->
+
+
+ ]]></description>
+  <guid>https://doriaxiao.github.io/posts/2025-09-08-welcome/</guid>
+  <pubDate>Mon, 08 Sep 2025 07:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

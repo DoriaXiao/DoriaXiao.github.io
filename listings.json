@@ -1,0 +1,22 @@
+[
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/2026-02-01-hybrid-scoring-reliability/index.html",
+      "/posts/2025-09-15-sltb-publication/index.html",
+      "/posts/2025-09-10-bear-seminar-talk/index.html",
+      "/posts/2025-09-09-bear-seminar-gmm-break/index.html",
+      "/posts/2025-09-08-welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/2026-02-01-hybrid-scoring-reliability/index.html",
+      "/posts/2025-09-15-sltb-publication/index.html",
+      "/posts/2025-09-10-bear-seminar-talk/index.html",
+      "/posts/2025-09-09-bear-seminar-gmm-break/index.html",
+      "/posts/2025-09-08-welcome/index.html"
+    ]
+  }
+]
