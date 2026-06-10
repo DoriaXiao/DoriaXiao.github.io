@@ -1,0 +1,73 @@
+---
+title: "When the DIC Goes Negative: A Parameterization-Invariant Fix"
+date: 2026-06-10
+description: "Why the classic DIC breaks down in latent variable models, and how a simple plug-in-free variant (DIC_i) fixes it — new paper with Sophia Rabe-Hesketh, now on arXiv."
+categories: [Research, Bayesian, Model Selection, DIC, WAIC, Latent Variables]
+---
+
+
+If you have ever fit a factor analysis or mixture model in a Bayesian framework and asked for the DIC, you may have seen something absurd: a **negative effective number of parameters**. The software reports, with a straight face, that your 18-parameter model has −1,300 effective parameters.
+
+In a new paper with [Sophia Rabe-Hesketh](https://gse.berkeley.edu/sophia-rabe-hesketh), now on arXiv ([arXiv:2605.27844](https://arxiv.org/abs/2605.27844)), we explain exactly why this happens — and propose a one-line fix we call **DIC<sub>i</sub>**, a *parameterization-invariant* DIC.
+
+## What goes wrong
+
+The classic DIC (Spiegelhalter et al., 2002) needs two ingredients: the posterior mean of the deviance, $E[D(\theta)]$, and the deviance evaluated at the posterior mean of the parameters, the **plug-in deviance** $D(\bar\theta)$. The penalty is the gap between them:
+
+$$p_{\mathrm{DIC}} = E[D(\theta)] - D(\bar\theta).$$
+
+The plug-in step is the Achilles heel. In many latent variable models, the posterior is **multimodal for reasons that are completely benign**:
+
+- In factor analysis, flipping the signs of all loadings ($\lambda \to -\lambda$) leaves the likelihood unchanged. With symmetric priors, MCMC chains happily settle into opposite signs — *sign switching*.
+- In finite mixtures, relabeling the components leaves the likelihood unchanged — *label switching*.
+- In overfitted mixtures, an extra class can vanish in two different ways (zero weight, or merging with another class) — what we call *parameterization switching*.
+
+In all three cases, averaging the draws gives a posterior mean $\bar\theta$ that sits **between the modes**, in a region of terrible fit. Two chains say $\lambda \approx +0.9$, two say $\lambda \approx -0.9$, the average says $\lambda \approx 0$ — a parameter value nobody believes. Plugging that into the deviance makes $D(\bar\theta)$ explode, and the penalty goes hugely negative. The DIC isn't being subtle; it's being destroyed by an artifact of how we summarize the posterior.
+
+## The fix: stop plugging in
+
+Gelman, Hwang & Vehtari (2014) suggested an alternative penalty that needs no plug-in at all — half the posterior **variance** of the deviance:
+
+$$p_V = \tfrac{1}{2}\,\mathrm{Var}[D(\theta)].$$
+
+Our proposal is to pair this penalty with the posterior **mean** deviance, and to never evaluate anything at a point estimate:
+
+$$\mathrm{DIC}_i = E[D(\theta)] + p_V.$$
+
+The subscript *i* stands for **invariant**: every ingredient is a functional of the deviance distribution, and the deviance is unchanged by sign flips, relabeling, or any reparameterization. The pathologies above can't touch it.
+
+(A note to avoid confusion: $p_V$ itself is Gelman et al.'s penalty, not ours. Their criterion, which we call DIC<sub>p</sub>, keeps the plug-in deviance — $D(\bar\theta) + 2p_V$ — and therefore inherits the same instability as the classic DIC. Amusingly, DIC<sub>i</sub> turns out to be exactly the average of the classic DIC and DIC<sub>p</sub>: when things break, those two explode in *opposite* directions, and their average stays put.)
+
+## Does it work?
+
+Theoretically: under standard regularity conditions, we show DIC<sub>i</sub> is **asymptotically equivalent to WAIC**. Empirically, across two large simulation studies (factor analysis and growth mixture models, 2,800 fitted models in total):
+
+| | Classic $p_{\mathrm{DIC}}$ | $p_V$ (used in DIC<sub>i</sub>) | $p_{\mathrm{WAIC}}$ |
+|---|---|---|---|
+| Mean (true $q=18$) | **−1,307** | 19.0 | 17.4 |
+| SD | 2,121 | 0.7 | 0.4 |
+| Min | −9,450 | 16.6 | 16.2 |
+
+The classic penalty is meaningless; $p_V$ sits right at the parameter count. DIC<sub>i</sub> tracks WAIC closely (their difference shrinks at the expected rate as the sample grows), and in mixture model selection DIC<sub>i</sub> picked the true number of classes in 94–100% of replicates — slightly *better* than WAIC's 84–96% at rejecting overfitted models.
+
+## Why not just use WAIC?
+
+Often you should! But there are three honest reasons to want DIC<sub>i</sub> in your toolbox:
+
+1. **WAIC isn't always defined.** It requires the (marginal) likelihood to factorize into pointwise contributions. Spatial models, and models with crossed latent variables (e.g., item response models with person *and* item effects), don't factorize. DIC<sub>i</sub> only needs the total deviance at each draw.
+2. **Speed and storage.** WAIC and LOO need the full draws × observations log-likelihood matrix. DIC<sub>i</sub> needs one number per draw. In our timing runs it was ~18× faster than WAIC and ~140× faster than LOO-CV.
+3. **Software reality.** Programs like Mplus report the deviance draws but not pointwise likelihoods. Adding DIC<sub>i</sub> there is essentially free; adding WAIC is not.
+
+Our practical recommendation: keep computing the classic DIC penalty as a *diagnostic* — if $p_{\mathrm{DIC}} < 0$, your posterior means are not to be trusted (in our factor analysis simulations, a negative $p_{\mathrm{DIC}}$ identified between-chain sign switching in all 1,200 replicates, exactly). Then report DIC<sub>i</sub>.
+
+## Try it
+
+- 📄 **Paper:** [arXiv:2605.27844](https://arxiv.org/abs/2605.27844)
+- 📦 **R package:** [github.com/DoriaXiao/DIC_i](https://github.com/DoriaXiao/DIC_i) — `remotes::install_github("DoriaXiao/DIC_i")`, then `compute_dic_i(log_lik)` or `dic_i_from_cmdstanr(fit)`
+- 🎛️ **Interactive demo:** [doriaxiao.shinyapps.io/dicv_app](https://doriaxiao.shinyapps.io/dicv_app/) — runs live Gibbs samplers in your browser; drag the sliders and watch $p_{\mathrm{DIC}}$ collapse while $p_V$ stays put
+
+If you've run into negative DIC penalties in your own work, I'd love to hear about it.
+
+---
+
+**Citation:** Xiao, X., & Rabe-Hesketh, S. (2026). A parameterization-invariant DIC. *arXiv preprint* [arXiv:2605.27844](https://arxiv.org/abs/2605.27844).
