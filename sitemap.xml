@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://doriaxiao.github.io/blog.html</loc>
-    <lastmod>2026-06-10T09:10:49.253Z</lastmod>
+    <loc>https://doriaxiao.github.io/teaching.html</loc>
+    <lastmod>2026-06-10T10:01:29.077Z</lastmod>
   </url>
   <url>
-    <loc>https://doriaxiao.github.io/about.html</loc>
-    <lastmod>2026-06-10T09:10:49.243Z</lastmod>
+    <loc>https://doriaxiao.github.io/research.html</loc>
+    <lastmod>2026-06-10T10:01:01.355Z</lastmod>
   </url>
   <url>
-    <loc>https://doriaxiao.github.io/index.html</loc>
-    <lastmod>2026-06-10T12:09:12.223Z</lastmod>
-  </url>
-  <url>
-    <loc>https://doriaxiao.github.io/talks.html</loc>
-    <lastmod>2026-06-10T09:18:04.874Z</lastmod>
-  </url>
-  <url>
-    <loc>https://doriaxiao.github.io/posts/2025-09-08-welcome/index.html</loc>
+    <loc>https://doriaxiao.github.io/projects.html</loc>
     <lastmod>2026-06-10T09:10:49.242Z</lastmod>
   </url>
   <url>
@@ -25,39 +17,43 @@
     <lastmod>2026-06-10T09:10:49.241Z</lastmod>
   </url>
   <url>
-    <loc>https://doriaxiao.github.io/posts/2025-09-15-sltb-publication/index.html</loc>
-    <lastmod>2026-06-10T09:10:49.240Z</lastmod>
+    <loc>https://doriaxiao.github.io/posts/2025-09-10-bear-seminar-talk/index.html</loc>
+    <lastmod>2026-06-10T09:10:49.241Z</lastmod>
   </url>
   <url>
-    <loc>https://doriaxiao.github.io/research.html</loc>
-    <lastmod>2026-06-10T10:01:01.355Z</lastmod>
-  </url>
-  <url>
-    <loc>https://doriaxiao.github.io/teaching.html</loc>
-    <lastmod>2026-06-10T10:01:29.077Z</lastmod>
+    <loc>https://doriaxiao.github.io/posts/2025-09-08-welcome/index.html</loc>
+    <lastmod>2026-06-10T09:10:49.242Z</lastmod>
   </url>
   <url>
     <loc>https://doriaxiao.github.io/contact.html</loc>
     <lastmod>2026-06-10T10:01:31.383Z</lastmod>
   </url>
   <url>
-    <loc>https://doriaxiao.github.io/posts/2025-09-10-bear-seminar-talk/index.html</loc>
-    <lastmod>2026-06-10T09:10:49.241Z</lastmod>
+    <loc>https://doriaxiao.github.io/about.html</loc>
+    <lastmod>2026-06-10T09:10:49.243Z</lastmod>
+  </url>
+  <url>
+    <loc>https://doriaxiao.github.io/blog.html</loc>
+    <lastmod>2026-06-10T09:10:49.253Z</lastmod>
+  </url>
+  <url>
+    <loc>https://doriaxiao.github.io/index.html</loc>
+    <lastmod>2026-06-10T12:09:12.223Z</lastmod>
   </url>
   <url>
     <loc>https://doriaxiao.github.io/posts/2025-09-09-bear-seminar-gmm-break/index.html</loc>
     <lastmod>2026-06-10T09:10:49.242Z</lastmod>
   </url>
   <url>
-    <loc>https://doriaxiao.github.io/projects.html</loc>
-    <lastmod>2026-06-10T09:10:49.242Z</lastmod>
+    <loc>https://doriaxiao.github.io/posts/2025-09-15-sltb-publication/index.html</loc>
+    <lastmod>2026-06-10T09:10:49.240Z</lastmod>
   </url>
   <url>
     <loc>https://doriaxiao.github.io/publications.html</loc>
     <lastmod>2026-06-10T10:01:20.227Z</lastmod>
   </url>
   <url>
-    <loc>https://doriaxiao.github.io/README-deploy.html</loc>
-    <lastmod>2026-06-10T09:10:49.243Z</lastmod>
+    <loc>https://doriaxiao.github.io/talks.html</loc>
+    <lastmod>2026-06-10T09:18:04.874Z</lastmod>
   </url>
 </urlset>

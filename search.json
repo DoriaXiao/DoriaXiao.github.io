@@ -1,10 +1,52 @@
 [
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
     "section": "",
-    "text": "New Publication: Reliability of Hybrid Human-ML Scoring Systems\n\n\n\nResearch\n\nPublications\n\nPsychometrics\n\nMachine Learning\n\nIRT\n\nMany-Facet Rasch Model\n\n\n\n\n\n\n\n\n\nFeb 1, 2026\n\n2 min\n\n\n\n\n\n\nNew Publication: Trajectories of Depressive Symptoms During COVID-19\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2025\n\n1 min\n\n\n\n\n\n\nBEAR Seminar Talk: When Growth Mixture Models Break\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2025\n\n1 min\n\n\n\n\n\n\n[BEAR Seminar] When Growth Mixture Models Break\n\n\n\n\n\n\n\n\n\n\n\nSep 9, 2025\n\n1 min\n\n\n\n\n\n\nWelcome\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2025\n\n1 min\n\n\n\n\nNo matching items"
+    "text": "Graduate Student Instructor — UC Berkeley\n\nHierarchical and Longitudinal Modeling (Fall 2021, 2022, 2023)\nData Analysis in Education Research II (Spring 2022, 2023)\n\nTeaching Assistant — Boston College\n\nIntermediate Statistics (Spring 2020)\nStatistics I (Fall 2019)\n\nTeaching Assistant — University of Minnesota, Morris\n\nIntroduction to Statistics (Fall 2017)"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "My research sits at the intersection of statistical methodology and educational measurement, developing robust psychometric frameworks for high-stakes and increasingly AI-assisted assessments. I specialize in Bayesian longitudinal modeling and the principled integration of machine learning into measurement.\n\nAI-Integrated Measurement & Hybrid Scoring\nI investigate how machine learning (ML) scoring can scale constructed-response assessments when integrated with human judgment.\n\nMy recent work shows that systematic rater bias is a greater threat to reliability than random machine noise.\nI have identified a “bias compensation” mechanism: pairing ML models with human raters of opposing severity profiles can cancel out directional errors and restore accuracy.\nThis research supports using the Many-Facet Rasch Model (MFRM) and anchoring strategies to stabilize scales in sparse scoring designs.\n\n\n\nBayesian Longitudinal & Growth Mixture Modeling\nA core focus is the stability and evaluation of latent variable models.\n\nI develop Bayesian diagnostics to identify local identifiability issues and convergence failures in growth mixture models (GMMs).\nMy work uses marginal likelihood to compare model selection strategies for longitudinal behavioral change.\n\n\n\nCross-Cultural Measurement (LEVANTE)\nAt Stanford, I work on the LEVANTE Project to create internationalized measures of learning for children ages 5–12.\n\nI focus on measurement invariance and statistical methods for modeling developmental change across cultural contexts.\nWe aim to validate core cognitive tasks that remain robust across languages and research sites.\n\n\n\nAdaptive Testing\n\nCAT fairness and robustness — mitigating item calibration error and designing robust stopping rules for computer-adaptive testing."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "BadBanks & CAT Overlap. Simulation frameworks for adaptive testing under calibration error, item reuse, and overlap constraints; evaluating rescoring, selection, and stopping rules.\nBalancing Bias / APE (AI‑assisted scoring). Ensemble LLM raters calibrated against human biases in MFRM; improving reliability and fairness.\nGMM Diagnostics & IMV. Identification checks, posterior instability diagnostics, and predictive comparisons between GMM and simpler growth models.\nLEVANTE. Cross‑cultural growth modeling and fairness evaluation across multilingual contexts (U.S., Canada, Colombia, Germany)."
+  },
+  {
+    "objectID": "posts/2026-02-01-hybrid-scoring-reliability/index.html",
+    "href": "posts/2026-02-01-hybrid-scoring-reliability/index.html",
+    "title": "New Publication: Reliability of Hybrid Human-ML Scoring Systems",
+    "section": "",
+    "text": "I am pleased to share that our new paper, “Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model,” has been published in the British Journal of Mathematical and Statistical Psychology.\nThis research, conducted with co-authors Richard J. Patz and Mark R. Wilson, investigates the psychometric impact of integrating machine learning (ML) scoring into high-stakes assessment frameworks.\n\nKey Insights\n\nSystematic Bias vs. Noise: We found that systematic rater bias, rather than random machine inconsistency, is the primary driver of estimation error in hybrid scoring systems.\nDesign Density: Increasing scoring matrix density (moving from isolated to complete designs) significantly stabilizes latent proficiency recovery.\nStrategic Hybridization: Hybrid scoring yields the greatest reliability gains when human and ML raters possess opposing biases, allowing directional errors to cancel out.\nRobust Modeling: For sparse scoring designs, the Partial Credit Model (PCM) with fixed thresholds often outperforms more complex Many-Facet variants by reducing over-parameterization.\n\n\n\nPractical Application\nWe applied these findings to real-world data from a “Problem Solving with Math” (PSM) assessment. Results confirmed that anchoring constructed-response items to selected-response metrics can effectively stabilize scales in sparse scoring environments.\nFull Citation: Xiao, X., Patz, R. J., & Wilson, M. R. (2026). Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model. British Journal of Mathematical and Statistical Psychology. https://doi.org/10.1111/bmsp.70034"
+  },
+  {
+    "objectID": "posts/2025-09-10-bear-seminar-talk/index.html",
+    "href": "posts/2025-09-10-bear-seminar-talk/index.html",
+    "title": "BEAR Seminar Talk: When Growth Mixture Models Break",
+    "section": "",
+    "text": "Yesterday I had the honor of presenting my dissertation,\n“When Growth Mixture Models Break,” as a talk in the BEAR Seminar at the School of Education, University of California, Berkeley.\nI am deeply grateful to the Social Research Methodologies (SRM) cluster—my mentors, colleagues, and friends—who have shaped and supported me throughout this journey.\nThe surprise celebration, complete with an SRM-themed cake 🎂, flowers 🌹, and cap 🎓, made the day even more special.\nProud to be an SRM Bear 🐻, and excited to continue this work as I begin the next chapter at Stanford!"
+  },
+  {
+    "objectID": "posts/2025-09-08-welcome/index.html",
+    "href": "posts/2025-09-08-welcome/index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Hi there, and thanks for visiting my site!\nI’m Xingyao (Doria) Xiao, a postdoctoral scholar at Stanford. My research brings together psychometrics, Bayesian modeling, and AI to understand learning and improve assessment.\nI built this space to share what I’m working on, from new papers and projects to talks and teaching. I’ll also post occasional reflections on methods and the joys (and headaches!) of modeling complex data.\nFeel free to explore the pages above, and if anything catches your interest, I’d love to connect."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Feel free to reach out — email is the most reliable way to contact me.\n\n📧 Email: xiaoxg@berkeley.edu\n💻 GitHub: github.com/DoriaXiao\n\n🎓 Google Scholar: Scholar Profile\n\n🧾 ORCID: 0000-0001-8430-0438\n\n🔗 LinkedIn: Xingyao (Doria) Xiao"
   },
   {
     "objectID": "about.html",
@@ -12,6 +54,13 @@
     "title": "About",
     "section": "",
     "text": "I am a Postdoctoral Scholar at Stanford University, working on the Learning Variability Network Exchange (LEVANTE) with Prof. Ben Domingue and collaborators. My research focuses on psychometrics and Bayesian statistical modeling, with interests in measurement invariance and the integration of AI into educational and psychometric practice.\nMy dissertation, Bayesian Identification, Estimation, and Evaluation of Growth Mixture Models, advanced new methods for addressing identifiability and model evaluation, offering both theoretical diagnostics and practical guidance for applied researchers.\nPreviously, I earned my Ph.D. in Social Research Methodologies at UC Berkeley. I also hold an M.S. in Applied Statistics and Psychometrics from Boston College and a B.A. in Statistics from the University of Minnesota, Morris."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "New Publication: Reliability of Hybrid Human-ML Scoring Systems\n\n\n\nResearch\n\nPublications\n\nPsychometrics\n\nMachine Learning\n\nIRT\n\nMany-Facet Rasch Model\n\n\n\n\n\n\n\n\n\nFeb 1, 2026\n\n2 min\n\n\n\n\n\n\nNew Publication: Trajectories of Depressive Symptoms During COVID-19\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2025\n\n1 min\n\n\n\n\n\n\nBEAR Seminar Talk: When Growth Mixture Models Break\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2025\n\n1 min\n\n\n\n\n\n\n[BEAR Seminar] When Growth Mixture Models Break\n\n\n\n\n\n\n\n\n\n\n\nSep 9, 2025\n\n1 min\n\n\n\n\n\n\nWelcome\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2025\n\n1 min\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -35,62 +84,6 @@
     "text": "Recent Posts\n\n\n\n\n\nNew Publication: Reliability of Hybrid Human-ML Scoring Systems\n\n\n\n\n\n\n\n\nFeb 1, 2026\n\n\n\n\n\n\n\nNew Publication: Trajectories of Depressive Symptoms During COVID-19\n\n\n\n\n\n\n\n\nSep 15, 2025\n\n\n\n\n\n\n\nBEAR Seminar Talk: When Growth Mixture Models Break\n\n\n\n\n\n\n\n\nSep 10, 2025\n\n\n\n\n\nNo matching items\n\nAll posts →"
   },
   {
-    "objectID": "talks.html",
-    "href": "talks.html",
-    "title": "Talks & Presentations",
-    "section": "",
-    "text": "BEAR Seminar — When Growth Mixture Models Break: Identifiability Failures and Misleading Model Evaluation\nUC Berkeley · September 9, 2025 · 2:00 p.m.\n📄 Read blog post · 🔗 Event details\n\nNCME (2025, 2024, 2023, 2022) — Topics include integrating ML and human rater scores (MFRM), ChatGPT transadaptation, Bayesian comparison of GMMs, and growth mixture class enumeration.\nIMPS (2025, 2023) — Model evaluation failures and diagnostics in GMM; Bayesian identification and local identifiability.\nRSS 2024 — Bayesian approaches to identifiability and estimation of GMM.\nStanCon 2024 — Diagnostics and identification for GMM in Stan.\nM3 2023 — Marginal likelihood for GMM; dynamic process heterogeneity.\nOther — AEFP 2022; SRCoS 2019; NEERO 2019; URS 2018."
-  },
-  {
-    "objectID": "posts/2025-09-08-welcome/index.html",
-    "href": "posts/2025-09-08-welcome/index.html",
-    "title": "Welcome",
-    "section": "",
-    "text": "Hi there, and thanks for visiting my site!\nI’m Xingyao (Doria) Xiao, a postdoctoral scholar at Stanford. My research brings together psychometrics, Bayesian modeling, and AI to understand learning and improve assessment.\nI built this space to share what I’m working on, from new papers and projects to talks and teaching. I’ll also post occasional reflections on methods and the joys (and headaches!) of modeling complex data.\nFeel free to explore the pages above, and if anything catches your interest, I’d love to connect."
-  },
-  {
-    "objectID": "posts/2026-02-01-hybrid-scoring-reliability/index.html",
-    "href": "posts/2026-02-01-hybrid-scoring-reliability/index.html",
-    "title": "New Publication: Reliability of Hybrid Human-ML Scoring Systems",
-    "section": "",
-    "text": "I am pleased to share that our new paper, “Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model,” has been published in the British Journal of Mathematical and Statistical Psychology.\nThis research, conducted with co-authors Richard J. Patz and Mark R. Wilson, investigates the psychometric impact of integrating machine learning (ML) scoring into high-stakes assessment frameworks.\n\nKey Insights\n\nSystematic Bias vs. Noise: We found that systematic rater bias, rather than random machine inconsistency, is the primary driver of estimation error in hybrid scoring systems.\nDesign Density: Increasing scoring matrix density (moving from isolated to complete designs) significantly stabilizes latent proficiency recovery.\nStrategic Hybridization: Hybrid scoring yields the greatest reliability gains when human and ML raters possess opposing biases, allowing directional errors to cancel out.\nRobust Modeling: For sparse scoring designs, the Partial Credit Model (PCM) with fixed thresholds often outperforms more complex Many-Facet variants by reducing over-parameterization.\n\n\n\nPractical Application\nWe applied these findings to real-world data from a “Problem Solving with Math” (PSM) assessment. Results confirmed that anchoring constructed-response items to selected-response metrics can effectively stabilize scales in sparse scoring environments.\nFull Citation: Xiao, X., Patz, R. J., & Wilson, M. R. (2026). Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model. British Journal of Mathematical and Statistical Psychology. https://doi.org/10.1111/bmsp.70034"
-  },
-  {
-    "objectID": "posts/2025-09-15-sltb-publication/index.html",
-    "href": "posts/2025-09-15-sltb-publication/index.html",
-    "title": "New Publication: Trajectories of Depressive Symptoms During COVID-19",
-    "section": "",
-    "text": "Publication Cover\n\n\nI’m very excited to share that our article,\n“Trajectories of Depressive Symptom Among College Students in China During the COVID-19 Pandemic: Association With Suicidal Ideation and Insomnia Symptoms,”\nhas just been published in Suicide and Life-Threatening Behavior :contentReferenceoaicite:0.\nThis three-year, five-wave longitudinal study followed 1,387 Chinese college students to better understand how depression evolved during the pandemic. Using growth mixture modeling (GMM), we identified five distinct trajectories of depressive symptoms:\n\nResilient (24%) — consistently low symptoms\n\nModerate-remission (46%) — moderate but improving over time\n\nLow-increasing (20%) — gradual worsening\n\nHigh-recovery (6%) — severe early, later recovered\n\nModerate-increasing (4%) — moderate but worsening\n\n🔎 Importantly, these trajectories were not just statistical patterns — they predicted later risks of suicidal ideation and insomnia. Students in the increasing-symptom groups were at particularly high risk, underscoring the importance of early identification and targeted interventions.\nThis study highlights the heterogeneity of mental health responses during COVID-19 and calls for more nuanced, trajectory-based approaches to supporting young people.\n\n📄 Full text available here: https://onlinelibrary.wiley.com/doi/10.1111/sltb.70051"
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "My research sits at the intersection of statistical methodology and educational measurement, developing robust psychometric frameworks for high-stakes and increasingly AI-assisted assessments. I specialize in Bayesian longitudinal modeling and the principled integration of machine learning into measurement.\n\nAI-Integrated Measurement & Hybrid Scoring\nI investigate how machine learning (ML) scoring can scale constructed-response assessments when integrated with human judgment.\n\nMy recent work shows that systematic rater bias is a greater threat to reliability than random machine noise.\nI have identified a “bias compensation” mechanism: pairing ML models with human raters of opposing severity profiles can cancel out directional errors and restore accuracy.\nThis research supports using the Many-Facet Rasch Model (MFRM) and anchoring strategies to stabilize scales in sparse scoring designs.\n\n\n\nBayesian Longitudinal & Growth Mixture Modeling\nA core focus is the stability and evaluation of latent variable models.\n\nI develop Bayesian diagnostics to identify local identifiability issues and convergence failures in growth mixture models (GMMs).\nMy work uses marginal likelihood to compare model selection strategies for longitudinal behavioral change.\n\n\n\nCross-Cultural Measurement (LEVANTE)\nAt Stanford, I work on the LEVANTE Project to create internationalized measures of learning for children ages 5–12.\n\nI focus on measurement invariance and statistical methods for modeling developmental change across cultural contexts.\nWe aim to validate core cognitive tasks that remain robust across languages and research sites.\n\n\n\nAdaptive Testing\n\nCAT fairness and robustness — mitigating item calibration error and designing robust stopping rules for computer-adaptive testing."
-  },
-  {
-    "objectID": "teaching.html",
-    "href": "teaching.html",
-    "title": "Teaching",
-    "section": "",
-    "text": "Graduate Student Instructor — UC Berkeley\n\nHierarchical and Longitudinal Modeling (Fall 2021, 2022, 2023)\nData Analysis in Education Research II (Spring 2022, 2023)\n\nTeaching Assistant — Boston College\n\nIntermediate Statistics (Spring 2020)\nStatistics I (Fall 2019)\n\nTeaching Assistant — University of Minnesota, Morris\n\nIntroduction to Statistics (Fall 2017)"
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "Feel free to reach out — email is the most reliable way to contact me.\n\n📧 Email: xiaoxg@berkeley.edu\n💻 GitHub: github.com/DoriaXiao\n\n🎓 Google Scholar: Scholar Profile\n\n🧾 ORCID: 0000-0001-8430-0438\n\n🔗 LinkedIn: Xingyao (Doria) Xiao"
-  },
-  {
-    "objectID": "posts/2025-09-10-bear-seminar-talk/index.html",
-    "href": "posts/2025-09-10-bear-seminar-talk/index.html",
-    "title": "BEAR Seminar Talk: When Growth Mixture Models Break",
-    "section": "",
-    "text": "Yesterday I had the honor of presenting my dissertation,\n“When Growth Mixture Models Break,” as a talk in the BEAR Seminar at the School of Education, University of California, Berkeley.\nI am deeply grateful to the Social Research Methodologies (SRM) cluster—my mentors, colleagues, and friends—who have shaped and supported me throughout this journey.\nThe surprise celebration, complete with an SRM-themed cake 🎂, flowers 🌹, and cap 🎓, made the day even more special.\nProud to be an SRM Bear 🐻, and excited to continue this work as I begin the next chapter at Stanford!"
-  },
-  {
     "objectID": "posts/2025-09-09-bear-seminar-gmm-break/index.html",
     "href": "posts/2025-09-09-bear-seminar-gmm-break/index.html",
     "title": "[BEAR Seminar] When Growth Mixture Models Break",
@@ -98,11 +91,11 @@
     "text": "I’m excited to be giving a BEAR Seminar talk at UC Berkeley:\nWhen: Tuesday, September 9, 2025, at 2:00 p.m.\nWhere: Berkeley Way West 4310 and via Zoom\nEvent page: Berkeley Events Calendar\n\n\nTalk overview\nGrowth Mixture Models (GMMs) are widely used to capture unobserved heterogeneity in longitudinal data. But they are fragile: nonidentifiability can cause classes to collapse or merge, and common information criteria (like AIC or traditional DIC) often fail under skewed or multimodal likelihoods.\nIn this talk, I’ll discuss posterior pathologies such as minuscule-class behavior, twinlike-class degeneracy, and stuck chains, and show why plug-in deviance penalties sometimes become negative. I’ll introduce diagnostics (moving-SD checks, Distinguishability Index) and argue that variance-based penalties (DIC_pV), WAIC, and LOO-CV align more closely with the marginal likelihood and provide more reliable guidance for class enumeration.\n\nIf you’re nearby—or joining remotely—I’d love to see you there!"
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
+    "objectID": "posts/2025-09-15-sltb-publication/index.html",
+    "href": "posts/2025-09-15-sltb-publication/index.html",
+    "title": "New Publication: Trajectories of Depressive Symptoms During COVID-19",
     "section": "",
-    "text": "BadBanks & CAT Overlap. Simulation frameworks for adaptive testing under calibration error, item reuse, and overlap constraints; evaluating rescoring, selection, and stopping rules.\nBalancing Bias / APE (AI‑assisted scoring). Ensemble LLM raters calibrated against human biases in MFRM; improving reliability and fairness.\nGMM Diagnostics & IMV. Identification checks, posterior instability diagnostics, and predictive comparisons between GMM and simpler growth models.\nLEVANTE. Cross‑cultural growth modeling and fairness evaluation across multilingual contexts (U.S., Canada, Colombia, Germany)."
+    "text": "Publication Cover\n\n\nI’m very excited to share that our article,\n“Trajectories of Depressive Symptom Among College Students in China During the COVID-19 Pandemic: Association With Suicidal Ideation and Insomnia Symptoms,”\nhas just been published in Suicide and Life-Threatening Behavior :contentReferenceoaicite:0.\nThis three-year, five-wave longitudinal study followed 1,387 Chinese college students to better understand how depression evolved during the pandemic. Using growth mixture modeling (GMM), we identified five distinct trajectories of depressive symptoms:\n\nResilient (24%) — consistently low symptoms\n\nModerate-remission (46%) — moderate but improving over time\n\nLow-increasing (20%) — gradual worsening\n\nHigh-recovery (6%) — severe early, later recovered\n\nModerate-increasing (4%) — moderate but worsening\n\n🔎 Importantly, these trajectories were not just statistical patterns — they predicted later risks of suicidal ideation and insomnia. Students in the increasing-symptom groups were at particularly high risk, underscoring the importance of early identification and targeted interventions.\nThis study highlights the heterogeneity of mental health responses during COVID-19 and calls for more nuanced, trajectory-based approaches to supporting young people.\n\n📄 Full text available here: https://onlinelibrary.wiley.com/doi/10.1111/sltb.70051"
   },
   {
     "objectID": "publications.html",
@@ -126,59 +119,10 @@
     "text": "Journal Articles\nXiao, X., & Cheng, Y. (2026). What do I know about AI beyond everyday knowledge? Unveiling misconceptions using item response theory analyses and cognitive interviews. ACM Transactions on Computing Education, 26(4), 1-28.\nXiao, X., Patz, R. J., & Wilson, M. R. (2026). Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model. British Journal of Mathematical and Statistical Psychology.\nXue, M., Xiao, X., Liu, Y., & Wilson, M. (2026). On the consistency of automatic scoring with large language models. Educational and Psychological Measurement. Advance online publication.\nXiao, X., & Cheng, Y. (2026). Gendered pathways to self-efficacy: Moderating and mediating roles of family, school, and sibling contexts in early adolescence. European Journal of Psychology of Education, 41(1), 2."
   },
   {
-    "objectID": "README-deploy.html",
-    "href": "README-deploy.html",
-    "title": "",
+    "objectID": "talks.html",
+    "href": "talks.html",
+    "title": "Talks & Presentations",
     "section": "",
-    "text": "Code"
-  },
-  {
-    "objectID": "README-deploy.html#第-0-步备份旧站",
-    "href": "README-deploy.html#第-0-步备份旧站",
-    "title": "",
-    "section": "第 0 步：备份旧站",
-    "text": "第 0 步：备份旧站\ncd DoriaXiao.github.io\ngit checkout -b jekyll-archive\ngit push origin jekyll-archive   # 旧 Jekyll 站完整保留在这个分支\ngit checkout main"
-  },
-  {
-    "objectID": "README-deploy.html#第-1-步替换为-quarto-源码",
-    "href": "README-deploy.html#第-1-步替换为-quarto-源码",
-    "title": "",
-    "section": "第 1 步：替换为 Quarto 源码",
-    "text": "第 1 步：替换为 Quarto 源码\n把本骨架的全部文件复制进仓库根目录（先清空 main 上的旧 Jekyll 文件， 但保留 assets/img/profile.jpg 和 assets/cv/ 下的 PDF，骨架里已留好对应目录）。\n本地需要：Quarto（quarto.org 下载）+ R + ggplot2。\nquarto preview    # 本地实时预览"
-  },
-  {
-    "objectID": "README-deploy.html#第-2-步发布",
-    "href": "README-deploy.html#第-2-步发布",
-    "title": "",
-    "section": "第 2 步：发布",
-    "text": "第 2 步：发布\nquarto publish gh-pages\n第一次运行会自动创建 gh-pages 分支并推送渲染结果。然后到 GitHub 仓库 Settings -&gt; Pages，把 Source 改为 gh-pages 分支（根目录）。 以后每次发文：写 .qmd -&gt; quarto publish gh-pages，一条命令。"
-  },
-  {
-    "objectID": "README-deploy.html#第-3-步阅读量goatcounter免费",
-    "href": "README-deploy.html#第-3-步阅读量goatcounter免费",
-    "title": "",
-    "section": "第 3 步：阅读量（GoatCounter，免费）",
-    "text": "第 3 步：阅读量（GoatCounter，免费）\n\n到 https://www.goatcounter.com 注册，site code 建议填 doriaxiao\n把 assets/goatcounter.html 和 assets/pageviews.html 里的 MYCODE 全部替换为你的 site code\n在 GoatCounter 后台 Settings 勾选 “Allow adding visitor counts on your website” （否则文章页底部的可见计数器不显示）\n后台 dashboard 可看每篇文章的访问量、来源、地区"
-  },
-  {
-    "objectID": "README-deploy.html#第-4-步评论-点赞giscus基于-github-discussions免费无后端",
-    "href": "README-deploy.html#第-4-步评论-点赞giscus基于-github-discussions免费无后端",
-    "title": "",
-    "section": "第 4 步：评论 + 点赞（giscus，基于 GitHub Discussions，免费无后端）",
-    "text": "第 4 步：评论 + 点赞（giscus，基于 GitHub Discussions，免费无后端）\n\n仓库 Settings -&gt; General -&gt; Features -&gt; 勾选 Discussions\n安装 giscus app：https://github.com/apps/giscus ，授权给这个仓库\n打开 https://giscus.app ，填入仓库名 DoriaXiao/DoriaXiao.github.io， Discussion 分类选 Announcements，页面会生成 data-repo-id 和 data-category-id 两个值\n把这两个值填进 posts/_metadata.yml 里的两处 REPLACE_FROM_GISCUS_APP\n\n之后每篇文章底部自动出现评论区，顶部有表情 reactions（👍❤️🎉 等）， 这就是”点赞”。读者用 GitHub 账号登录即可评论，学术受众基本人手一个。"
-  },
-  {
-    "objectID": "README-deploy.html#关于收藏",
-    "href": "README-deploy.html#关于收藏",
-    "title": "",
-    "section": "关于”收藏”",
-    "text": "关于”收藏”\n静态网站没有无后端的收藏功能，诚实的答案是不做：读者的收藏行为 发生在浏览器书签和 RSS 订阅里（blog.xml 已自动生成）。giscus 的 reactions + GoatCounter 阅读量已覆盖你需要的反馈信号。"
-  },
-  {
-    "objectID": "README-deploy.html#必改清单上线前",
-    "href": "README-deploy.html#必改清单上线前",
-    "title": "",
-    "section": "必改清单（上线前）",
-    "text": "必改清单（上线前）\n\nindex.qmd 里的 REPLACE_WITH_PERSONAL_EMAIL（Stanford 邮箱离职后会停用！）\nCV PDF 里的联系邮箱同步更新\n从旧仓库复制 profile.jpg 和 CV PDF 到 assets/ 对应目录\n旧博文（约 5 篇）：从 jekyll-archive 分支把 markdown 内容 搬到 posts/&lt;日期-标题&gt;/index.qmd，front matter 改成 Quarto 格式\n示例文章删掉 draft: true 才会出现在列表里"
+    "text": "BEAR Seminar — When Growth Mixture Models Break: Identifiability Failures and Misleading Model Evaluation\nUC Berkeley · September 9, 2025 · 2:00 p.m.\n📄 Read blog post · 🔗 Event details\n\nNCME (2025, 2024, 2023, 2022) — Topics include integrating ML and human rater scores (MFRM), ChatGPT transadaptation, Bayesian comparison of GMMs, and growth mixture class enumeration.\nIMPS (2025, 2023) — Model evaluation failures and diagnostics in GMM; Bayesian identification and local identifiability.\nRSS 2024 — Bayesian approaches to identifiability and estimation of GMM.\nStanCon 2024 — Diagnostics and identification for GMM in Stan.\nM3 2023 — Marginal likelihood for GMM; dynamic process heterogeneity.\nOther — AEFP 2022; SRCoS 2019; NEERO 2019; URS 2018."
   }
 ]
