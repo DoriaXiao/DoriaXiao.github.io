@@ -1,6 +1,11 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - assets/cv/Xingyao_CV_2026.pdf
+  render:
+    - "**/*.qmd"
+    - "!README-deploy.md"
 
 website:
   title: "Xingyao (Doria) Xiao, Ph.D."
