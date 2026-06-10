@@ -1,0 +1,32 @@
+---
+title: "Research"
+toc: true
+---
+
+My research sits at the intersection of **statistical methodology** and **educational measurement**, developing robust psychometric frameworks for high-stakes and increasingly AI-assisted assessments. I specialize in **Bayesian longitudinal modeling** and the principled integration of machine learning into measurement.
+
+### AI-Integrated Measurement & Hybrid Scoring
+
+I investigate how machine learning (ML) scoring can scale constructed-response assessments when integrated with human judgment.
+
+- My recent work shows that **systematic rater bias** is a greater threat to reliability than random machine noise.
+- I have identified a **"bias compensation"** mechanism: pairing ML models with human raters of opposing severity profiles can cancel out directional errors and restore accuracy.
+- This research supports using the **Many-Facet Rasch Model (MFRM)** and anchoring strategies to stabilize scales in sparse scoring designs.
+
+### Bayesian Longitudinal & Growth Mixture Modeling
+
+A core focus is the stability and evaluation of latent variable models.
+
+- I develop Bayesian diagnostics to identify local identifiability issues and convergence failures in growth mixture models (GMMs).
+- My work uses marginal likelihood to compare model selection strategies for longitudinal behavioral change.
+
+### Cross-Cultural Measurement (LEVANTE)
+
+At Stanford, I work on the [**LEVANTE Project**](https://levante-network.org/) to create internationalized measures of learning for children ages 5–12.
+
+- I focus on **measurement invariance** and statistical methods for modeling developmental change across cultural contexts.
+- We aim to validate core cognitive tasks that remain robust across languages and research sites.
+
+### Adaptive Testing
+
+- **CAT fairness and robustness** — mitigating item calibration error and designing robust stopping rules for computer-adaptive testing.

@@ -1,0 +1,61 @@
+---
+title: "Xingyao (Doria) Xiao, Ph.D."
+image: assets/img/profile.jpg
+toc: false
+page-layout: full
+about:
+  template: trestles
+  image-shape: round
+  image-width: 11em
+  links:
+    - icon: envelope
+      text: Email
+      href: "mailto:xiaoxg@berkeley.edu"
+    - icon: github
+      text: GitHub
+      href: https://github.com/DoriaXiao
+    - icon: mortarboard-fill
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=Alm4A50AAAAJ&hl=en
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/xingyao-doria-xiao-565b25170/
+    - icon: file-earmark-pdf
+      text: CV (PDF)
+      href: assets/cv/Xingyao_CV_2026.pdf
+listing:
+  id: recent-posts
+  contents: posts
+  sort: "date desc"
+  type: default
+  max-items: 3
+  fields: [date, title, description]
+---
+
+Welcome! I am a Postdoctoral Scholar at the **Stanford University** Graduate School of Education, where I work on the [**LEVANTE Project**](https://levante-network.org/) with Ben Domingue, Mike Frank, and Nilam Ram. I develop statistical methods that make educational and psychological measurement more reliable, valid, and fair — particularly as AI enters the assessment pipeline.
+
+<!-- After August 2026, replace the paragraph above with the ACER version, e.g.:
+Research Fellow at the Australian Council for Educational Research (ACER), Melbourne. -->
+
+My research bridges methodological innovation with practical assessment design and large-scale data analysis. I specialize in:
+
+- **Statistical Psychometrics** — multidimensional IRT (mIRT) and Many-Facet Rasch Models (MFRM)
+- **Bayesian Modeling** — longitudinal and latent variable models, including Growth Mixture Modeling (GMM)
+- **AI-Integrated Measurement** — evaluating ML-based scoring and the integration of LLMs into educational assessment
+
+## Recent Highlights
+
+- **Preprint (June 2026)** — *Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy* (with Domingue, Ram, & Frank) · [PsyArXiv](https://osf.io/preprints/psyarxiv/gk368_v1)
+- **Preprint (May 2026)** — *The Safety Valve: A Mixture IRT Approach to Modeling Guessing Behavior* (with Ulitzsch, Zhang, Frank, & Domingue) · [PsyArXiv](https://osf.io/preprints/psyarxiv/7gtwd_v1) · R package [mixirt](https://github.com/DoriaXiao/mixirt)
+- **Preprint (2026)** — *A Parameterization-Invariant DIC* (with Rabe-Hesketh) · [arXiv:2605.27844](https://arxiv.org/abs/2605.27844)
+- **Publication (2026)** — *What Do I Know about AI beyond Everyday Knowledge?* in *ACM Transactions on Computing Education*
+- **Editorial Service** — Editorial Board Member, *Measurement: Interdisciplinary Research and Perspectives*
+
+[Full publication list →](publications.qmd)
+
+## Recent Posts
+
+::: {#recent-posts}
+:::
+
+[All posts →](blog.qmd)

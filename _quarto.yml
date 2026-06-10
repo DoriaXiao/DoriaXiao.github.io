@@ -1,0 +1,57 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Xingyao (Doria) Xiao, Ph.D."
+  site-url: https://doriaxiao.github.io
+  description: "Psychometrics, Bayesian Modeling, AI-Integrated Assessment"
+  favicon: assets/img/profile.jpg
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: research.qmd
+        text: Research
+      - href: publications.qmd
+        text: Publications
+      - href: blog.qmd
+        text: Blog
+      - text: More
+        menu:
+          - href: talks.qmd
+            text: Talks
+          - href: teaching.qmd
+            text: Teaching
+          - href: projects.qmd
+            text: Projects
+          - href: contact.qmd
+            text: Contact
+    right:
+      - icon: github
+        href: https://github.com/DoriaXiao
+        aria-label: GitHub
+      - icon: mortarboard-fill
+        href: https://scholar.google.com/citations?user=Alm4A50AAAAJ&hl=en
+        aria-label: Google Scholar
+      - icon: rss
+        href: blog.xml
+        aria-label: RSS
+  page-footer:
+    left: "© 2026 Xingyao (Doria) Xiao"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: [cosmo, styles.scss]
+    toc: true
+    code-fold: show
+    code-tools: true
+    include-in-header: assets/goatcounter.html
+    lang: en
+
+execute:
+  freeze: auto

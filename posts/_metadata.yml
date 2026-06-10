@@ -1,0 +1,27 @@
+# Shared settings for every post under posts/
+
+# Comments + reactions (likes) via giscus, backed by GitHub Discussions.
+# SETUP REQUIRED before this works (see README-deploy.md, step 4):
+#   1. Enable Discussions on the repo
+#   2. Install the giscus app on the repo
+#   3. Get repo-id and category-id from https://giscus.app and paste below
+comments:
+  giscus:
+    repo: DoriaXiao/DoriaXiao.github.io
+    repo-id: "R_kgDOPsIp9Q"
+    category: "Announcements"
+    category-id: "DIC_kwDOPsIp9c4C-4N2"
+    reactions-enabled: true
+    loading: lazy
+    mapping: pathname
+    input-position: top
+
+# Page-view counter shown at the top of each post (GoatCounter)
+include-after-body: ../assets/pageviews.html
+
+# Sensible defaults for posts
+format:
+  html:
+    toc: true
+    code-fold: show
+freeze: true

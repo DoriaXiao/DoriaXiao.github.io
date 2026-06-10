@@ -1,0 +1,17 @@
+{
+  "hash": "6466219e24c6c0508c645abca6a78624",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"为什么95%的AI短剧没人看：一个测量学视角\"\ndescription: \"信噪比、信度坍缩与Goodhart定律：用心理测量学的语言解释AI内容洪水 | A measurement perspective on the AI content flood\"\nauthor: \"Doria Xiao\"\ndate: 2026-06-20\ncategories: [AI, psychometrics, 中文]\nlang: zh\ndraft: true\n---\n\n这是一篇示例文章，演示 Quarto 博文的写法：正文、可执行的 R 代码块、图表会在 `quarto render` 时自动生成。把 `draft: true` 删掉即可正式发布。\n\n## 信度公式怎么解释推荐算法的失效\n\n经典测验理论中，信度定义为真分变异占观测变异的比例。当 AI 生成的内容彼此高度同质（真分变异 $\\sigma^2_T$ 坍缩）而早期流量信号的噪音 $\\sigma^2_E$ 不变时，平台对内容质量的\"测量\"信度随之坍缩：\n\n$$\\rho = \\frac{\\sigma^2_T}{\\sigma^2_T + \\sigma^2_E}$$\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\n\nsigma_e2 <- 1\nsigma_t2 <- seq(0.01, 2, length.out = 200)\nrho <- sigma_t2 / (sigma_t2 + sigma_e2)\n\nggplot(data.frame(sigma_t2, rho), aes(sigma_t2, rho)) +\n  geom_line(linewidth = 1) +\n  geom_vline(xintercept = 0.1, linetype = \"dashed\", color = \"grey50\") +\n  annotate(\"text\", x = 0.32, y = 0.92, hjust = 0, size = 3.2,\n           label = \"同质化供给区:\\n内容差异远小于噪音\") +\n  labs(x = expression(\"真分变异\" ~ sigma[T]^2 ~ \"(噪音方差固定为1)\"),\n       y = expression(\"筛选信度\" ~ rho)) +\n  theme_minimal(base_size = 13)\n```\n\n::: {.cell-output-display}\n![真分变异坍缩时，质量筛选的信度如何下降](index_files/figure-html/fig-reliability-1.png){#fig-reliability width=672}\n:::\n:::\n\n\n（正文继续……）\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

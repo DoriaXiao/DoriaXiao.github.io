@@ -1,0 +1,56 @@
+/*-- scss:defaults --*/
+// Keep the academic look quiet; one accent color, used sparingly.
+$link-color: #1a5276;
+$font-size-root: 17px;
+$headings-font-weight: 600;
+// System serif stack for headings — no webfont downloads, fast everywhere
+$headings-font-family: Charter, "Bitstream Charter", Cambria, Georgia,
+  "Songti SC", "Noto Serif CJK SC", serif;
+
+/*-- scss:rules --*/
+.navbar-title { font-weight: 600; letter-spacing: 0.01em; }
+
+// CJK-friendly body text for bilingual posts
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+// Quieter links in body text: underline on hover only
+main.content a:not(.btn):not(.about-link) { text-decoration: none; }
+main.content a:not(.btn):not(.about-link):hover { text-decoration: underline; }
+
+// Subtle separation under section headings
+main.content h2 {
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+// Blog listings: tighter titles, lighter metadata
+div.quarto-post .listing-title { font-size: 1.15rem; }
+div.quarto-post .metadata,
+.listing-date,
+.listing-reading-time {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+// Homepage: use more of the viewport, capped for readable line length
+div.quarto-about-trestles {
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Homepage (trestles): narrower sidebar, more room for content
+@media (min-width: 992px) {
+  div.quarto-about-trestles .about-entity { flex: 0 0 30%; }
+}
+div.quarto-about-trestles .about-entity h1.title { font-size: 1.55rem; }
+
+.page-views {
+  border-top: 1px solid #eee;
+  padding-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #6c757d;
+}

@@ -1,0 +1,15 @@
+<!-- Visible view counter for posts. Replace MYCODE with your GoatCounter site code.
+     Requires: GoatCounter Settings -> "Allow adding visitor counts on your website" enabled. -->
+<div class="page-views" style="margin-top:2rem; color:#6c757d; font-size:0.85rem;">
+  <img id="gc-counter" alt="" style="height:1.2em; vertical-align:text-bottom;">
+</div>
+<script>
+  (function () {
+    var img = document.getElementById("gc-counter");
+    if (img) {
+      var path = location.pathname.replace(/\/$/, "") || "/";
+      img.src = "https://MYCODE.goatcounter.com/counter/" +
+        encodeURIComponent(path) + ".svg?style=color:#6c757d;";
+    }
+  })();
+</script>

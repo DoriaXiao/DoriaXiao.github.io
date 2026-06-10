@@ -1,0 +1,31 @@
+---
+title: "Publications"
+toc: true
+---
+
+## Preprints
+
+**Xiao, X.**, Domingue, B., Ram, N., & Frank, M. C. (2026, June 7). *Good kitty, bad bank? Rescoring miscalibrated CATs improves accuracy*. PsyArXiv. <https://osf.io/preprints/psyarxiv/gk368_v1>
+
+**Xiao, X.**, & Rabe-Hesketh, S. (2026). *A parameterization-invariant DIC*. arXiv. <https://arxiv.org/abs/2605.27844>
+
+**Xiao, X.**, Ulitzsch, E., Zhang, L., Frank, M. C., & Domingue, B. (2026, May 21). *The safety valve: A mixture IRT approach to modeling guessing behavior*. PsyArXiv. <https://osf.io/preprints/psyarxiv/7gtwd_v1>
+
+Kachergis, G., O'Reilly, F., Braginsky, M., **Xiao, X.**, Lightbody, A. A., Shannon, K. A., … Frank, M. C. (2025, December 17). *Creation and validation of the LEVANTE core tasks: Internationalized measures of learning and development for children ages 5-12 years*. PsyArXiv. <https://doi.org/10.31234/osf.io/r4dhw_v1>
+
+## Journal Articles
+
+**Xiao, X.**, & Cheng, Y. (2026). What do I know about AI beyond everyday knowledge? Unveiling misconceptions using item response theory analyses and cognitive interviews. *ACM Transactions on Computing Education, 26*(4), 1-28.
+
+**Xiao, X.**, Patz, R. J., & Wilson, M. R. (2026). Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model. *British Journal of Mathematical and Statistical Psychology*.
+
+Xue, M., **Xiao, X.**, Liu, Y., & Wilson, M. (2026). On the consistency of automatic scoring with large language models. *Educational and Psychological Measurement*. Advance online publication.
+
+**Xiao, X.**, & Cheng, Y. (2026). Gendered pathways to self-efficacy: Moderating and mediating roles of family, school, and sibling contexts in early adolescence. *European Journal of Psychology of Education, 41*(1), 2.
+
+<!-- PENDING CONFIRMATION (do not publish until verified):
+"Integration of machine learning and human rater scores with the many-facet
+Rasch model" (Xiao, Patz, & Wilson, BJMSP). Google Scholar shows this as a
+separate record from the "Revisiting reliability..." BJMSP paper, but the
+author string is mangled. Confirm whether this is a second paper or a
+duplicate record, then add or delete. -->
