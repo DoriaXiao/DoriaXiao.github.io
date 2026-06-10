@@ -1,7 +1,8 @@
 [
   {
-    "listing": "/blog.html",
+    "listing": "/index.html",
     "items": [
+      "/posts/2026-06-10-dic-i/index.html",
       "/posts/2026-02-01-hybrid-scoring-reliability/index.html",
       "/posts/2025-09-15-sltb-publication/index.html",
       "/posts/2025-09-10-bear-seminar-talk/index.html",
@@ -10,8 +11,9 @@
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/blog.html",
     "items": [
+      "/posts/2026-06-10-dic-i/index.html",
       "/posts/2026-02-01-hybrid-scoring-reliability/index.html",
       "/posts/2025-09-15-sltb-publication/index.html",
       "/posts/2025-09-10-bear-seminar-talk/index.html",

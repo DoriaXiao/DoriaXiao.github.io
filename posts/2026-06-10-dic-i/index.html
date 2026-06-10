@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-06-10">
+<meta name="description" content="Why the classic DIC breaks down in latent variable models, and how a simple plug-in-free variant (DIC_i) fixes it — new paper with Sophia Rabe-Hesketh, now on arXiv.">
+
+<title>When the DIC Goes Negative: A Parameterization-Invariant Fix – Xingyao (Doria) Xiao, Ph.D.</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/img/profile.jpg" rel="icon" type="image/jpeg">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-bdd0fc84cb6cf5abc9a9edc3eea4df5d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- GoatCounter analytics: counts page views site-wide. -->
+<script data-goatcounter="https://doriaxiao.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Xingyao (Doria) Xiao, Ph.D.</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">More</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-more">    
+        <li>
+    <a class="dropdown-item" href="../../talks.html">
+ <span class="dropdown-text">Talks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../teaching.html">
+ <span class="dropdown-text">Teaching</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../projects.html">
+ <span class="dropdown-text">Projects</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../contact.html">
+ <span class="dropdown-text">Contact</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/DoriaXiao"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://scholar.google.com/citations?user=Alm4A50AAAAJ&amp;hl=en"> <i class="bi bi-mortarboard-fill" role="img" aria-label="Google Scholar">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../blog.xml"> <i class="bi bi-rss" role="img" aria-label="RSS">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-goes-wrong" id="toc-what-goes-wrong" class="nav-link active" data-scroll-target="#what-goes-wrong">What goes wrong</a></li>
+  <li><a href="#the-fix-stop-plugging-in" id="toc-the-fix-stop-plugging-in" class="nav-link" data-scroll-target="#the-fix-stop-plugging-in">The fix: stop plugging in</a></li>
+  <li><a href="#does-it-work" id="toc-does-it-work" class="nav-link" data-scroll-target="#does-it-work">Does it work?</a></li>
+  <li><a href="#why-not-just-use-waic" id="toc-why-not-just-use-waic" class="nav-link" data-scroll-target="#why-not-just-use-waic">Why not just use WAIC?</a></li>
+  <li><a href="#try-it" id="toc-try-it" class="nav-link" data-scroll-target="#try-it">Try it</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">When the DIC Goes Negative: A Parameterization-Invariant Fix</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+  <div class="quarto-categories">
+    <div class="quarto-category">Research</div>
+    <div class="quarto-category">Bayesian</div>
+    <div class="quarto-category">Model Selection</div>
+    <div class="quarto-category">DIC</div>
+    <div class="quarto-category">WAIC</div>
+    <div class="quarto-category">Latent Variables</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Why the classic DIC breaks down in latent variable models, and how a simple plug-in-free variant (DIC_i) fixes it — new paper with Sophia Rabe-Hesketh, now on arXiv.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 10, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>If you have ever fit a factor analysis or mixture model in a Bayesian framework and asked for the DIC, you may have seen something absurd: a <strong>negative effective number of parameters</strong>. The software reports, with a straight face, that your 18-parameter model has −1,300 effective parameters.</p>
+<p>In a new paper with <a href="https://gse.berkeley.edu/sophia-rabe-hesketh">Sophia Rabe-Hesketh</a>, now on arXiv (<a href="https://arxiv.org/abs/2605.27844">arXiv:2605.27844</a>), we explain exactly why this happens — and propose a one-line fix we call <strong>DIC<sub>i</sub></strong>, a <em>parameterization-invariant</em> DIC.</p>
+<section id="what-goes-wrong" class="level2">
+<h2 class="anchored" data-anchor-id="what-goes-wrong">What goes wrong</h2>
+<p>The classic DIC (Spiegelhalter et al., 2002) needs two ingredients: the posterior mean of the deviance, <span class="math inline">\(E[D(\theta)]\)</span>, and the deviance evaluated at the posterior mean of the parameters, the <strong>plug-in deviance</strong> <span class="math inline">\(D(\bar\theta)\)</span>. The penalty is the gap between them:</p>
+<p><span class="math display">\[p_{\mathrm{DIC}} = E[D(\theta)] - D(\bar\theta).\]</span></p>
+<p>The plug-in step is the Achilles heel. In many latent variable models, the posterior is <strong>multimodal for reasons that are completely benign</strong>:</p>
+<ul>
+<li>In factor analysis, flipping the signs of all loadings (<span class="math inline">\(\lambda \to -\lambda\)</span>) leaves the likelihood unchanged. With symmetric priors, MCMC chains happily settle into opposite signs — <em>sign switching</em>.</li>
+<li>In finite mixtures, relabeling the components leaves the likelihood unchanged — <em>label switching</em>.</li>
+<li>In overfitted mixtures, an extra class can vanish in two different ways (zero weight, or merging with another class) — what we call <em>parameterization switching</em>.</li>
+</ul>
+<p>In all three cases, averaging the draws gives a posterior mean <span class="math inline">\(\bar\theta\)</span> that sits <strong>between the modes</strong>, in a region of terrible fit. Two chains say <span class="math inline">\(\lambda \approx +0.9\)</span>, two say <span class="math inline">\(\lambda \approx -0.9\)</span>, the average says <span class="math inline">\(\lambda \approx 0\)</span> — a parameter value nobody believes. Plugging that into the deviance makes <span class="math inline">\(D(\bar\theta)\)</span> explode, and the penalty goes hugely negative. The DIC isn’t being subtle; it’s being destroyed by an artifact of how we summarize the posterior.</p>
+</section>
+<section id="the-fix-stop-plugging-in" class="level2">
+<h2 class="anchored" data-anchor-id="the-fix-stop-plugging-in">The fix: stop plugging in</h2>
+<p>Gelman, Hwang &amp; Vehtari (2014) suggested an alternative penalty that needs no plug-in at all — half the posterior <strong>variance</strong> of the deviance:</p>
+<p><span class="math display">\[p_V = \tfrac{1}{2}\,\mathrm{Var}[D(\theta)].\]</span></p>
+<p>Our proposal is to pair this penalty with the posterior <strong>mean</strong> deviance, and to never evaluate anything at a point estimate:</p>
+<p><span class="math display">\[\mathrm{DIC}_i = E[D(\theta)] + p_V.\]</span></p>
+<p>The subscript <em>i</em> stands for <strong>invariant</strong>: every ingredient is a functional of the deviance distribution, and the deviance is unchanged by sign flips, relabeling, or any reparameterization. The pathologies above can’t touch it.</p>
+<p>(A note to avoid confusion: <span class="math inline">\(p_V\)</span> itself is Gelman et al.’s penalty, not ours. Their criterion, which we call DIC<sub>p</sub>, keeps the plug-in deviance — <span class="math inline">\(D(\bar\theta) + 2p_V\)</span> — and therefore inherits the same instability as the classic DIC. Amusingly, DIC<sub>i</sub> turns out to be exactly the average of the classic DIC and DIC<sub>p</sub>: when things break, those two explode in <em>opposite</em> directions, and their average stays put.)</p>
+</section>
+<section id="does-it-work" class="level2">
+<h2 class="anchored" data-anchor-id="does-it-work">Does it work?</h2>
+<p>Theoretically: under standard regularity conditions, we show DIC<sub>i</sub> is <strong>asymptotically equivalent to WAIC</strong>. Empirically, across two large simulation studies (factor analysis and growth mixture models, 2,800 fitted models in total):</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Classic <span class="math inline">\(p_{\mathrm{DIC}}\)</span></th>
+<th><span class="math inline">\(p_V\)</span> (used in DIC<sub>i</sub>)</th>
+<th><span class="math inline">\(p_{\mathrm{WAIC}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean (true <span class="math inline">\(q=18\)</span>)</td>
+<td><strong>−1,307</strong></td>
+<td>19.0</td>
+<td>17.4</td>
+</tr>
+<tr class="even">
+<td>SD</td>
+<td>2,121</td>
+<td>0.7</td>
+<td>0.4</td>
+</tr>
+<tr class="odd">
+<td>Min</td>
+<td>−9,450</td>
+<td>16.6</td>
+<td>16.2</td>
+</tr>
+</tbody>
+</table>
+<p>The classic penalty is meaningless; <span class="math inline">\(p_V\)</span> sits right at the parameter count. DIC<sub>i</sub> tracks WAIC closely (their difference shrinks at the expected rate as the sample grows), and in mixture model selection DIC<sub>i</sub> picked the true number of classes in 94–100% of replicates — slightly <em>better</em> than WAIC’s 84–96% at rejecting overfitted models.</p>
+</section>
+<section id="why-not-just-use-waic" class="level2">
+<h2 class="anchored" data-anchor-id="why-not-just-use-waic">Why not just use WAIC?</h2>
+<p>Often you should! But there are three honest reasons to want DIC<sub>i</sub> in your toolbox:</p>
+<ol type="1">
+<li><strong>WAIC isn’t always defined.</strong> It requires the (marginal) likelihood to factorize into pointwise contributions. Spatial models, and models with crossed latent variables (e.g., item response models with person <em>and</em> item effects), don’t factorize. DIC<sub>i</sub> only needs the total deviance at each draw.</li>
+<li><strong>Speed and storage.</strong> WAIC and LOO need the full draws × observations log-likelihood matrix. DIC<sub>i</sub> needs one number per draw. In our timing runs it was ~18× faster than WAIC and ~140× faster than LOO-CV.</li>
+<li><strong>Software reality.</strong> Programs like Mplus report the deviance draws but not pointwise likelihoods. Adding DIC<sub>i</sub> there is essentially free; adding WAIC is not.</li>
+</ol>
+<p>Our practical recommendation: keep computing the classic DIC penalty as a <em>diagnostic</em> — if <span class="math inline">\(p_{\mathrm{DIC}} &lt; 0\)</span>, your posterior means are not to be trusted (in our factor analysis simulations, a negative <span class="math inline">\(p_{\mathrm{DIC}}\)</span> identified between-chain sign switching in all 1,200 replicates, exactly). Then report DIC<sub>i</sub>.</p>
+</section>
+<section id="try-it" class="level2">
+<h2 class="anchored" data-anchor-id="try-it">Try it</h2>
+<ul>
+<li>📄 <strong>Paper:</strong> <a href="https://arxiv.org/abs/2605.27844">arXiv:2605.27844</a></li>
+<li>📦 <strong>R package:</strong> <a href="https://github.com/DoriaXiao/DIC_i">github.com/DoriaXiao/DIC_i</a> — <code>remotes::install_github("DoriaXiao/DIC_i")</code>, then <code>compute_dic_i(log_lik)</code> or <code>dic_i_from_cmdstanr(fit)</code></li>
+<li>🎛️ <strong>Interactive demo:</strong> <a href="https://doriaxiao.shinyapps.io/dicv_app/">doriaxiao.shinyapps.io/dicv_app</a> — runs live Gibbs samplers in your browser; drag the sliders and watch <span class="math inline">\(p_{\mathrm{DIC}}\)</span> collapse while <span class="math inline">\(p_V\)</span> stays put</li>
+</ul>
+<p>If you’ve run into negative DIC penalties in your own work, I’d love to hear about it.</p>
+<hr>
+<p><strong>Citation:</strong> Xiao, X., &amp; Rabe-Hesketh, S. (2026). A parameterization-invariant DIC. <em>arXiv preprint</em> <a href="https://arxiv.org/abs/2605.27844">arXiv:2605.27844</a>.</p>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<!-- Visible view counter for posts (GoatCounter).
+     Requires: GoatCounter Settings -> "Allow adding visitor counts on your website" enabled. -->
+<div class="page-views" style="margin-top:2rem; color:#6c757d; font-size:0.85rem;">
+  <img id="gc-counter" alt="" style="height:1.2em; vertical-align:text-bottom;">
+</div>
+<script>
+  (function () {
+    var img = document.getElementById("gc-counter");
+    if (img) {
+      var path = location.pathname.replace(/\/$/, "") || "/";
+      img.src = "https://doriaxiao.goatcounter.com/counter/" +
+        encodeURIComponent(path) + ".svg?style=color:#6c757d;";
+    }
+  })();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/doriaxiao\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+<script>
+  function loadGiscus() {
+    // Function to get the theme based on body class
+    const getTheme = () => {
+      let baseTheme = document.getElementById('giscus-base-theme').value;
+      let altTheme = document.getElementById('giscus-alt-theme').value;
+      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
+    };
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.dataset.repo = "DoriaXiao/DoriaXiao.github.io";
+    script.dataset.repoId = "R_kgDOPsIp9Q";
+    script.dataset.category = "Announcements";
+    script.dataset.categoryId = "DIC_kwDOPsIp9c4C-4N2";
+    script.dataset.mapping = "pathname";
+    script.dataset.reactionsEnabled = "1";
+    script.dataset.emitMetadata = "0";
+    script.dataset.inputPosition = "top";
+    script.dataset.theme = getTheme();
+    script.dataset.lang = "en";
+    script.crossOrigin = "anonymous";
+    // Append the script to the desired div instead of at the end of the body
+    document.getElementById("quarto-content").appendChild(script);
+  }
+  loadGiscus();
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "When the DIC Goes Negative: A Parameterization-Invariant Fix"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2026-06-10</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Why the classic DIC breaks down in latent variable models, and how a simple plug-in-free variant (DIC_i) fixes it — new paper with Sophia Rabe-Hesketh, now on arXiv."</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Research, Bayesian, Model Selection, DIC, WAIC, Latent Variables]</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>If you have ever fit a factor analysis or mixture model in a Bayesian framework and asked for the DIC, you may have seen something absurd: a **negative effective number of parameters**. The software reports, with a straight face, that your 18-parameter model has −1,300 effective parameters.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>In a new paper with <span class="co">[</span><span class="ot">Sophia Rabe-Hesketh</span><span class="co">](https://gse.berkeley.edu/sophia-rabe-hesketh)</span>, now on arXiv (<span class="co">[</span><span class="ot">arXiv:2605.27844</span><span class="co">](https://arxiv.org/abs/2605.27844)</span>), we explain exactly why this happens — and propose a one-line fix we call **DIC&lt;sub&gt;i&lt;/sub&gt;**, a *parameterization-invariant* DIC.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## What goes wrong</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>The classic DIC (Spiegelhalter et al., 2002) needs two ingredients: the posterior mean of the deviance, $E<span class="co">[</span><span class="ot">D(\theta)</span><span class="co">]</span>$, and the deviance evaluated at the posterior mean of the parameters, the **plug-in deviance** $D(\bar\theta)$. The penalty is the gap between them:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>$$p_{\mathrm{DIC}} = E<span class="co">[</span><span class="ot">D(\theta)</span><span class="co">]</span> - D(\bar\theta).$$</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>The plug-in step is the Achilles heel. In many latent variable models, the posterior is **multimodal for reasons that are completely benign**:</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>In factor analysis, flipping the signs of all loadings ($\lambda \to -\lambda$) leaves the likelihood unchanged. With symmetric priors, MCMC chains happily settle into opposite signs — *sign switching*.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>In finite mixtures, relabeling the components leaves the likelihood unchanged — *label switching*.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>In overfitted mixtures, an extra class can vanish in two different ways (zero weight, or merging with another class) — what we call *parameterization switching*.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>In all three cases, averaging the draws gives a posterior mean $\bar\theta$ that sits **between the modes**, in a region of terrible fit. Two chains say $\lambda \approx +0.9$, two say $\lambda \approx -0.9$, the average says $\lambda \approx 0$ — a parameter value nobody believes. Plugging that into the deviance makes $D(\bar\theta)$ explode, and the penalty goes hugely negative. The DIC isn't being subtle; it's being destroyed by an artifact of how we summarize the posterior.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## The fix: stop plugging in</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Gelman, Hwang &amp; Vehtari (2014) suggested an alternative penalty that needs no plug-in at all — half the posterior **variance** of the deviance:</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>$$p_V = \tfrac{1}{2}\,\mathrm{Var}<span class="co">[</span><span class="ot">D(\theta)</span><span class="co">]</span>.$$</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Our proposal is to pair this penalty with the posterior **mean** deviance, and to never evaluate anything at a point estimate:</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>$$\mathrm{DIC}_i = E<span class="co">[</span><span class="ot">D(\theta)</span><span class="co">]</span> + p_V.$$</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>The subscript *i* stands for **invariant**: every ingredient is a functional of the deviance distribution, and the deviance is unchanged by sign flips, relabeling, or any reparameterization. The pathologies above can't touch it.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>(A note to avoid confusion: $p_V$ itself is Gelman et al.'s penalty, not ours. Their criterion, which we call DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>p<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span>, keeps the plug-in deviance — $D(\bar\theta) + 2p_V$ — and therefore inherits the same instability as the classic DIC. Amusingly, DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span> turns out to be exactly the average of the classic DIC and DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>p<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span>: when things break, those two explode in *opposite* directions, and their average stays put.)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Does it work?</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>Theoretically: under standard regularity conditions, we show DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span> is **asymptotically equivalent to WAIC**. Empirically, across two large simulation studies (factor analysis and growth mixture models, 2,800 fitted models in total):</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> Classic $p_{\mathrm{DIC}}$ <span class="pp">|</span> $p_V$ (used in DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span>) <span class="pp">|</span> $p_{\mathrm{WAIC}}$ <span class="pp">|</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|---|</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Mean (true $q=18$) <span class="pp">|</span> **−1,307** <span class="pp">|</span> 19.0 <span class="pp">|</span> 17.4 <span class="pp">|</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> SD <span class="pp">|</span> 2,121 <span class="pp">|</span> 0.7 <span class="pp">|</span> 0.4 <span class="pp">|</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Min <span class="pp">|</span> −9,450 <span class="pp">|</span> 16.6 <span class="pp">|</span> 16.2 <span class="pp">|</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>The classic penalty is meaningless; $p_V$ sits right at the parameter count. DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span> tracks WAIC closely (their difference shrinks at the expected rate as the sample grows), and in mixture model selection DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span> picked the true number of classes in 94–100% of replicates — slightly *better* than WAIC's 84–96% at rejecting overfitted models.</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why not just use WAIC?</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>Often you should! But there are three honest reasons to want DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span> in your toolbox:</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**WAIC isn't always defined.** It requires the (marginal) likelihood to factorize into pointwise contributions. Spatial models, and models with crossed latent variables (e.g., item response models with person *and* item effects), don't factorize. DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span> only needs the total deviance at each draw.</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Speed and storage.** WAIC and LOO need the full draws × observations log-likelihood matrix. DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span> needs one number per draw. In our timing runs it was ~18× faster than WAIC and ~140× faster than LOO-CV.</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Software reality.** Programs like Mplus report the deviance draws but not pointwise likelihoods. Adding DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span> there is essentially free; adding WAIC is not.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>Our practical recommendation: keep computing the classic DIC penalty as a *diagnostic* — if $p_{\mathrm{DIC}} &lt; 0$, your posterior means are not to be trusted (in our factor analysis simulations, a negative $p_{\mathrm{DIC}}$ identified between-chain sign switching in all 1,200 replicates, exactly). Then report DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span>.</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## Try it</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>📄 **Paper:** <span class="co">[</span><span class="ot">arXiv:2605.27844</span><span class="co">](https://arxiv.org/abs/2605.27844)</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>📦 **R package:** <span class="co">[</span><span class="ot">github.com/DoriaXiao/DIC_i</span><span class="co">](https://github.com/DoriaXiao/DIC_i)</span> — <span class="in">`remotes::install_github("DoriaXiao/DIC_i")`</span>, then <span class="in">`compute_dic_i(log_lik)`</span> or <span class="in">`dic_i_from_cmdstanr(fit)`</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>🎛️ **Interactive demo:** <span class="co">[</span><span class="ot">doriaxiao.shinyapps.io/dicv_app</span><span class="co">](https://doriaxiao.shinyapps.io/dicv_app/)</span> — runs live Gibbs samplers in your browser; drag the sliders and watch $p_{\mathrm{DIC}}$ collapse while $p_V$ stays put</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>If you've run into negative DIC penalties in your own work, I'd love to hear about it.</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>**Citation:** Xiao, X., &amp; Rabe-Hesketh, S. (2026). A parameterization-invariant DIC. *arXiv preprint* <span class="co">[</span><span class="ot">arXiv:2605.27844</span><span class="co">](https://arxiv.org/abs/2605.27844)</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Xingyao (Doria) Xiao</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
