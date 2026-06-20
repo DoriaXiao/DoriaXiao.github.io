@@ -60,10 +60,3 @@ Li, Z., & **Xiao, X.** (submitted). Which countries are more meritocratic? Indiv
 Xue, M., **Xiao, X.**, Liu, Y., & Wilson, M. (submitted). Extracting information from process data using transformers.
 
 **Xiao, X.**, Li, Z., Liu, Y., & Cheng, Y. (submitted). Identifying sensitive periods for the impact of physical abuse on psychopathology symptoms.
-
-<!-- PENDING CONFIRMATION (do not publish until verified):
-"Integration of machine learning and human rater scores with the many-facet
-Rasch model" (Xiao, Patz, & Wilson, BJMSP). Google Scholar shows this as a
-separate record from the "Revisiting reliability..." BJMSP paper, but the
-author string is mangled. Confirm whether this is a second paper or a
-duplicate record, then add or delete. -->
