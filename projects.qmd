@@ -8,3 +8,5 @@ toc: true
 - **Balancing Bias / APE (AI‑assisted scoring).** Ensemble LLM raters calibrated against human biases in MFRM; improving reliability and fairness.
 - **GMM Diagnostics & IMV.** Identification checks, posterior instability diagnostics, and predictive comparisons between GMM and simpler growth models.
 - **LEVANTE.** Cross‑cultural growth modeling and fairness evaluation across multilingual contexts (U.S., Canada, Colombia, Germany).
+- **Automated scoring at operational scale (ACER).** Measurement criteria for when machine-generated scores can carry part of an operational marking load, and the human oversight required around them.
+- **Scaling and linking for large-scale assessment (ACER).** Scale comparability across forms, cycles, and instruments not originally designed to be linked.

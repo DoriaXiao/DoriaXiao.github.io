@@ -20,12 +20,20 @@ A core focus is the stability and evaluation of latent variable models.
 - I develop Bayesian diagnostics to identify local identifiability issues and convergence failures in growth mixture models (GMMs).
 - My work uses marginal likelihood to compare model selection strategies for longitudinal behavioral change.
 
+### Large-Scale Assessment
+
+At ACER, I work on the psychometrics of large-scale assessment programs.
+
+- **Scaling and linking** — establishing comparable scales across test forms, cycles, and instruments that were not designed to be compared.
+- **Technical evaluation** — independent replication and audit of operational scaling and reporting analyses.
+- **Automated scoring at operational scale** — the measurement conditions under which machine scores can carry part of an operational marking load, and the human oversight that has to sit around them.
+
 ### Cross-Cultural Measurement (LEVANTE)
 
-At Stanford, I work on the [**LEVANTE Project**](https://levante-network.org/) to create internationalized measures of learning for children ages 5–12.
+At Stanford, I worked on the [**LEVANTE Project**](https://levante-network.org/) to create internationalized measures of learning for children ages 5–12.
 
-- I focus on **measurement invariance** and statistical methods for modeling developmental change across cultural contexts.
-- We aim to validate core cognitive tasks that remain robust across languages and research sites.
+- I focused on **measurement invariance** and statistical methods for modeling developmental change across cultural contexts.
+- The project validates core cognitive tasks that remain robust across languages and research sites.
 
 ### Adaptive Testing
 

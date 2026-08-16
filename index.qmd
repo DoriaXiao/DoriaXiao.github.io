@@ -10,7 +10,7 @@ about:
   links:
     - icon: envelope
       text: Email
-      href: "mailto:xiaoxg@berkeley.edu"
+      href: "mailto:doria.xiao@acer.org"
     - icon: github
       text: GitHub
       href: https://github.com/DoriaXiao
@@ -32,16 +32,16 @@ listing:
   fields: [date, title, description]
 ---
 
-Welcome! I am a Postdoctoral Scholar at the **Stanford University** Graduate School of Education, where I work on the [**LEVANTE Project**](https://levante-network.org/) with Ben Domingue, Mike Frank, and Nilam Ram. I develop statistical methods that make educational and psychological measurement more reliable, valid, and fair — particularly as AI enters the assessment pipeline.
+Welcome! I am a **Research Fellow 2** at the [**Australian Council for Educational Research (ACER)**](https://www.acer.org/) in Melbourne. I develop statistical methods that make educational and psychological measurement more reliable, valid, and fair — particularly as AI enters the assessment pipeline.
 
-<!-- After August 2026, replace the paragraph above with the ACER version, e.g.:
-Research Fellow at the Australian Council for Educational Research (ACER), Melbourne. -->
+Before joining ACER, I was a Postdoctoral Scholar at the **Stanford University** Graduate School of Education, where I worked on the [**LEVANTE Project**](https://levante-network.org/) with Ben Domingue, Mike Frank, and Nilam Ram.
 
 My research bridges methodological innovation with practical assessment design and large-scale data analysis. I specialize in:
 
 - **Statistical Psychometrics** — multidimensional IRT (mIRT) and Many-Facet Rasch Models (MFRM)
 - **Bayesian Modeling** — longitudinal and latent variable models, including Growth Mixture Modeling (GMM)
-- **AI-Integrated Measurement** — evaluating ML-based scoring and the integration of LLMs into educational assessment
+- **AI-Integrated Measurement** — evaluating ML-based scoring of constructed responses and the integration of LLMs into educational assessment
+- **Large-Scale Assessment** — scaling, linking, and technical evaluation for national and international assessment programs
 
 ## Recent Highlights
 

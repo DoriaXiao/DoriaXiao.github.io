@@ -5,7 +5,8 @@ toc: true
 
 Feel free to reach out — email is the most reliable way to contact me.
 
-- 📧 Email: [xiaoxg@berkeley.edu](mailto:xiaoxg@berkeley.edu)
+- 📧 Email (work): [doria.xiao@acer.org](mailto:doria.xiao@acer.org)
+- 📧 Email (alternate): [xiaoxg@berkeley.edu](mailto:xiaoxg@berkeley.edu)
 - 💻 GitHub: [github.com/DoriaXiao](https://github.com/DoriaXiao)  
 - 🎓 Google Scholar: [Scholar Profile](https://scholar.google.com/citations?user=Alm4A50AAAAJ&hl=en)  
 - 🧾 ORCID: [0000-0001-8430-0438](https://orcid.org/0000-0001-8430-0438)  

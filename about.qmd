@@ -4,7 +4,9 @@ toc: false
 ---
 
 
-I am a [Postdoctoral Scholar at Stanford University](https://profiles.stanford.edu/Doria_Xiao), working on the [**Learning Variability Network Exchange (LEVANTE)**](https://levante-network.org/) with Prof. **Ben Domingue** and collaborators. My research focuses on **psychometrics** and **Bayesian statistical modeling**, with interests in **measurement invariance** and the **integration of AI into educational and psychometric practice**.  
+I am a **Research Fellow 2** at the [**Australian Council for Educational Research (ACER)**](https://www.acer.org/) in Melbourne, where I work on psychometric methods for large-scale assessment and on the automated scoring of constructed responses. My research focuses on **psychometrics** and **Bayesian statistical modeling**, with interests in **measurement invariance** and the **integration of AI into educational and psychometric practice**.
+
+Before joining ACER, I was a [Postdoctoral Scholar at Stanford University](https://profiles.stanford.edu/Doria_Xiao), working on the [**Learning Variability Network Exchange (LEVANTE)**](https://levante-network.org/) with Prof. **Ben Domingue** and collaborators.
 
 My dissertation, *Bayesian Identification, Estimation, and Evaluation of Growth Mixture Models*, advanced new methods for addressing **identifiability** and **model evaluation**, offering both theoretical diagnostics and practical guidance for applied researchers.  
 
