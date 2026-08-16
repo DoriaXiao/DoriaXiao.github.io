@@ -10,7 +10,7 @@
 <atom:link href="https://doriaxiao.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Psychometrics, AI, and measurement</description>
 <generator>quarto-1.9.38</generator>
-<lastBuildDate>Wed, 10 Jun 2026 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 09 Jun 2026 14:00:00 GMT</lastBuildDate>
 <item>
   <title>When the DIC Goes Negative: A Parameterization-Invariant Fix</title>
   <link>https://doriaxiao.github.io/posts/2026-06-10-dic-i/</link>
@@ -117,7 +117,7 @@
   <category>WAIC</category>
   <category>Latent Variables</category>
   <guid>https://doriaxiao.github.io/posts/2026-06-10-dic-i/</guid>
-  <pubDate>Wed, 10 Jun 2026 07:00:00 GMT</pubDate>
+  <pubDate>Tue, 09 Jun 2026 14:00:00 GMT</pubDate>
 </item>
 <item>
   <title>New Publication: Reliability of Hybrid Human-ML Scoring Systems</title>
@@ -156,7 +156,7 @@
   <category>IRT</category>
   <category>Many-Facet Rasch Model</category>
   <guid>https://doriaxiao.github.io/posts/2026-02-01-hybrid-scoring-reliability/</guid>
-  <pubDate>Sun, 01 Feb 2026 08:00:00 GMT</pubDate>
+  <pubDate>Sat, 31 Jan 2026 13:00:00 GMT</pubDate>
 </item>
 <item>
   <title>New Publication: Trajectories of Depressive Symptoms During COVID-19</title>
@@ -198,7 +198,7 @@ has just been published in <em><a href="https://onlinelibrary.wiley.com/doi/10.1
 
  ]]></description>
   <guid>https://doriaxiao.github.io/posts/2025-09-15-sltb-publication/</guid>
-  <pubDate>Mon, 15 Sep 2025 07:00:00 GMT</pubDate>
+  <pubDate>Sun, 14 Sep 2025 14:00:00 GMT</pubDate>
 </item>
 <item>
   <title>BEAR Seminar Talk: When Growth Mixture Models Break</title>
@@ -221,7 +221,7 @@ has just been published in <em><a href="https://onlinelibrary.wiley.com/doi/10.1
 
  ]]></description>
   <guid>https://doriaxiao.github.io/posts/2025-09-10-bear-seminar-talk/</guid>
-  <pubDate>Wed, 10 Sep 2025 07:00:00 GMT</pubDate>
+  <pubDate>Tue, 09 Sep 2025 14:00:00 GMT</pubDate>
 </item>
 <item>
   <title>[BEAR Seminar] When Growth Mixture Models Break</title>
@@ -250,7 +250,7 @@ has just been published in <em><a href="https://onlinelibrary.wiley.com/doi/10.1
 
  ]]></description>
   <guid>https://doriaxiao.github.io/posts/2025-09-09-bear-seminar-gmm-break/</guid>
-  <pubDate>Tue, 09 Sep 2025 07:00:00 GMT</pubDate>
+  <pubDate>Mon, 08 Sep 2025 14:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Welcome</title>
@@ -271,7 +271,7 @@ has just been published in <em><a href="https://onlinelibrary.wiley.com/doi/10.1
 
  ]]></description>
   <guid>https://doriaxiao.github.io/posts/2025-09-08-welcome/</guid>
-  <pubDate>Mon, 08 Sep 2025 07:00:00 GMT</pubDate>
+  <pubDate>Sun, 07 Sep 2025 14:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
