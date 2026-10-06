@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -75,10 +78,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-bdd0fc84cb6cf5abc9a9edc3eea4df5d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7e67589ea44d64aef7b5e3c195f72768.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -243,6 +246,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="journal-articles" class="level2">
 <h2 class="anchored" data-anchor-id="journal-articles">Journal Articles</h2>
+<p><strong>Xiao, X.</strong>, &amp; Cheng, Y. (2026). Which algorithm hurts most? Differential associations of task allocation, scheduling, and performance monitoring with worker well-being across 27 EU countries. <em>International Archives of Occupational and Environmental Health, 99</em>(8), 54. <a href="https://doi.org/10.1007/s00420-026-02239-x" class="uri">https://doi.org/10.1007/s00420-026-02239-x</a></p>
 <p><strong>Xiao, X.</strong>, &amp; Cheng, Y. (2026). What do I know about AI beyond everyday knowledge? Unveiling misconceptions using item response theory analyses and cognitive interviews. <em>ACM Transactions on Computing Education, 26</em>(4), 1-28.</p>
 <p><strong>Xiao, X.</strong>, Patz, R. J., &amp; Wilson, M. R. (2026). Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model. <em>British Journal of Mathematical and Statistical Psychology</em>.</p>
 <p>Xue, M., <strong>Xiao, X.</strong>, Liu, Y., &amp; Wilson, M. (2026). On the consistency of automatic scoring with large language models. <em>Educational and Psychological Measurement</em>. Advance online publication. <a href="https://doi.org/10.1177/00131644261418138" class="uri">https://doi.org/10.1177/00131644261418138</a></p>
@@ -369,16 +373,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
     function toggleCodeHandler(show) {
       return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
           if (show) {
             details.open = true;
           } else {
             details.removeAttribute("open");
           }
         }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
         const fromCls = show ? "hidden" : "unhidden";
         const toCls = show ? "unhidden" : "hidden";
         for (let i=0; i<cellCodeDivs.length; i++) {
@@ -745,51 +749,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Journal Articles</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, &amp; Cheng, Y. (2026). What do I know about AI beyond everyday knowledge? Unveiling misconceptions using item response theory analyses and cognitive interviews. *ACM Transactions on Computing Education, 26*(4), 1-28.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, &amp; Cheng, Y. (2026). Which algorithm hurts most? Differential associations of task allocation, scheduling, and performance monitoring with worker well-being across 27 EU countries. *International Archives of Occupational and Environmental Health, 99*(8), 54. <span class="ot">&lt;https://doi.org/10.1007/s00420-026-02239-x&gt;</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, Patz, R. J., &amp; Wilson, M. R. (2026). Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model. *British Journal of Mathematical and Statistical Psychology*.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, &amp; Cheng, Y. (2026). What do I know about AI beyond everyday knowledge? Unveiling misconceptions using item response theory analyses and cognitive interviews. *ACM Transactions on Computing Education, 26*(4), 1-28.</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Xue, M., **Xiao, X.**, Liu, Y., &amp; Wilson, M. (2026). On the consistency of automatic scoring with large language models. *Educational and Psychological Measurement*. Advance online publication. <span class="ot">&lt;https://doi.org/10.1177/00131644261418138&gt;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, Patz, R. J., &amp; Wilson, M. R. (2026). Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model. *British Journal of Mathematical and Statistical Psychology*.</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, &amp; Cheng, Y. (2026). Gendered pathways to self-efficacy: Moderating and mediating roles of family, school, and sibling contexts in early adolescence. *European Journal of Psychology of Education, 41*(1), 2.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Xue, M., **Xiao, X.**, Liu, Y., &amp; Wilson, M. (2026). On the consistency of automatic scoring with large language models. *Educational and Psychological Measurement*. Advance online publication. <span class="ot">&lt;https://doi.org/10.1177/00131644261418138&gt;</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, Rabe-Hesketh, S., &amp; Skrondal, A. (2025). Bayesian identification and estimation of growth mixture models. *Psychometrika*. <span class="ot">&lt;https://doi.org/10.1017/psy.2025.11&gt;</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, &amp; Cheng, Y. (2026). Gendered pathways to self-efficacy: Moderating and mediating roles of family, school, and sibling contexts in early adolescence. *European Journal of Psychology of Education, 41*(1), 2.</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Xue, M., Liu, Y., **Xiao, X.**, &amp; Wilson, M. (2025). Automatic prompt engineering for automatic scoring. *Journal of Educational Measurement*. <span class="ot">&lt;https://doi.org/10.1111/jedm.70002&gt;</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, Rabe-Hesketh, S., &amp; Skrondal, A. (2025). Bayesian identification and estimation of growth mixture models. *Psychometrika*. <span class="ot">&lt;https://doi.org/10.1017/psy.2025.11&gt;</span></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Su, B., **Xiao, X.**, Cheng, Y., Liu, C., &amp; Yang, C. (2025). Trajectories of depressive symptom among college students in China during the COVID-19 pandemic: Association with suicidal ideation and insomnia symptoms. *Suicide and Life-Threatening Behavior*. <span class="ot">&lt;https://doi.org/10.1111/sltb.70051&gt;</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Xue, M., Liu, Y., **Xiao, X.**, &amp; Wilson, M. (2025). Automatic prompt engineering for automatic scoring. *Journal of Educational Measurement*. <span class="ot">&lt;https://doi.org/10.1111/jedm.70002&gt;</span></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Cheng, Y., **Xiao, X.**, Jackson, D., Shah, S. A., Abdus-Sabur, F., Hira, A., … &amp; Barnett, M. (2025). Competent but anxious smart greenhouse makers: Findings from a physical computing project. *Journal of Science Education and Technology*, 1-19.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Su, B., **Xiao, X.**, Cheng, Y., Liu, C., &amp; Yang, C. (2025). Trajectories of depressive symptom among college students in China during the COVID-19 pandemic: Association with suicidal ideation and insomnia symptoms. *Suicide and Life-Threatening Behavior*. <span class="ot">&lt;https://doi.org/10.1111/sltb.70051&gt;</span></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Wang, F., Zhu, X., Pi, L., **Xiao, X.**, &amp; Zhang, J. (2024). Patterns of participation and performance at the class level in English online education: A longitudinal cluster analysis. *Education and Information Technologies, 29*, 15595-15619.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Cheng, Y., **Xiao, X.**, Jackson, D., Shah, S. A., Abdus-Sabur, F., Hira, A., … &amp; Barnett, M. (2025). Competent but anxious smart greenhouse makers: Findings from a physical computing project. *Journal of Science Education and Technology*, 1-19.</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Ma, J., Shen, Z., Wang, N., **Xiao, X.**, &amp; Zhang, J. (2023). Developmental differences in children's adaptation to vehicle distance and speed in street-crossing decision-making. *Journal of Safety Research, 88*, 261-274.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Wang, F., Zhu, X., Pi, L., **Xiao, X.**, &amp; Zhang, J. (2024). Patterns of participation and performance at the class level in English online education: A longitudinal cluster analysis. *Education and Information Technologies, 29*, 15595-15619.</span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>Zhang, J., Liu, F., Chen, Z., Yu, Z., **Xiao, X.**, Shi, L., &amp; Guo, Z. (2023). A multi-level analysis on the causes of train-pedestrian collisions in Southwest China 2011-2020. *Accident Analysis &amp; Prevention, 193*, 107332.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>Ma, J., Shen, Z., Wang, N., **Xiao, X.**, &amp; Zhang, J. (2023). Developmental differences in children's adaptation to vehicle distance and speed in street-crossing decision-making. *Journal of Safety Research, 88*, 261-274.</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, &amp; Cheng, Y. (2021). Movie title keywords: A text mining and exploratory factor analysis of popular movies in the United States and China. *Journal of Risk and Financial Management, 14*(2). <span class="ot">&lt;https://doi.org/10.3390/jrfm14020068&gt;</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>Zhang, J., Liu, F., Chen, Z., Yu, Z., **Xiao, X.**, Shi, L., &amp; Guo, Z. (2023). A multi-level analysis on the causes of train-pedestrian collisions in Southwest China 2011-2020. *Accident Analysis &amp; Prevention, 193*, 107332.</span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Kim, J. M., **Xiao, X.**, &amp; Kim, I. (2020). Hollywood movie data analysis by social network analysis and text mining. *International Journal of Electronic Commerce Studies, 11*(1), 75-92.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, &amp; Cheng, Y. (2021). Movie title keywords: A text mining and exploratory factor analysis of popular movies in the United States and China. *Journal of Risk and Financial Management, 14*(2). <span class="ot">&lt;https://doi.org/10.3390/jrfm14020068&gt;</span></span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Kim, J. M., Lee, N., &amp; **Xiao, X.** (2019). Directional dependence between major cities in China based on copula regression on air pollution measurement. *PLoS ONE, 14*(3), e0213148.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Kim, J. M., **Xiao, X.**, &amp; Kim, I. (2020). Hollywood movie data analysis by social network analysis and text mining. *International Journal of Electronic Commerce Studies, 11*(1), 75-92.</span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Book Chapters &amp; Technical Reports</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Kim, J. M., Lee, N., &amp; **Xiao, X.** (2019). Directional dependence between major cities in China based on copula regression on air pollution measurement. *PLoS ONE, 14*(3), e0213148.</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, Xue, M., &amp; Cheng, Y. (2023). Bayesian partial credit model and its applications in science education. In X. Liu &amp; W. J. Boone (Eds.), *Advances in Applications of Rasch Measurement in Science Education* (Contemporary Trends and Issues in Science Education, Vol. 57). Springer. <span class="ot">&lt;https://doi.org/10.1007/978-3-031-28776-3_4&gt;</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Book Chapters &amp; Technical Reports</span></span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, Ji, F., &amp; Rabe-Hesketh, S. (2022). Introduction to multilevel logistic regression using rstanarm. *Stan Case Study*. <span class="ot">&lt;https://education-stan.github.io/tutorial_glmm.html&gt;</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, Xue, M., &amp; Cheng, Y. (2023). Bayesian partial credit model and its applications in science education. In X. Liu &amp; W. J. Boone (Eds.), *Advances in Applications of Rasch Measurement in Science Education* (Contemporary Trends and Issues in Science Education, Vol. 57). Springer. <span class="ot">&lt;https://doi.org/10.1007/978-3-031-28776-3_4&gt;</span></span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Under Review / In Preparation</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, Ji, F., &amp; Rabe-Hesketh, S. (2022). Introduction to multilevel logistic regression using rstanarm. *Stan Case Study*. <span class="ot">&lt;https://education-stan.github.io/tutorial_glmm.html&gt;</span></span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>**Xiao, X.** (invited; in preparation). Neural networks and autoencoders for model selection in growth mixture models. *British Journal of Mathematical and Statistical Psychology* (Special Issue: Using Machine Learning for Statistical Inference).</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Under Review / In Preparation</span></span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, Patz, R., Wilson, M., &amp; Cheng, Y. (submitted). STEM confidence, context, and problem-solving.</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>**Xiao, X.** (invited; in preparation). Neural networks and autoencoders for model selection in growth mixture models. *British Journal of Mathematical and Statistical Psychology* (Special Issue: Using Machine Learning for Statistical Inference).</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>Li, Z., &amp; **Xiao, X.** (submitted). Which countries are more meritocratic? Individual- and country-level patterns of meritocratic beliefs.</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, Patz, R., Wilson, M., &amp; Cheng, Y. (submitted). STEM confidence, context, and problem-solving.</span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>Xue, M., **Xiao, X.**, Liu, Y., &amp; Wilson, M. (submitted). Extracting information from process data using transformers.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>Li, Z., &amp; **Xiao, X.** (submitted). Which countries are more meritocratic? Individual- and country-level patterns of meritocratic beliefs.</span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, Li, Z., Liu, Y., &amp; Cheng, Y. (submitted). Identifying sensitive periods for the impact of physical abuse on psychopathology symptoms.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>Xue, M., **Xiao, X.**, Liu, Y., &amp; Wilson, M. (submitted). Extracting information from process data using transformers.</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>**Xiao, X.**, Li, Z., Liu, Y., &amp; Cheng, Y. (submitted). Identifying sensitive periods for the impact of physical abuse on psychopathology symptoms.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
