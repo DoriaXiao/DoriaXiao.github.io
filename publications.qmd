@@ -15,7 +15,7 @@ Kachergis, G., O'Reilly, F., Braginsky, M., **Xiao, X.**, Lightbody, A. A., Shan
 
 ## Journal Articles
 
-**Xiao, X.**, & Cheng, Y. (2026). Which algorithm hurts most? Differential associations of task allocation, scheduling, and performance monitoring with worker well-being across 27 EU countries. *International Archives of Occupational and Environmental Health, 99*(8), 54. <https://doi.org/10.1007/s00420-026-02239-x>
+**Xiao, X.**, & Cheng, Y. (2026). Which algorithm hurts most? Differential associations of task allocation, scheduling, and performance monitoring with worker well-being across 27 EU countries. *International Archives of Occupational and Environmental Health, 99*(8), 54. <https://doi.org/10.1007/s00420-026-02239-x> · [Free full text (view-only)](https://rdcu.be/ZYZ9F9TRu1xa)
 
 **Xiao, X.**, & Cheng, Y. (2026). What do I know about AI beyond everyday knowledge? Unveiling misconceptions using item response theory analyses and cognitive interviews. *ACM Transactions on Computing Education, 26*(4), 1-28.
 

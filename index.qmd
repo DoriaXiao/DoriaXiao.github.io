@@ -45,7 +45,7 @@ My research bridges methodological innovation with practical assessment design a
 
 ## Recent Highlights
 
-- **Publication (October 2026)** — *Which Algorithm Hurts Most? Differential Associations of Task Allocation, Scheduling, and Performance Monitoring with Worker Well-Being across 27 EU Countries* (with Cheng) in *International Archives of Occupational and Environmental Health* · [DOI](https://doi.org/10.1007/s00420-026-02239-x)
+- **Publication (October 2026)** — *Which Algorithm Hurts Most? Differential Associations of Task Allocation, Scheduling, and Performance Monitoring with Worker Well-Being across 27 EU Countries* (with Cheng) in *International Archives of Occupational and Environmental Health* · [DOI](https://doi.org/10.1007/s00420-026-02239-x) · [Free full text](https://rdcu.be/ZYZ9F9TRu1xa)
 - **Preprint (June 2026)** — *Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy* (with Domingue, Ram, & Frank) · [PsyArXiv](https://osf.io/preprints/psyarxiv/gk368_v1)
 - **Preprint (May 2026)** — *The Safety Valve: A Mixture IRT Approach to Modeling Guessing Behavior* (with Ulitzsch, Zhang, Frank, & Domingue) · [PsyArXiv](https://osf.io/preprints/psyarxiv/7gtwd_v1) · R package [mixirt](https://github.com/DoriaXiao/mixirt)
 - **Preprint (2026)** — *A Parameterization-Invariant DIC* (with Rabe-Hesketh) · [arXiv:2605.27844](https://arxiv.org/abs/2605.27844)
