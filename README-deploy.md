@@ -89,3 +89,11 @@ quarto publish gh-pages
 （`quarto typst --version` 查看）。
 
 只想预览 CV：`quarto typst compile --root . cv/cv.typ assets/cv/Xingyao_CV.pdf`
+
+删除页面或改文件名之后，发布前先清掉本地的旧输出，否则 `quarto publish`
+会把 `_site/` 里残留的旧文件重新推上线：
+
+```bash
+rm -rf _site
+quarto publish gh-pages
+```
