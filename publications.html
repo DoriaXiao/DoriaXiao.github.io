@@ -80,7 +80,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-bdd0fc84cb6cf5abc9a9edc3eea4df5d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-63a534aae96ac0c81fb70f43bb444eee.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,9 +118,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
 
     const options = {
-      valueNames: ['listing-type','listing-authors','listing-year','listing-title','listing-venue','listing-url','listing-doi',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-type','listing-authors','listing-year','listing-title','listing-venue','listing-url','listing-demo','listing-code','listing-summary','listing-doi',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-type","listing-authors","listing-year","listing-title","listing-venue","listing-url","listing-doi"],
+      searchColumns: ["listing-type","listing-authors","listing-year","listing-title","listing-venue","listing-url","listing-demo","listing-code","listing-summary","listing-doi"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -146,9 +146,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
 
     const options = {
-      valueNames: ['listing-type','listing-authors','listing-year','listing-title','listing-venue','listing-volume','listing-issue','listing-pages','listing-doi','listing-links','listing-note',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-type','listing-authors','listing-year','listing-title','listing-venue','listing-doi','listing-links','listing-demo','listing-code','listing-summary','listing-volume','listing-issue','listing-pages','listing-note',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-type","listing-authors","listing-year","listing-title","listing-venue","listing-volume","listing-issue","listing-pages","listing-doi","listing-links","listing-note"],
+      searchColumns: ["listing-type","listing-authors","listing-year","listing-title","listing-venue","listing-doi","listing-links","listing-demo","listing-code","listing-summary","listing-volume","listing-issue","listing-pages","listing-note"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -307,6 +307,10 @@ window.Quarto = {
  <span class="dropdown-text">Teaching</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./software.html">
+ <span class="dropdown-text">Software &amp; Demos</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./projects.html">
  <span class="dropdown-text">Projects</span></a>
   </li>  
@@ -383,10 +387,7 @@ window.Quarto = {
 <div id="listing-pubs-preprint" class="quarto-listing quarto-listing-container-custom">
 <div class="pub-list">
 <p class="pub-item">
-<strong>Xiao, X.</strong>, Domingue, B., Ram, N., &amp; Frank, M. C. (2026, June 7). <em>Good kitty, bad bank? Rescoring miscalibrated CATs improves accuracy</em>. PsyArXiv. <a href="https://osf.io/preprints/psyarxiv/gk368_v1">https://osf.io/preprints/psyarxiv/gk368_v1</a>
-</p>
-<p class="pub-item">
-<strong>Xiao, X.</strong>, &amp; Rabe-Hesketh, S. (2026). <em>A parameterization-invariant DIC</em>. arXiv. <a href="https://arxiv.org/abs/2605.27844">https://arxiv.org/abs/2605.27844</a>
+<strong>Xiao, X.</strong>, &amp; Rabe-Hesketh, S. (2026). <em>A parameterization-invariant DIC</em>. arXiv. <a href="https://arxiv.org/abs/2605.27844">https://arxiv.org/abs/2605.27844</a> · <a href="https://doriaxiao.shinyapps.io/dicv_app/">Demo (Shiny)</a> · <a href="https://github.com/DoriaXiao/DIC_i">Code</a>
 </p>
 <p class="pub-item">
 <strong>Xiao, X.</strong>, Ulitzsch, E., Zhang, L., Frank, M. C., &amp; Domingue, B. (2026, May 21). <em>The safety valve: A mixture IRT approach to modeling guessing behavior</em>. PsyArXiv. <a href="https://osf.io/preprints/psyarxiv/7gtwd_v1">https://osf.io/preprints/psyarxiv/7gtwd_v1</a>
@@ -402,6 +403,9 @@ Kachergis, G., O’Reilly, F., Braginsky, M., <strong>Xiao, X.</strong>, Lightbo
 <h2 class="anchored" data-anchor-id="journal-articles">Journal Articles</h2>
 <div id="listing-pubs-journal" class="quarto-listing quarto-listing-container-custom">
 <div class="pub-list">
+<p class="pub-item">
+<strong>Xiao, X.</strong>, Domingue, B., Ram, N., &amp; Frank, M. C. (in press). Recovering accuracy from miscalibrated item banks: Scoring error is fixable, selection error is not. <em>Educational and Psychological Measurement</em>. <a href="https://doi.org/10.1177/00131644261486854">https://doi.org/10.1177/00131644261486854</a> · <a href="https://osf.io/preprints/psyarxiv/gk368_v1">Preprint (submitted version: Good kitty, bad bank?)</a> · <a href="https://huggingface.co/spaces/doriax/cat-rescoring-explorer">Demo (Hugging Face)</a> · <a href="https://github.com/DoriaXiao/rescoring-cat">Code</a>
+</p>
 <p class="pub-item">
 <strong>Xiao, X.</strong>, &amp; Cheng, Y. (2026). Which algorithm hurts most? Differential associations of task allocation, scheduling, and performance monitoring with worker well-being across 27 EU countries. <em>International Archives of Occupational and Environmental Health, 99</em>(8), 54. <a href="https://doi.org/10.1007/s00420-026-02239-x">https://doi.org/10.1007/s00420-026-02239-x</a> · <a href="https://rdcu.be/ZYZ9F9TRu1xa">Free full text (view-only)</a>
 </p>
