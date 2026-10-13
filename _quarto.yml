@@ -31,6 +31,8 @@ website:
             text: Talks
           - href: teaching.qmd
             text: Teaching
+          - href: software.qmd
+            text: Software & Demos
           - href: projects.qmd
             text: Projects
           - href: contact.qmd

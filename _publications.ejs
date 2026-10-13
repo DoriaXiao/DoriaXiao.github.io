@@ -39,6 +39,8 @@ function formatEntry(it) {
   else if (has("url")) parts.push(link(it.url, it.url));
   let html = parts.join(" ");
   for (const l of (it.links || [])) html += " · " + link(l.url, l.text);
+  if (has("demo")) html += " · " + link(it.demo.url, "Demo" + (it.demo.platform ? " (" + it.demo.platform + ")" : ""));
+  if (has("code")) html += " · " + link(it.code, "Code");
   return html;
 }
 %>

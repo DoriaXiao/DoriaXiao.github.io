@@ -1,0 +1,14 @@
+---
+title: "Software & Demos"
+# Generated from the demo/code fields in data/publications.yml.
+listing:
+  id: software
+  contents: data/publications.yml
+  template: _software.ejs
+  sort: false
+---
+
+Interactive companions and code for my papers. Free-tier apps sleep when idle, so the first load can take a minute.
+
+::: {#software}
+:::

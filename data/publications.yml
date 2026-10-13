@@ -16,6 +16,9 @@
 #   doi:        bare DOI, e.g. 10.1017/psy.2025.11
 #   url:        used when there is no DOI
 #   links:      extra links, list of {text, url}
+#   demo:       interactive app: {name, url, platform}, e.g. platform Hugging Face / Shiny
+#   code:       code or package repository URL
+#   summary:    one sentence for the Software & Demos page
 
 - type: preprint
   authors: ["Xiao, X.", "Domingue, B.", "Ram, N.", "Frank, M. C."]
@@ -23,6 +26,12 @@
   title: "Good kitty, bad bank? Rescoring miscalibrated CATs improves accuracy"
   venue: PsyArXiv
   url: https://osf.io/preprints/psyarxiv/gk368_v1
+  demo:
+    name: CAT Rescoring Explorer
+    url: https://huggingface.co/spaces/doriax/cat-rescoring-explorer
+    platform: Hugging Face
+  code: https://github.com/DoriaXiao/rescoring-cat
+  summary: "Explore how rescoring with improved item parameters recovers accuracy in miscalibrated CATs: scoring vs selection error, calibration noise and shifts, and test length."
 
 - type: preprint
   authors: ["Xiao, X.", "Rabe-Hesketh, S."]
@@ -30,6 +39,12 @@
   title: "A parameterization-invariant DIC"
   venue: arXiv
   url: https://arxiv.org/abs/2605.27844
+  demo:
+    name: DIC penalty demo
+    url: https://doriaxiao.shinyapps.io/dicv_app/
+    platform: Shiny
+  code: https://github.com/DoriaXiao/DIC_i
+  summary: "Live Gibbs samplers in the browser: watch the classic DIC penalty collapse under sign switching while the variance-based penalty stays put. The R package DICi computes DIC_i from posterior draws."
 
 - type: preprint
   authors: ["Xiao, X.", "Ulitzsch, E.", "Zhang, L.", "Frank, M. C.", "Domingue, B."]

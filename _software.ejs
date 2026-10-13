@@ -1,0 +1,21 @@
+<%
+// Software & Demos: every entry in data/publications.yml with a demo or code.
+// Output stays on single lines because Quarto re-parses it as Markdown.
+const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const link = (href, text) => '<a href="' + esc(href) + '">' + esc(text) + "</a>";
+function card(it) {
+  const name = it.demo ? it.demo.name : it.title;
+  const paperUrl = it.doi ? "https://doi.org/" + it.doi : it.url;
+  const links = [];
+  if (it.demo) links.push(link(it.demo.url, "Open demo" + (it.demo.platform ? " (" + it.demo.platform + ")" : "")));
+  if (it.code) links.push(link(it.code, "Code"));
+  if (paperUrl) links.push(link(paperUrl, "Paper"));
+  return '<h3 class="anchored">' + esc(name) + "</h3>" +
+    '<p class="software-paper"><em>' + esc(it.title) + "</em> (" + esc(it.year) + ")</p>" +
+    (it.summary ? "<p>" + esc(it.summary) + "</p>" : "") +
+    '<p class="software-links">' + links.join(" · ") + "</p>";
+}
+%>
+<% for (const item of items) { if (item.demo || item.code) { %>
+<div class="software-item"><%= card(item) %></div>
+<% } } %>
