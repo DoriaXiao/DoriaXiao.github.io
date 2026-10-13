@@ -21,6 +21,83 @@
     "text": "BadBanks & CAT Overlap. Simulation frameworks for adaptive testing under calibration error, item reuse, and overlap constraints; evaluating rescoring, selection, and stopping rules.\nBalancing Bias / APE (AI‑assisted scoring). Ensemble LLM raters calibrated against human biases in MFRM; improving reliability and fairness.\nGMM Diagnostics & IMV. Identification checks, posterior instability diagnostics, and predictive comparisons between GMM and simpler growth models.\nLEVANTE. Cross‑cultural growth modeling and fairness evaluation across multilingual contexts (U.S., Canada, Colombia, Germany).\nAutomated scoring at operational scale (ACER). Measurement criteria for when machine-generated scores can carry part of an operational marking load, and the human oversight required around them.\nScaling and linking for large-scale assessment (ACER). Scale comparability across forms, cycles, and instruments not originally designed to be linked."
   },
   {
+    "objectID": "posts/2026-02-01-hybrid-scoring-reliability/index.html",
+    "href": "posts/2026-02-01-hybrid-scoring-reliability/index.html",
+    "title": "New Publication: Reliability of Hybrid Human-ML Scoring Systems",
+    "section": "",
+    "text": "I am pleased to share that our new paper, “Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model,” has been published in the British Journal of Mathematical and Statistical Psychology.\nThis research, conducted with co-authors Richard J. Patz and Mark R. Wilson, investigates the psychometric impact of integrating machine learning (ML) scoring into high-stakes assessment frameworks.\n\nKey Insights\n\nSystematic Bias vs. Noise: We found that systematic rater bias, rather than random machine inconsistency, is the primary driver of estimation error in hybrid scoring systems.\nDesign Density: Increasing scoring matrix density (moving from isolated to complete designs) significantly stabilizes latent proficiency recovery.\nStrategic Hybridization: Hybrid scoring yields the greatest reliability gains when human and ML raters possess opposing biases, allowing directional errors to cancel out.\nRobust Modeling: For sparse scoring designs, the Partial Credit Model (PCM) with fixed thresholds often outperforms more complex Many-Facet variants by reducing over-parameterization.\n\n\n\nPractical Application\nWe applied these findings to real-world data from a “Problem Solving with Math” (PSM) assessment. Results confirmed that anchoring constructed-response items to selected-response metrics can effectively stabilize scales in sparse scoring environments.\nFull Citation: Xiao, X., Patz, R. J., & Wilson, M. R. (2026). Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model. British Journal of Mathematical and Statistical Psychology. https://doi.org/10.1111/bmsp.70034"
+  },
+  {
+    "objectID": "posts/2025-09-10-bear-seminar-talk/index.html",
+    "href": "posts/2025-09-10-bear-seminar-talk/index.html",
+    "title": "BEAR Seminar Talk: When Growth Mixture Models Break",
+    "section": "",
+    "text": "Yesterday I had the honor of presenting my dissertation,\n“When Growth Mixture Models Break,” as a talk in the BEAR Seminar at the School of Education, University of California, Berkeley.\nI am deeply grateful to the Social Research Methodologies (SRM) cluster—my mentors, colleagues, and friends—who have shaped and supported me throughout this journey.\nThe surprise celebration, complete with an SRM-themed cake 🎂, flowers 🌹, and cap 🎓, made the day even more special.\nProud to be an SRM Bear 🐻, and excited to continue this work as I begin the next chapter at Stanford!"
+  },
+  {
+    "objectID": "posts/2025-09-08-welcome/index.html",
+    "href": "posts/2025-09-08-welcome/index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Hi there, and thanks for visiting my site!\nI’m Xingyao (Doria) Xiao, a postdoctoral scholar at Stanford. My research brings together psychometrics, Bayesian modeling, and AI to understand learning and improve assessment.\nI built this space to share what I’m working on, from new papers and projects to talks and teaching. I’ll also post occasional reflections on methods and the joys (and headaches!) of modeling complex data.\nFeel free to explore the pages above, and if anything catches your interest, I’d love to connect."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Feel free to reach out — email is the most reliable way to contact me.\n\n📧 Email (work): doria.xiao@acer.org\n📧 Email (alternate): xiaoxg@berkeley.edu\n💻 GitHub: github.com/DoriaXiao\n\n🎓 Google Scholar: Scholar Profile\n\n🧾 ORCID: 0000-0001-8430-0438\n\n🔗 LinkedIn: Xingyao (Doria) Xiao"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I am a Research Fellow 2 at the Australian Council for Educational Research (ACER) in Melbourne, where I work on psychometric methods for large-scale assessment and on the automated scoring of constructed responses. My research focuses on psychometrics and Bayesian statistical modeling, with interests in measurement invariance and the integration of AI into educational and psychometric practice.\nBefore joining ACER, I was a Postdoctoral Scholar at Stanford University, working on the Learning Variability Network Exchange (LEVANTE) with Prof. Ben Domingue and collaborators.\nMy dissertation, Bayesian Identification, Estimation, and Evaluation of Growth Mixture Models, advanced new methods for addressing identifiability and model evaluation, offering both theoretical diagnostics and practical guidance for applied researchers.\nPreviously, I earned my Ph.D. in Social Research Methodologies at UC Berkeley. I also hold an M.S. in Applied Statistics and Psychometrics from Boston College and a B.A. in Statistics from the University of Minnesota, Morris."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "When the DIC Goes Negative: A Parameterization-Invariant Fix\n\n\n\nResearch\n\nBayesian\n\nModel Selection\n\nDIC\n\nWAIC\n\nLatent Variables\n\n\n\nWhy the classic DIC breaks down in latent variable models, and how a simple plug-in-free variant (DIC_i) fixes it — new paper with Sophia Rabe-Hesketh, now on arXiv.\n\n\n\n\n\nJun 10, 2026\n\n4 min\n\n\n\n\n\n\nNew Publication: Reliability of Hybrid Human-ML Scoring Systems\n\n\n\nResearch\n\nPublications\n\nPsychometrics\n\nMachine Learning\n\nIRT\n\nMany-Facet Rasch Model\n\n\n\n\n\n\n\n\n\nFeb 1, 2026\n\n2 min\n\n\n\n\n\n\nNew Publication: Trajectories of Depressive Symptoms During COVID-19\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2025\n\n1 min\n\n\n\n\n\n\nBEAR Seminar Talk: When Growth Mixture Models Break\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2025\n\n1 min\n\n\n\n\n\n\n[BEAR Seminar] When Growth Mixture Models Break\n\n\n\n\n\n\n\n\n\n\n\nSep 9, 2025\n\n1 min\n\n\n\n\n\n\nWelcome\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2025\n\n1 min\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Xingyao (Doria) Xiao, Ph.D.",
+    "section": "",
+    "text": "Welcome! I am a Research Fellow 2 at the Australian Council for Educational Research (ACER) in Melbourne. I develop statistical methods that make educational and psychological measurement more reliable, valid, and fair — particularly as AI enters the assessment pipeline.\nBefore joining ACER, I was a Postdoctoral Scholar at the Stanford University Graduate School of Education, where I worked on the LEVANTE Project with Ben Domingue, Mike Frank, and Nilam Ram.\nMy research bridges methodological innovation with practical assessment design and large-scale data analysis. I specialize in:"
+  },
+  {
+    "objectID": "index.html#recent-highlights",
+    "href": "index.html#recent-highlights",
+    "title": "Xingyao (Doria) Xiao, Ph.D.",
+    "section": "Recent Highlights",
+    "text": "Recent Highlights\n\nPublication (October 2026) — Which Algorithm Hurts Most? Differential Associations of Task Allocation, Scheduling, and Performance Monitoring with Worker Well-Being across 27 EU Countries (with Cheng) in International Archives of Occupational and Environmental Health · DOI · Free full text\nPreprint (June 2026) — Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy (with Domingue, Ram, & Frank) · PsyArXiv\nPreprint (May 2026) — The Safety Valve: A Mixture IRT Approach to Modeling Guessing Behavior (with Ulitzsch, Zhang, Frank, & Domingue) · PsyArXiv · R package mixirt\nPreprint (2026) — A Parameterization-Invariant DIC (with Rabe-Hesketh) · arXiv:2605.27844\nPublication (2026) — What Do I Know about AI beyond Everyday Knowledge? in ACM Transactions on Computing Education · invited journal paper presentation at the ACM SIGCSE Technical Symposium (February 2027)\nEditorial Service — Editorial Board Member, Measurement: Interdisciplinary Research and Perspectives\n\nFull publication list →"
+  },
+  {
+    "objectID": "index.html#recent-posts",
+    "href": "index.html#recent-posts",
+    "title": "Xingyao (Doria) Xiao, Ph.D.",
+    "section": "Recent Posts",
+    "text": "Recent Posts\n\n\n\n\n\nWhen the DIC Goes Negative: A Parameterization-Invariant Fix\n\n\nWhy the classic DIC breaks down in latent variable models, and how a simple plug-in-free variant (DIC_i) fixes it — new paper with Sophia Rabe-Hesketh, now on arXiv.\n\n\n\n\n\nJun 10, 2026\n\n\n\n\n\n\n\nNew Publication: Reliability of Hybrid Human-ML Scoring Systems\n\n\n\n\n\n\n\n\nFeb 1, 2026\n\n\n\n\n\n\n\nNew Publication: Trajectories of Depressive Symptoms During COVID-19\n\n\n\n\n\n\n\n\nSep 15, 2025\n\n\n\n\n\nNo matching items\n\nAll posts →"
+  },
+  {
+    "objectID": "posts/2025-09-09-bear-seminar-gmm-break/index.html",
+    "href": "posts/2025-09-09-bear-seminar-gmm-break/index.html",
+    "title": "[BEAR Seminar] When Growth Mixture Models Break",
+    "section": "",
+    "text": "I’m excited to be giving a BEAR Seminar talk at UC Berkeley:\nWhen: Tuesday, September 9, 2025, at 2:00 p.m.\nWhere: Berkeley Way West 4310 and via Zoom\nEvent page: Berkeley Events Calendar\n\n\nTalk overview\nGrowth Mixture Models (GMMs) are widely used to capture unobserved heterogeneity in longitudinal data. But they are fragile: nonidentifiability can cause classes to collapse or merge, and common information criteria (like AIC or traditional DIC) often fail under skewed or multimodal likelihoods.\nIn this talk, I’ll discuss posterior pathologies such as minuscule-class behavior, twinlike-class degeneracy, and stuck chains, and show why plug-in deviance penalties sometimes become negative. I’ll introduce diagnostics (moving-SD checks, Distinguishability Index) and argue that variance-based penalties (DIC_pV), WAIC, and LOO-CV align more closely with the marginal likelihood and provide more reliable guidance for class enumeration.\n\nIf you’re nearby—or joining remotely—I’d love to see you there!"
+  },
+  {
+    "objectID": "posts/2025-09-15-sltb-publication/index.html",
+    "href": "posts/2025-09-15-sltb-publication/index.html",
+    "title": "New Publication: Trajectories of Depressive Symptoms During COVID-19",
+    "section": "",
+    "text": "Publication Cover\n\n\nI’m very excited to share that our article,\n“Trajectories of Depressive Symptom Among College Students in China During the COVID-19 Pandemic: Association With Suicidal Ideation and Insomnia Symptoms,”\nhas just been published in Suicide and Life-Threatening Behavior :contentReferenceoaicite:0.\nThis three-year, five-wave longitudinal study followed 1,387 Chinese college students to better understand how depression evolved during the pandemic. Using growth mixture modeling (GMM), we identified five distinct trajectories of depressive symptoms:\n\nResilient (24%) — consistently low symptoms\n\nModerate-remission (46%) — moderate but improving over time\n\nLow-increasing (20%) — gradual worsening\n\nHigh-recovery (6%) — severe early, later recovered\n\nModerate-increasing (4%) — moderate but worsening\n\n🔎 Importantly, these trajectories were not just statistical patterns — they predicted later risks of suicidal ideation and insomnia. Students in the increasing-symptom groups were at particularly high risk, underscoring the importance of early identification and targeted interventions.\nThis study highlights the heterogeneity of mental health responses during COVID-19 and calls for more nuanced, trajectory-based approaches to supporting young people.\n\n📄 Full text available here: https://onlinelibrary.wiley.com/doi/10.1111/sltb.70051"
+  },
+  {
     "objectID": "posts/2026-06-10-dic-i/index.html",
     "href": "posts/2026-06-10-dic-i/index.html",
     "title": "When the DIC Goes Negative: A Parameterization-Invariant Fix",
@@ -61,83 +138,6 @@
     "title": "When the DIC Goes Negative: A Parameterization-Invariant Fix",
     "section": "Try it",
     "text": "Try it\n\n📄 Paper: arXiv:2605.27844\n📦 R package: github.com/DoriaXiao/DIC_i — remotes::install_github(\"DoriaXiao/DIC_i\"), then compute_dic_i(log_lik) or dic_i_from_cmdstanr(fit)\n🎛️ Interactive demo: doriaxiao.shinyapps.io/dicv_app — runs live Gibbs samplers in your browser; drag the sliders and watch \\(p_{\\mathrm{DIC}}\\) collapse while \\(p_V\\) stays put\n\nIf you’ve run into negative DIC penalties in your own work, I’d love to hear about it.\n\nCitation: Xiao, X., & Rabe-Hesketh, S. (2026). A parameterization-invariant DIC. arXiv preprint arXiv:2605.27844."
-  },
-  {
-    "objectID": "posts/2025-09-15-sltb-publication/index.html",
-    "href": "posts/2025-09-15-sltb-publication/index.html",
-    "title": "New Publication: Trajectories of Depressive Symptoms During COVID-19",
-    "section": "",
-    "text": "Publication Cover\n\n\nI’m very excited to share that our article,\n“Trajectories of Depressive Symptom Among College Students in China During the COVID-19 Pandemic: Association With Suicidal Ideation and Insomnia Symptoms,”\nhas just been published in Suicide and Life-Threatening Behavior :contentReferenceoaicite:0.\nThis three-year, five-wave longitudinal study followed 1,387 Chinese college students to better understand how depression evolved during the pandemic. Using growth mixture modeling (GMM), we identified five distinct trajectories of depressive symptoms:\n\nResilient (24%) — consistently low symptoms\n\nModerate-remission (46%) — moderate but improving over time\n\nLow-increasing (20%) — gradual worsening\n\nHigh-recovery (6%) — severe early, later recovered\n\nModerate-increasing (4%) — moderate but worsening\n\n🔎 Importantly, these trajectories were not just statistical patterns — they predicted later risks of suicidal ideation and insomnia. Students in the increasing-symptom groups were at particularly high risk, underscoring the importance of early identification and targeted interventions.\nThis study highlights the heterogeneity of mental health responses during COVID-19 and calls for more nuanced, trajectory-based approaches to supporting young people.\n\n📄 Full text available here: https://onlinelibrary.wiley.com/doi/10.1111/sltb.70051"
-  },
-  {
-    "objectID": "posts/2025-09-09-bear-seminar-gmm-break/index.html",
-    "href": "posts/2025-09-09-bear-seminar-gmm-break/index.html",
-    "title": "[BEAR Seminar] When Growth Mixture Models Break",
-    "section": "",
-    "text": "I’m excited to be giving a BEAR Seminar talk at UC Berkeley:\nWhen: Tuesday, September 9, 2025, at 2:00 p.m.\nWhere: Berkeley Way West 4310 and via Zoom\nEvent page: Berkeley Events Calendar\n\n\nTalk overview\nGrowth Mixture Models (GMMs) are widely used to capture unobserved heterogeneity in longitudinal data. But they are fragile: nonidentifiability can cause classes to collapse or merge, and common information criteria (like AIC or traditional DIC) often fail under skewed or multimodal likelihoods.\nIn this talk, I’ll discuss posterior pathologies such as minuscule-class behavior, twinlike-class degeneracy, and stuck chains, and show why plug-in deviance penalties sometimes become negative. I’ll introduce diagnostics (moving-SD checks, Distinguishability Index) and argue that variance-based penalties (DIC_pV), WAIC, and LOO-CV align more closely with the marginal likelihood and provide more reliable guidance for class enumeration.\n\nIf you’re nearby—or joining remotely—I’d love to see you there!"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Xingyao (Doria) Xiao, Ph.D.",
-    "section": "",
-    "text": "Welcome! I am a Research Fellow 2 at the Australian Council for Educational Research (ACER) in Melbourne. I develop statistical methods that make educational and psychological measurement more reliable, valid, and fair — particularly as AI enters the assessment pipeline.\nBefore joining ACER, I was a Postdoctoral Scholar at the Stanford University Graduate School of Education, where I worked on the LEVANTE Project with Ben Domingue, Mike Frank, and Nilam Ram.\nMy research bridges methodological innovation with practical assessment design and large-scale data analysis. I specialize in:"
-  },
-  {
-    "objectID": "index.html#recent-highlights",
-    "href": "index.html#recent-highlights",
-    "title": "Xingyao (Doria) Xiao, Ph.D.",
-    "section": "Recent Highlights",
-    "text": "Recent Highlights\n\nPublication (October 2026) — Which Algorithm Hurts Most? Differential Associations of Task Allocation, Scheduling, and Performance Monitoring with Worker Well-Being across 27 EU Countries (with Cheng) in International Archives of Occupational and Environmental Health · DOI · Free full text\nPreprint (June 2026) — Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy (with Domingue, Ram, & Frank) · PsyArXiv\nPreprint (May 2026) — The Safety Valve: A Mixture IRT Approach to Modeling Guessing Behavior (with Ulitzsch, Zhang, Frank, & Domingue) · PsyArXiv · R package mixirt\nPreprint (2026) — A Parameterization-Invariant DIC (with Rabe-Hesketh) · arXiv:2605.27844\nPublication (2026) — What Do I Know about AI beyond Everyday Knowledge? in ACM Transactions on Computing Education · invited journal paper presentation at the ACM SIGCSE Technical Symposium (February 2027)\nEditorial Service — Editorial Board Member, Measurement: Interdisciplinary Research and Perspectives\n\nFull publication list →"
-  },
-  {
-    "objectID": "index.html#recent-posts",
-    "href": "index.html#recent-posts",
-    "title": "Xingyao (Doria) Xiao, Ph.D.",
-    "section": "Recent Posts",
-    "text": "Recent Posts\n\n\n\n\n\nWhen the DIC Goes Negative: A Parameterization-Invariant Fix\n\n\nWhy the classic DIC breaks down in latent variable models, and how a simple plug-in-free variant (DIC_i) fixes it — new paper with Sophia Rabe-Hesketh, now on arXiv.\n\n\n\n\n\nJun 10, 2026\n\n\n\n\n\n\n\nNew Publication: Reliability of Hybrid Human-ML Scoring Systems\n\n\n\n\n\n\n\n\nFeb 1, 2026\n\n\n\n\n\n\n\nNew Publication: Trajectories of Depressive Symptoms During COVID-19\n\n\n\n\n\n\n\n\nSep 15, 2025\n\n\n\n\n\nNo matching items\n\nAll posts →"
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
-    "section": "",
-    "text": "When the DIC Goes Negative: A Parameterization-Invariant Fix\n\n\n\nResearch\n\nBayesian\n\nModel Selection\n\nDIC\n\nWAIC\n\nLatent Variables\n\n\n\nWhy the classic DIC breaks down in latent variable models, and how a simple plug-in-free variant (DIC_i) fixes it — new paper with Sophia Rabe-Hesketh, now on arXiv.\n\n\n\n\n\nJun 10, 2026\n\n4 min\n\n\n\n\n\n\nNew Publication: Reliability of Hybrid Human-ML Scoring Systems\n\n\n\nResearch\n\nPublications\n\nPsychometrics\n\nMachine Learning\n\nIRT\n\nMany-Facet Rasch Model\n\n\n\n\n\n\n\n\n\nFeb 1, 2026\n\n2 min\n\n\n\n\n\n\nNew Publication: Trajectories of Depressive Symptoms During COVID-19\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2025\n\n1 min\n\n\n\n\n\n\nBEAR Seminar Talk: When Growth Mixture Models Break\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2025\n\n1 min\n\n\n\n\n\n\n[BEAR Seminar] When Growth Mixture Models Break\n\n\n\n\n\n\n\n\n\n\n\nSep 9, 2025\n\n1 min\n\n\n\n\n\n\nWelcome\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2025\n\n1 min\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "I am a Research Fellow 2 at the Australian Council for Educational Research (ACER) in Melbourne, where I work on psychometric methods for large-scale assessment and on the automated scoring of constructed responses. My research focuses on psychometrics and Bayesian statistical modeling, with interests in measurement invariance and the integration of AI into educational and psychometric practice.\nBefore joining ACER, I was a Postdoctoral Scholar at Stanford University, working on the Learning Variability Network Exchange (LEVANTE) with Prof. Ben Domingue and collaborators.\nMy dissertation, Bayesian Identification, Estimation, and Evaluation of Growth Mixture Models, advanced new methods for addressing identifiability and model evaluation, offering both theoretical diagnostics and practical guidance for applied researchers.\nPreviously, I earned my Ph.D. in Social Research Methodologies at UC Berkeley. I also hold an M.S. in Applied Statistics and Psychometrics from Boston College and a B.A. in Statistics from the University of Minnesota, Morris."
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "Feel free to reach out — email is the most reliable way to contact me.\n\n📧 Email (work): doria.xiao@acer.org\n📧 Email (alternate): xiaoxg@berkeley.edu\n💻 GitHub: github.com/DoriaXiao\n\n🎓 Google Scholar: Scholar Profile\n\n🧾 ORCID: 0000-0001-8430-0438\n\n🔗 LinkedIn: Xingyao (Doria) Xiao"
-  },
-  {
-    "objectID": "posts/2025-09-08-welcome/index.html",
-    "href": "posts/2025-09-08-welcome/index.html",
-    "title": "Welcome",
-    "section": "",
-    "text": "Hi there, and thanks for visiting my site!\nI’m Xingyao (Doria) Xiao, a postdoctoral scholar at Stanford. My research brings together psychometrics, Bayesian modeling, and AI to understand learning and improve assessment.\nI built this space to share what I’m working on, from new papers and projects to talks and teaching. I’ll also post occasional reflections on methods and the joys (and headaches!) of modeling complex data.\nFeel free to explore the pages above, and if anything catches your interest, I’d love to connect."
-  },
-  {
-    "objectID": "posts/2025-09-10-bear-seminar-talk/index.html",
-    "href": "posts/2025-09-10-bear-seminar-talk/index.html",
-    "title": "BEAR Seminar Talk: When Growth Mixture Models Break",
-    "section": "",
-    "text": "Yesterday I had the honor of presenting my dissertation,\n“When Growth Mixture Models Break,” as a talk in the BEAR Seminar at the School of Education, University of California, Berkeley.\nI am deeply grateful to the Social Research Methodologies (SRM) cluster—my mentors, colleagues, and friends—who have shaped and supported me throughout this journey.\nThe surprise celebration, complete with an SRM-themed cake 🎂, flowers 🌹, and cap 🎓, made the day even more special.\nProud to be an SRM Bear 🐻, and excited to continue this work as I begin the next chapter at Stanford!"
-  },
-  {
-    "objectID": "posts/2026-02-01-hybrid-scoring-reliability/index.html",
-    "href": "posts/2026-02-01-hybrid-scoring-reliability/index.html",
-    "title": "New Publication: Reliability of Hybrid Human-ML Scoring Systems",
-    "section": "",
-    "text": "I am pleased to share that our new paper, “Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model,” has been published in the British Journal of Mathematical and Statistical Psychology.\nThis research, conducted with co-authors Richard J. Patz and Mark R. Wilson, investigates the psychometric impact of integrating machine learning (ML) scoring into high-stakes assessment frameworks.\n\nKey Insights\n\nSystematic Bias vs. Noise: We found that systematic rater bias, rather than random machine inconsistency, is the primary driver of estimation error in hybrid scoring systems.\nDesign Density: Increasing scoring matrix density (moving from isolated to complete designs) significantly stabilizes latent proficiency recovery.\nStrategic Hybridization: Hybrid scoring yields the greatest reliability gains when human and ML raters possess opposing biases, allowing directional errors to cancel out.\nRobust Modeling: For sparse scoring designs, the Partial Credit Model (PCM) with fixed thresholds often outperforms more complex Many-Facet variants by reducing over-parameterization.\n\n\n\nPractical Application\nWe applied these findings to real-world data from a “Problem Solving with Math” (PSM) assessment. Results confirmed that anchoring constructed-response items to selected-response metrics can effectively stabilize scales in sparse scoring environments.\nFull Citation: Xiao, X., Patz, R. J., & Wilson, M. R. (2026). Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model. British Journal of Mathematical and Statistical Psychology. https://doi.org/10.1111/bmsp.70034"
   },
   {
     "objectID": "publications.html",
