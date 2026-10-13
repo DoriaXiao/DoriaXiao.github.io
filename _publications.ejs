@@ -4,8 +4,9 @@
 // Each entry is built as one line of HTML: Quarto re-parses the template
 // output as Markdown, so line breaks would split an entry into paragraphs.
 // Interpolation in Quarto templates is not HTML-escaped, so text goes through esc().
+// Apostrophes are escaped too, so Pandoc keeps them straight instead of curling them.
 const me = "Xiao, X.";
-const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 const em = (s) => "<em>" + esc(s) + "</em>";
 const link = (href, text) => '<a href="' + esc(href) + '">' + esc(text) + "</a>";
 

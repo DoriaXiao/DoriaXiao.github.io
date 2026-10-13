@@ -21,6 +21,27 @@
 #   summary:    one sentence for the Software & Demos page
 
 - type: preprint
+  authors: ["Xiao, X.", "Xue, M.", "Cheng, Y."]
+  year: 2026
+  title: "Enhancing routing fairness in hybrid scoring with group-conditional coverage"
+  venue: EdArXiv
+  doi: 10.35542/osf.io/25nwj_v1
+
+- type: preprint
+  authors: ["Xiao, X.", "Cheng, Y."]
+  year: 2026
+  title: "How far can a language model carry a systematic review? Preregistered reliability evidence from screening to measurement-quality coding"
+  venue: MetaArXiv
+  doi: 10.31222/osf.io/qhy74_v1
+
+- type: preprint
+  authors: ["Xiao, X.", "Cheng, Y."]
+  year: 2026
+  title: 'Beyond acceptance: A pre-attitudinal "uninformed" stage in teachers'' engagement with AI across 53 education systems'
+  venue: EdArXiv
+  doi: 10.35542/osf.io/y7awu_v1
+
+- type: preprint
   authors: ["Xiao, X.", "Rabe-Hesketh, S."]
   year: 2026
   title: "A parameterization-invariant DIC"
