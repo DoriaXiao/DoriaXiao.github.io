@@ -59,3 +59,9 @@ div.quarto-about-trestles .about-entity h1.title { font-size: 1.55rem; }
 .software-item { margin-bottom: 1.5rem; }
 .software-item h3 { margin-bottom: 0.25rem; }
 .software-item .software-paper { color: #6c757d; margin-bottom: 0.35rem; }
+
+// Homepage (about: trestles): keep photo and links in view while scrolling
+@media (min-width: 992px) {
+  .quarto-about-trestles { align-items: flex-start; }
+  .quarto-about-trestles .about-entity { position: sticky; top: 5rem; }
+}
