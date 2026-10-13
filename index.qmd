@@ -49,7 +49,7 @@ My research bridges methodological innovation with practical assessment design a
 - **Preprint (June 2026)** — *Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy* (with Domingue, Ram, & Frank) · [PsyArXiv](https://osf.io/preprints/psyarxiv/gk368_v1)
 - **Preprint (May 2026)** — *The Safety Valve: A Mixture IRT Approach to Modeling Guessing Behavior* (with Ulitzsch, Zhang, Frank, & Domingue) · [PsyArXiv](https://osf.io/preprints/psyarxiv/7gtwd_v1) · R package [mixirt](https://github.com/DoriaXiao/mixirt)
 - **Preprint (2026)** — *A Parameterization-Invariant DIC* (with Rabe-Hesketh) · [arXiv:2605.27844](https://arxiv.org/abs/2605.27844)
-- **Publication (2026)** — *What Do I Know about AI beyond Everyday Knowledge?* in *ACM Transactions on Computing Education* · invited journal paper presentation at the ACM SIGCSE Technical Symposium (February 2027)
+- **Publication (2026)** — *What Do I Know about AI beyond Everyday Knowledge?* in *ACM Transactions on Computing Education*
 - **Editorial Service** — Editorial Board Member, *Measurement: Interdisciplinary Research and Perspectives*
 
 [Full publication list →](publications.qmd)

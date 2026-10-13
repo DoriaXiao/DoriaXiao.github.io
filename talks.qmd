@@ -3,9 +3,6 @@ title: "Talks & Presentations"
 toc: true
 ---
 
-- **ACM SIGCSE Technical Symposium — *What Do I Know about AI beyond Everyday Knowledge? Unveiling Misconceptions Using Item Response Theory Analyses and Cognitive Interviews***  
-  Invited journal paper presentation · Sacramento, CA · February 2027
-
 - **BEAR Seminar — *When Growth Mixture Models Break: Identifiability Failures and Misleading Model Evaluation***  
   UC Berkeley · September 9, 2025 · 2:00 p.m.  
   [📄 Read blog post](posts/2025-09-09-bear-seminar-gmm-break/index.qmd) · [🔗 Event details](https://events.berkeley.edu/educ/event/304585-bear-seminar-when-growth-mixture-models-break)
