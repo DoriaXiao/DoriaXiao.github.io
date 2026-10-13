@@ -50,10 +50,6 @@ My research bridges methodological innovation with practical assessment design a
 - **Preprint (2026)**: *Enhancing Routing Fairness in Hybrid Scoring with Group-Conditional Coverage* (with Xue & Cheng) · [EdArXiv](https://doi.org/10.35542/osf.io/25nwj_v1)
 - **Preprint (2026)**: *How Far Can a Language Model Carry a Systematic Review? Preregistered Reliability Evidence from Screening to Measurement-Quality Coding* (with Cheng) · [MetaArXiv](https://doi.org/10.31222/osf.io/qhy74_v1)
 - **Preprint (2026)**: *Beyond Acceptance: A Pre-Attitudinal "Uninformed" Stage in Teachers' Engagement with AI across 53 Education Systems* (with Cheng) · [EdArXiv](https://doi.org/10.35542/osf.io/y7awu_v1)
-- **Preprint (May 2026)**: *The Safety Valve: A Mixture IRT Approach to Modeling Guessing Behavior* (with Ulitzsch, Zhang, Frank, & Domingue) · [PsyArXiv](https://osf.io/preprints/psyarxiv/7gtwd_v1) · R package [mixirt](https://github.com/DoriaXiao/mixirt)
-- **Preprint (2026)**: *A Parameterization-Invariant DIC* (with Rabe-Hesketh) · [arXiv:2605.27844](https://arxiv.org/abs/2605.27844)
-- **Publication (2026)**: *What Do I Know about AI beyond Everyday Knowledge?* in *ACM Transactions on Computing Education* · invited journal paper presentation at the ACM SIGCSE Technical Symposium (February 2027)
-- **Editorial Service**: Editorial Board Member, *Measurement: Interdisciplinary Research and Perspectives*
 
 [Full publication list](publications.qmd)
 
