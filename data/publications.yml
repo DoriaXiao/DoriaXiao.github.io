@@ -72,6 +72,7 @@
   year: 2026
   title: "Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model"
   venue: British Journal of Mathematical and Statistical Psychology
+  doi: 10.1111/bmsp.70034
 
 - type: journal
   authors: ["Xue, M.", "Xiao, X.", "Liu, Y.", "Wilson, M."]
