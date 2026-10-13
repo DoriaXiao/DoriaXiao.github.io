@@ -1,0 +1,207 @@
+# CV content other than publications (those live in publications.yml).
+# Used by cv/cv.typ to build assets/cv/Xingyao_CV.pdf.
+
+name: "Xingyao (Doria) Xiao"
+contact:
+  - text: doria.xiao@acer.org
+    url: mailto:doria.xiao@acer.org
+  - text: doriaxiao.github.io
+    url: https://doriaxiao.github.io
+  - text: "ORCID 0000-0001-8430-0438"
+    url: https://orcid.org/0000-0001-8430-0438
+  - text: Melbourne, Australia
+
+interests: >-
+  Psychometrics and educational measurement; Bayesian latent variable modeling;
+  item response theory (IRT) and Many-Facet Rasch models; growth mixture models
+  and model selection; automated scoring and AI/LLM evaluation; measurement
+  invariance and cross-cultural assessment; integration of machine learning with
+  human judgment systems.
+
+education:
+  - title: "Ph.D. in Social Research Methodologies, GPA: 4.00/4.00"
+    org: University of California, Berkeley
+    dates: August 2020 - May 2025
+    bullets:
+      - "Research areas: Bayesian longitudinal and latent variable modeling, growth mixture models, model selection, multidimensional IRT, Many-Facet Rasch Model (MFRM), integration of AI in education"
+  - title: "M.S. in Applied Statistics and Psychometrics, GPA: 3.88/4.00 (Major GPA: 4.00)"
+    org: Boston College
+    dates: August 2018 - May 2020
+    bullets:
+      - "Dean's Merit Scholarship (2018 & 2019)"
+  - title: "B.A. in Statistics, Minor in Mathematics, GPA: 3.82/4.00 (Major GPA: 4.00)"
+    org: University of Minnesota, Morris
+    dates: January 2016 - September 2018
+    bullets:
+      - "Graduated with Distinction; Project Stipend; Outstanding Performance Award; Dean's List"
+
+experience:
+  - title: Research Fellow 2
+    org: Australian Council for Educational Research (ACER), Melbourne
+    dates: August 2026 - Present
+    bullets:
+      - Psychometric methods for large-scale assessment and automated scoring of constructed responses
+  - title: Postdoctoral Scholar
+    org: LEVANTE Project, Stanford University (Graduate School of Education & Department of Psychology)
+    dates: July 2025 - July 2026
+    bullets:
+      - Worked with Ben Domingue, Mike Frank, and Nilam Ram on developmental change and psychometrics research
+      - Focused on measurement invariance and statistical methods for modeling behavioral and developmental change
+      - Contributed to research design and engagement within Stanford's psychology and education research communities
+      - Collaborative project supported by the Jacobs Foundation with international sites
+  - title: Lead Researcher
+    org: Influence Score Chat Project, The Munathara Initiative
+    dates: March 2025 - July 2025
+    bullets:
+      - Designed NLP-based and GPT-assisted scoring/translation evaluation frameworks
+  - title: Graduate Student Researcher
+    org: Berkeley Evaluation and Assessment Research (BEAR) Center, UC Berkeley
+    dates: November 2020 - January 2025
+    bullets:
+      - Developed and validated digital tasks; implemented MFRM and mIRT models; optimized rater and scoring design for educational assessments
+  - title: Graduate Student Researcher (Bayesian Modeling)
+    org: Education Research using Stan, UC Berkeley
+    dates: November 2020 - January 2025
+    bullets:
+      - Created accessible tutorial on multilevel logistic regression using rstanarm (published Stan Case Study)
+      - Developed code-based and visual diagnostics for identifiability problems in Bayesian growth mixture models; proposed solutions through careful prior selection
+  - title: Summer Intern
+    org: Edmentum
+    dates: June 2023 - August 2023
+    bullets:
+      - Assessed quality of GPT-generated translations using mixed-method algorithmic and human reviews
+      - Benchmarked AI translations with human translations to evaluate linguistic accuracy and contextual relevance
+  - title: Statistical Modeling Consultant
+    org: Chinese Academy of Sciences, Institute of Psychology
+    dates: June 2022 - April 2023
+    bullets:
+      - Provided guidance on advanced R-based statistical models; contributed to research projects by refining methodologies and enhancing data analysis
+  - title: Graduate Student Researcher
+    org: California Computer Science Project (CCSP), UC Berkeley
+    dates: November 2020 - January 2022
+    bullets:
+      - Helped develop computer science instructional materials in collaboration with educational specialists; contributed to outreach strategies
+  - title: Graduate Research Assistant
+    org: "City Connects: Mary E. Walsh Center for Thriving Children, Boston College"
+    dates: August 2019 - July 2020
+    bullets:
+      - Assisted in data collection, statistical analysis (regression, multivariate techniques), and report preparation for evaluating educational intervention programs
+  - title: Data Analyst
+    org: Innovation in Urban Science Education Lab, Boston College
+    dates: May 2019 - June 2020
+    bullets:
+      - Conducted and analyzed qualitative data from cognitive interviews for STEM education programs
+      - Assisted in developing AI Concept Inventories using psychometric analyses
+  - title: Statistical Research Consultant
+    org: Research Services, Boston College
+    dates: February 2019 - June 2019
+    bullets:
+      - Provided statistical analysis and guidance to researchers and faculty
+
+# Talks: same author/year/title fields as publications; "where" is plain text.
+talks:
+  - group: Invited Presentations
+    items:
+      - authors: ["Xiao, X.", "Cheng, Y."]
+        year: "2027, February"
+        title: "What do I know about AI beyond everyday knowledge? Unveiling misconceptions using item response theory analyses and cognitive interviews"
+        where: "Invited journal paper presentation, ACM SIGCSE Technical Symposium, Sacramento, CA."
+      - authors: ["Xiao, X."]
+        year: "2025, September 9"
+        title: "When growth mixture models break: Identifiability failures and misleading model evaluation"
+        where: "BEAR Seminar, UC Berkeley, Berkeley, CA."
+  - group: National Council on Measurement in Education (NCME)
+    items:
+      - authors: ["Xiao, X.", "Patz, R.", "Wilson, M."]
+        year: 2025
+        title: "Integration of machine learning and human rater scores using the many-facet Rasch model"
+        where: "Denver, CO."
+      - authors: ["Xiao, X.", "Gochyyev, P.", "Wilson, M."]
+        year: 2025
+        title: "Comparing the difficulty of selected-response and constructed-response items"
+        where: "Denver, CO."
+      - authors: ["Xiao, X.", "Razavi, P.", "Powers, S."]
+        year: 2024
+        title: "Bridging bilingual gaps: An in-depth exploration of ChatGPT's transadaptation capabilities"
+        where: "Philadelphia, PA."
+      - authors: ["Xiao, X.", "Patz, R.", "Wilson, M."]
+        year: 2024
+        title: "Designing scoring reliability and instructional support into classroom-based math assessments"
+        where: "Philadelphia, PA."
+      - authors: ["Xiao, X."]
+        year: 2023
+        title: "Bayesian comparison of growth mixture models"
+        where: "Chicago, IL."
+      - authors: ["Xiao, X."]
+        year: 2022
+        title: "Bayesian growth mixture models for classifying and measuring individual trajectories"
+        where: "San Diego, CA."
+  - group: American Educational Research Association (AERA)
+    items:
+      - authors: ["Xiao, X.", "Rabe-Hesketh, S.", "Cheng, Y."]
+        year: 2023
+        title: "Bayesian comparison of growth mixture models: To better pursue truth"
+        where: "Chicago, IL."
+  - group: International Meeting of the Psychometric Society (IMPS)
+    items:
+      - authors: ["Xiao, X.", "Rabe-Hesketh, S."]
+        year: 2025
+        title: "When model evaluation fails in growth mixture models: Diagnostic and comparative perspective"
+        where: "Minneapolis, MN."
+      - authors: ["Xiao, X.", "Rabe-Hesketh, S."]
+        year: 2023
+        title: "Bayesian model evaluation and local identifiability for growth mixture models"
+        where: "College Park, MD."
+      - authors: ["Xiao, X.", "Ji, F.", "Ernst, A."]
+        year: 2023
+        title: "Sample heterogeneity in dynamic psychological processes"
+        where: "College Park, MD."
+  - group: Other Conferences
+    items:
+      - authors: ["Xiao, X.", "Rabe-Hesketh, S.", "Skrondal, A."]
+        year: 2024
+        title: "Bayesian approaches to identifiability and estimation of growth mixture models"
+        where: "Royal Statistical Society International Conference, Brighton, UK."
+      - authors: ["Xiao, X.", "Rabe-Hesketh, S.", "Skrondal, A."]
+        year: 2024
+        title: "Bayesian identification, estimation, and diagnostic techniques for growth mixture models using Stan"
+        where: "StanCon, Oxford, UK."
+      - authors: ["Xiao, X."]
+        year: 2023
+        title: "Bayesian model evaluation using marginal likelihood for growth mixture models"
+        where: "Modern Modeling Methods (M3) Conference, Storrs, CT."
+      - authors: ["Xiao, X.", "Li, Y.", "Park, Y."]
+        year: 2022
+        title: "Automating book-to-curriculum mapping using representation learning"
+        where: "Association for Education Finance & Policy, Denver, CO."
+
+teaching:
+  - org: Graduate Student Instructor, University of California, Berkeley
+    courses:
+      - Hierarchical and Longitudinal Modeling (Fall 2021, 2022, 2023)
+      - Data Analysis in Education Research II (Spring 2022, 2023)
+  - org: Teaching Assistant, Boston College
+    courses:
+      - Intermediate Statistics (Spring 2020)
+      - Statistics I (Fall 2019)
+  - org: Teaching Assistant, University of Minnesota, Morris
+    courses:
+      - Introduction to Statistics (Fall 2017)
+
+awards:
+  - "Dissertation Completion Fellowship ($30,000), Berkeley School of Education, UC Berkeley, 2024-2025"
+  - "Continuing Student Fellowship Award ($8,000), Berkeley School of Education, UC Berkeley, 2022-2024"
+  - "Psychometric Society Travel Award, IMPS 2023, sponsored by EdAstra Tech"
+  - "Barbara White Bequest Competition Award ($3,300), Berkeley School of Education, UC Berkeley, 2021. Project: Using Item Response Theory to critique, develop, and validate concept inventories in STEM education"
+
+service:
+  - "Editorial Board Member, Measurement: Interdisciplinary Research and Perspectives (Taylor & Francis), 2025-Present"
+  - "Conference Reviewer and Session Chair, National Council on Measurement in Education (NCME), 2024"
+  - "Manuscript Reviewer, Measurement: Interdisciplinary Research and Perspectives, May 2023, September 2025"
+  - "Manuscript Reviewer, School Psychology Review, September 2025"
+
+skills:
+  - label: "Measurement & Modeling"
+    text: "IRT, mIRT, MFRM, CAT, DIF, growth modeling, Bayesian analysis (Stan, Mplus, R)"
+  - label: "Data Science & Assessment Tools"
+    text: "R, Python, SAS, SQL, Power BI, Shiny, Qualtrics, NLP/LLM evaluation, digital task development"

@@ -1,8 +1,9 @@
 project:
   type: website
   output-dir: _site
+  pre-render: cv/build-cv.ts
   resources:
-    - assets/cv/Xingyao_CV_2026.pdf
+    - assets/cv/Xingyao_CV.pdf
   render:
     - "**/*.qmd"
     - "!README-deploy.md"

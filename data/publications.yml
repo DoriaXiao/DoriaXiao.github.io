@@ -1,0 +1,213 @@
+# Single source for publications.
+# Used by publications.qmd (website) and cv/cv.typ (PDF CV).
+# Order within each type is the display order (newest first).
+#
+# Fields
+#   type:       preprint | journal | chapter | review
+#   authors:    APA-style names; "Xiao, X." is bolded automatically.
+#               Use "…" for omitted authors.
+#   year:       text shown in parentheses, e.g. 2026, "2026, June 7", "submitted"
+#   title:      italic for preprints, plain otherwise
+#   venue:      italic (journal, book, or series); plain for preprints
+#   venue_pre:  text before the venue, e.g. "In X. Liu & W. J. Boone (Eds.),"
+#   venue_post: text after the venue, e.g. "(Special Issue: ...)"
+#   volume, issue, pages
+#   note:       e.g. "Advance online publication."
+#   doi:        bare DOI, e.g. 10.1017/psy.2025.11
+#   url:        used when there is no DOI
+#   links:      extra links, list of {text, url}
+
+- type: preprint
+  authors: ["Xiao, X.", "Domingue, B.", "Ram, N.", "Frank, M. C."]
+  year: "2026, June 7"
+  title: "Good kitty, bad bank? Rescoring miscalibrated CATs improves accuracy"
+  venue: PsyArXiv
+  url: https://osf.io/preprints/psyarxiv/gk368_v1
+
+- type: preprint
+  authors: ["Xiao, X.", "Rabe-Hesketh, S."]
+  year: 2026
+  title: "A parameterization-invariant DIC"
+  venue: arXiv
+  url: https://arxiv.org/abs/2605.27844
+
+- type: preprint
+  authors: ["Xiao, X.", "Ulitzsch, E.", "Zhang, L.", "Frank, M. C.", "Domingue, B."]
+  year: "2026, May 21"
+  title: "The safety valve: A mixture IRT approach to modeling guessing behavior"
+  venue: PsyArXiv
+  url: https://osf.io/preprints/psyarxiv/7gtwd_v1
+
+- type: preprint
+  authors: ["Kachergis, G.", "O'Reilly, F.", "Braginsky, M.", "Xiao, X.", "Lightbody, A. A.", "Shannon, K. A.", "…", "Frank, M. C."]
+  year: "2025, December 17"
+  title: "Creation and validation of the LEVANTE core tasks: Internationalized measures of learning and development for children ages 5-12 years"
+  venue: PsyArXiv
+  doi: 10.31234/osf.io/r4dhw_v1
+
+- type: journal
+  authors: ["Xiao, X.", "Cheng, Y."]
+  year: 2026
+  title: "Which algorithm hurts most? Differential associations of task allocation, scheduling, and performance monitoring with worker well-being across 27 EU countries"
+  venue: International Archives of Occupational and Environmental Health
+  volume: 99
+  issue: 8
+  pages: 54
+  doi: 10.1007/s00420-026-02239-x
+  links:
+    - text: Free full text (view-only)
+      url: https://rdcu.be/ZYZ9F9TRu1xa
+
+- type: journal
+  authors: ["Xiao, X.", "Cheng, Y."]
+  year: 2026
+  title: "What do I know about AI beyond everyday knowledge? Unveiling misconceptions using item response theory analyses and cognitive interviews"
+  venue: ACM Transactions on Computing Education
+  volume: 26
+  issue: 4
+  pages: 1-28
+
+- type: journal
+  authors: ["Xiao, X.", "Patz, R. J.", "Wilson, M. R."]
+  year: 2026
+  title: "Revisiting reliability with human and machine learning raters under scoring design and rater configuration in the many-facet Rasch model"
+  venue: British Journal of Mathematical and Statistical Psychology
+
+- type: journal
+  authors: ["Xue, M.", "Xiao, X.", "Liu, Y.", "Wilson, M."]
+  year: 2026
+  title: "On the consistency of automatic scoring with large language models"
+  venue: Educational and Psychological Measurement
+  note: Advance online publication.
+  doi: 10.1177/00131644261418138
+
+- type: journal
+  authors: ["Xiao, X.", "Cheng, Y."]
+  year: 2026
+  title: "Gendered pathways to self-efficacy: Moderating and mediating roles of family, school, and sibling contexts in early adolescence"
+  venue: European Journal of Psychology of Education
+  volume: 41
+  issue: 1
+  pages: 2
+
+- type: journal
+  authors: ["Xiao, X.", "Rabe-Hesketh, S.", "Skrondal, A."]
+  year: 2025
+  title: "Bayesian identification and estimation of growth mixture models"
+  venue: Psychometrika
+  doi: 10.1017/psy.2025.11
+
+- type: journal
+  authors: ["Xue, M.", "Liu, Y.", "Xiao, X.", "Wilson, M."]
+  year: 2025
+  title: "Automatic prompt engineering for automatic scoring"
+  venue: Journal of Educational Measurement
+  doi: 10.1111/jedm.70002
+
+- type: journal
+  authors: ["Su, B.", "Xiao, X.", "Cheng, Y.", "Liu, C.", "Yang, C."]
+  year: 2025
+  title: "Trajectories of depressive symptom among college students in China during the COVID-19 pandemic: Association with suicidal ideation and insomnia symptoms"
+  venue: Suicide and Life-Threatening Behavior
+  doi: 10.1111/sltb.70051
+
+- type: journal
+  authors: ["Cheng, Y.", "Xiao, X.", "Jackson, D.", "Shah, S. A.", "Abdus-Sabur, F.", "Hira, A.", "…", "Barnett, M."]
+  year: 2025
+  title: "Competent but anxious smart greenhouse makers: Findings from a physical computing project"
+  venue: Journal of Science Education and Technology
+  pages: 1-19
+
+- type: journal
+  authors: ["Wang, F.", "Zhu, X.", "Pi, L.", "Xiao, X.", "Zhang, J."]
+  year: 2024
+  title: "Patterns of participation and performance at the class level in English online education: A longitudinal cluster analysis"
+  venue: Education and Information Technologies
+  volume: 29
+  pages: 15595-15619
+
+- type: journal
+  authors: ["Ma, J.", "Shen, Z.", "Wang, N.", "Xiao, X.", "Zhang, J."]
+  year: 2023
+  title: "Developmental differences in children's adaptation to vehicle distance and speed in street-crossing decision-making"
+  venue: Journal of Safety Research
+  volume: 88
+  pages: 261-274
+
+- type: journal
+  authors: ["Zhang, J.", "Liu, F.", "Chen, Z.", "Yu, Z.", "Xiao, X.", "Shi, L.", "Guo, Z."]
+  year: 2023
+  title: "A multi-level analysis on the causes of train-pedestrian collisions in Southwest China 2011-2020"
+  venue: Accident Analysis & Prevention
+  volume: 193
+  pages: 107332
+
+- type: journal
+  authors: ["Xiao, X.", "Cheng, Y."]
+  year: 2021
+  title: "Movie title keywords: A text mining and exploratory factor analysis of popular movies in the United States and China"
+  venue: Journal of Risk and Financial Management
+  volume: 14
+  issue: 2
+  doi: 10.3390/jrfm14020068
+
+- type: journal
+  authors: ["Kim, J. M.", "Xiao, X.", "Kim, I."]
+  year: 2020
+  title: "Hollywood movie data analysis by social network analysis and text mining"
+  venue: International Journal of Electronic Commerce Studies
+  volume: 11
+  issue: 1
+  pages: 75-92
+
+- type: journal
+  authors: ["Kim, J. M.", "Lee, N.", "Xiao, X."]
+  year: 2019
+  title: "Directional dependence between major cities in China based on copula regression on air pollution measurement"
+  venue: PLoS ONE
+  volume: 14
+  issue: 3
+  pages: e0213148
+
+- type: chapter
+  authors: ["Xiao, X.", "Xue, M.", "Cheng, Y."]
+  year: 2023
+  title: "Bayesian partial credit model and its applications in science education"
+  venue_pre: "In X. Liu & W. J. Boone (Eds.),"
+  venue: Advances in Applications of Rasch Measurement in Science Education
+  venue_post: "(Contemporary Trends and Issues in Science Education, Vol. 57). Springer."
+  doi: 10.1007/978-3-031-28776-3_4
+
+- type: chapter
+  authors: ["Xiao, X.", "Ji, F.", "Rabe-Hesketh, S."]
+  year: 2022
+  title: "Introduction to multilevel logistic regression using rstanarm"
+  venue: Stan Case Study
+  url: https://education-stan.github.io/tutorial_glmm.html
+
+- type: review
+  authors: ["Xiao, X."]
+  year: "invited; in preparation"
+  title: "Neural networks and autoencoders for model selection in growth mixture models"
+  venue: British Journal of Mathematical and Statistical Psychology
+  venue_post: "(Special Issue: Using Machine Learning for Statistical Inference)."
+
+- type: review
+  authors: ["Xiao, X.", "Patz, R.", "Wilson, M.", "Cheng, Y."]
+  year: submitted
+  title: "STEM confidence, context, and problem-solving"
+
+- type: review
+  authors: ["Li, Z.", "Xiao, X."]
+  year: submitted
+  title: "Which countries are more meritocratic? Individual- and country-level patterns of meritocratic beliefs"
+
+- type: review
+  authors: ["Xue, M.", "Xiao, X.", "Liu, Y.", "Wilson, M."]
+  year: submitted
+  title: "Extracting information from process data using transformers"
+
+- type: review
+  authors: ["Xiao, X.", "Li, Z.", "Liu, Y.", "Cheng, Y."]
+  year: submitted
+  title: "Identifying sensitive periods for the impact of physical abuse on psychopathology symptoms"

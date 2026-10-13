@@ -22,7 +22,7 @@ about:
       href: https://www.linkedin.com/in/xingyao-doria-xiao-565b25170/
     - icon: file-earmark-pdf
       text: CV (PDF)
-      href: assets/cv/Xingyao_CV_2026.pdf
+      href: assets/cv/Xingyao_CV.pdf
 listing:
   id: recent-posts
   contents: posts

@@ -1,0 +1,48 @@
+<%
+// Renders data/publications.yml as APA references.
+// Keep the formatting rules in sync with cv/cv.typ.
+// Each entry is built as one line of HTML: Quarto re-parses the template
+// output as Markdown, so line breaks would split an entry into paragraphs.
+// Interpolation in Quarto templates is not HTML-escaped, so text goes through esc().
+const me = "Xiao, X.";
+const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const em = (s) => "<em>" + esc(s) + "</em>";
+const link = (href, text) => '<a href="' + esc(href) + '">' + esc(text) + "</a>";
+
+const authorList = (authors) => authors.map((a, i) => {
+  const name = a === me ? "<strong>" + esc(a) + "</strong>" : esc(a);
+  if (i === 0) return name;
+  if (authors[i - 1] === "…") return " " + name;
+  if (i === authors.length - 1) return ", &amp; " + name;
+  return ", " + name;
+}).join("");
+
+function formatEntry(it) {
+  const has = (k) => it[k] !== undefined && it[k] !== null && it[k] !== "";
+  const parts = [];
+  parts.push(authorList(it.authors || []) + " (" + esc(it.year) + ").");
+  const title = it.type === "preprint" ? em(it.title) : esc(it.title);
+  parts.push(/[.?!]$/.test(it.title) ? title : title + ".");
+  let src = "";
+  if (has("venue_pre")) src += esc(it.venue_pre) + " ";
+  // APA: the comma between journal and volume is italic too.
+  const venue = has("volume") ? it.venue + ", " + it.volume : it.venue;
+  if (has("venue")) src += it.type === "preprint" ? esc(venue) : em(venue);
+  if (has("issue")) src += "(" + esc(it.issue) + ")";
+  if (has("pages")) src += ", " + esc(it.pages);
+  if (has("venue_post")) src += " " + esc(it.venue_post);
+  else if (src) src += ".";
+  if (src) parts.push(src);
+  if (has("note")) parts.push(esc(it.note));
+  if (has("doi")) parts.push(link("https://doi.org/" + it.doi, "https://doi.org/" + it.doi));
+  else if (has("url")) parts.push(link(it.url, it.url));
+  let html = parts.join(" ");
+  for (const l of (it.links || [])) html += " · " + link(l.url, l.text);
+  return html;
+}
+%>
+<div class="pub-list">
+<% for (const item of items) { %>
+<p class="pub-item"><%= formatEntry(item) %></p>
+<% } %>
+</div>

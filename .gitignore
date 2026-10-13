@@ -1,3 +1,6 @@
 /.quarto/
 **/*.quarto_ipynb
 /_site/
+
+# Built from data/*.yml by cv/build-cv.ts on every render
+/assets/cv/Xingyao_CV.pdf
