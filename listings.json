@@ -1,5 +1,9 @@
 [
   {
+    "listing": "/teaching.html",
+    "items": []
+  },
+  {
     "listing": "/blog.html",
     "items": [
       "/posts/2026-06-10-dic-i/index.html",
@@ -23,6 +27,10 @@
   },
   {
     "listing": "/publications.html",
+    "items": []
+  },
+  {
+    "listing": "/talks.html",
     "items": []
   }
 ]

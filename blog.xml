@@ -20,27 +20,27 @@
 
 
 <p>If you have ever fit a factor analysis or mixture model in a Bayesian framework and asked for the DIC, you may have seen something absurd: a <strong>negative effective number of parameters</strong>. The software reports, with a straight face, that your 18-parameter model has −1,300 effective parameters.</p>
-<p>In a new paper with <a href="https://gse.berkeley.edu/sophia-rabe-hesketh">Sophia Rabe-Hesketh</a>, now on arXiv (<a href="https://arxiv.org/abs/2605.27844">arXiv:2605.27844</a>), we explain exactly why this happens — and propose a one-line fix we call <strong>DIC<sub>i</sub></strong>, a <em>parameterization-invariant</em> DIC.</p>
+<p>In a new paper with <a href="https://gse.berkeley.edu/sophia-rabe-hesketh">Sophia Rabe-Hesketh</a>, now on arXiv (<a href="https://arxiv.org/abs/2605.27844">arXiv:2605.27844</a>), we explain exactly why this happens, and propose a one-line fix we call <strong>DIC<sub>i</sub></strong>, a <em>parameterization-invariant</em> DIC.</p>
 <section id="what-goes-wrong" class="level2">
 <h2 class="anchored" data-anchor-id="what-goes-wrong">What goes wrong</h2>
 <p>The classic DIC (Spiegelhalter et al., 2002) needs two ingredients: the posterior mean of the deviance, <img src="https://latex.codecogs.com/png.latex?E%5BD(%5Ctheta)%5D">, and the deviance evaluated at the posterior mean of the parameters, the <strong>plug-in deviance</strong> <img src="https://latex.codecogs.com/png.latex?D(%5Cbar%5Ctheta)">. The penalty is the gap between them:</p>
 <p><img src="https://latex.codecogs.com/png.latex?p_%7B%5Cmathrm%7BDIC%7D%7D%20=%20E%5BD(%5Ctheta)%5D%20-%20D(%5Cbar%5Ctheta)."></p>
 <p>The plug-in step is the Achilles heel. In many latent variable models, the posterior is <strong>multimodal for reasons that are completely benign</strong>:</p>
 <ul>
-<li>In factor analysis, flipping the signs of all loadings (<img src="https://latex.codecogs.com/png.latex?%5Clambda%20%5Cto%20-%5Clambda">) leaves the likelihood unchanged. With symmetric priors, MCMC chains happily settle into opposite signs — <em>sign switching</em>.</li>
-<li>In finite mixtures, relabeling the components leaves the likelihood unchanged — <em>label switching</em>.</li>
-<li>In overfitted mixtures, an extra class can vanish in two different ways (zero weight, or merging with another class) — what we call <em>parameterization switching</em>.</li>
+<li>In factor analysis, flipping the signs of all loadings (<img src="https://latex.codecogs.com/png.latex?%5Clambda%20%5Cto%20-%5Clambda">) leaves the likelihood unchanged. With symmetric priors, MCMC chains happily settle into opposite signs (<em>sign switching</em>).</li>
+<li>In finite mixtures, relabeling the components leaves the likelihood unchanged (<em>label switching</em>).</li>
+<li>In overfitted mixtures, an extra class can vanish in two different ways (zero weight, or merging with another class), which we call <em>parameterization switching</em>.</li>
 </ul>
-<p>In all three cases, averaging the draws gives a posterior mean <img src="https://latex.codecogs.com/png.latex?%5Cbar%5Ctheta"> that sits <strong>between the modes</strong>, in a region of terrible fit. Two chains say <img src="https://latex.codecogs.com/png.latex?%5Clambda%20%5Capprox%20+0.9">, two say <img src="https://latex.codecogs.com/png.latex?%5Clambda%20%5Capprox%20-0.9">, the average says <img src="https://latex.codecogs.com/png.latex?%5Clambda%20%5Capprox%200"> — a parameter value nobody believes. Plugging that into the deviance makes <img src="https://latex.codecogs.com/png.latex?D(%5Cbar%5Ctheta)"> explode, and the penalty goes hugely negative. The DIC isn’t being subtle; it’s being destroyed by an artifact of how we summarize the posterior.</p>
+<p>In all three cases, averaging the draws gives a posterior mean <img src="https://latex.codecogs.com/png.latex?%5Cbar%5Ctheta"> that sits <strong>between the modes</strong>, in a region of terrible fit. Two chains say <img src="https://latex.codecogs.com/png.latex?%5Clambda%20%5Capprox%20+0.9">, two say <img src="https://latex.codecogs.com/png.latex?%5Clambda%20%5Capprox%20-0.9">, the average says <img src="https://latex.codecogs.com/png.latex?%5Clambda%20%5Capprox%200">: a parameter value nobody believes. Plugging that into the deviance makes <img src="https://latex.codecogs.com/png.latex?D(%5Cbar%5Ctheta)"> explode, and the penalty goes hugely negative. The DIC isn’t being subtle; it’s being destroyed by an artifact of how we summarize the posterior.</p>
 </section>
 <section id="the-fix-stop-plugging-in" class="level2">
 <h2 class="anchored" data-anchor-id="the-fix-stop-plugging-in">The fix: stop plugging in</h2>
-<p>Gelman, Hwang &amp; Vehtari (2014) suggested an alternative penalty that needs no plug-in at all — half the posterior <strong>variance</strong> of the deviance:</p>
+<p>Gelman, Hwang &amp; Vehtari (2014) suggested an alternative penalty that needs no plug-in at all: half the posterior <strong>variance</strong> of the deviance:</p>
 <p><img src="https://latex.codecogs.com/png.latex?p_V%20=%20%5Ctfrac%7B1%7D%7B2%7D%5C,%5Cmathrm%7BVar%7D%5BD(%5Ctheta)%5D."></p>
 <p>Our proposal is to pair this penalty with the posterior <strong>mean</strong> deviance, and to never evaluate anything at a point estimate:</p>
 <p><img src="https://latex.codecogs.com/png.latex?%5Cmathrm%7BDIC%7D_i%20=%20E%5BD(%5Ctheta)%5D%20+%20p_V."></p>
 <p>The subscript <em>i</em> stands for <strong>invariant</strong>: every ingredient is a functional of the deviance distribution, and the deviance is unchanged by sign flips, relabeling, or any reparameterization. The pathologies above can’t touch it.</p>
-<p>(A note to avoid confusion: <img src="https://latex.codecogs.com/png.latex?p_V"> itself is Gelman et al.’s penalty, not ours. Their criterion, which we call DIC<sub>p</sub>, keeps the plug-in deviance — <img src="https://latex.codecogs.com/png.latex?D(%5Cbar%5Ctheta)%20+%202p_V"> — and therefore inherits the same instability as the classic DIC. Amusingly, DIC<sub>i</sub> turns out to be exactly the average of the classic DIC and DIC<sub>p</sub>: when things break, those two explode in <em>opposite</em> directions, and their average stays put.)</p>
+<p>(A note to avoid confusion: <img src="https://latex.codecogs.com/png.latex?p_V"> itself is Gelman et al.’s penalty, not ours. Their criterion, which we call DIC<sub>p</sub>, keeps the plug-in deviance (<img src="https://latex.codecogs.com/png.latex?D(%5Cbar%5Ctheta)%20+%202p_V">) and therefore inherits the same instability as the classic DIC. Amusingly, DIC<sub>i</sub> turns out to be exactly the average of the classic DIC and DIC<sub>p</sub>: when things break, those two explode in <em>opposite</em> directions, and their average stays put.)</p>
 </section>
 <section id="does-it-work" class="level2">
 <h2 class="anchored" data-anchor-id="does-it-work">Does it work?</h2>
@@ -81,7 +81,7 @@
 </tr>
 </tbody>
 </table>
-<p>The classic penalty is meaningless; <img src="https://latex.codecogs.com/png.latex?p_V"> sits right at the parameter count. DIC<sub>i</sub> tracks WAIC closely (their difference shrinks at the expected rate as the sample grows), and in mixture model selection DIC<sub>i</sub> picked the true number of classes in 94–100% of replicates — slightly <em>better</em> than WAIC’s 84–96% at rejecting overfitted models.</p>
+<p>The classic penalty is meaningless; <img src="https://latex.codecogs.com/png.latex?p_V"> sits right at the parameter count. DIC<sub>i</sub> tracks WAIC closely (their difference shrinks at the expected rate as the sample grows), and in mixture model selection DIC<sub>i</sub> picked the true number of classes in 94–100% of replicates, slightly <em>better</em> than WAIC’s 84–96% at rejecting overfitted models.</p>
 </section>
 <section id="why-not-just-use-waic" class="level2">
 <h2 class="anchored" data-anchor-id="why-not-just-use-waic">Why not just use WAIC?</h2>
@@ -91,14 +91,14 @@
 <li><strong>Speed and storage.</strong> WAIC and LOO need the full draws × observations log-likelihood matrix. DIC<sub>i</sub> needs one number per draw. In our timing runs it was ~18× faster than WAIC and ~140× faster than LOO-CV.</li>
 <li><strong>Software reality.</strong> Programs like Mplus report the deviance draws but not pointwise likelihoods. Adding DIC<sub>i</sub> there is essentially free; adding WAIC is not.</li>
 </ol>
-<p>Our practical recommendation: keep computing the classic DIC penalty as a <em>diagnostic</em> — if <img src="https://latex.codecogs.com/png.latex?p_%7B%5Cmathrm%7BDIC%7D%7D%20%3C%200">, your posterior means are not to be trusted (in our factor analysis simulations, a negative <img src="https://latex.codecogs.com/png.latex?p_%7B%5Cmathrm%7BDIC%7D%7D"> identified between-chain sign switching in all 1,200 replicates, exactly). Then report DIC<sub>i</sub>.</p>
+<p>Our practical recommendation: keep computing the classic DIC penalty as a <em>diagnostic</em>: if <img src="https://latex.codecogs.com/png.latex?p_%7B%5Cmathrm%7BDIC%7D%7D%20%3C%200">, your posterior means are not to be trusted (in our factor analysis simulations, a negative <img src="https://latex.codecogs.com/png.latex?p_%7B%5Cmathrm%7BDIC%7D%7D"> identified between-chain sign switching in all 1,200 replicates, exactly). Then report DIC<sub>i</sub>.</p>
 </section>
 <section id="try-it" class="level2">
 <h2 class="anchored" data-anchor-id="try-it">Try it</h2>
 <ul>
 <li>📄 <strong>Paper:</strong> <a href="https://arxiv.org/abs/2605.27844">arXiv:2605.27844</a></li>
-<li>📦 <strong>R package:</strong> <a href="https://github.com/DoriaXiao/DIC_i">github.com/DoriaXiao/DIC_i</a> — <code>remotes::install_github("DoriaXiao/DIC_i")</code>, then <code>compute_dic_i(log_lik)</code> or <code>dic_i_from_cmdstanr(fit)</code></li>
-<li>🎛️ <strong>Interactive demo:</strong> <a href="https://doriaxiao.shinyapps.io/dicv_app/">doriaxiao.shinyapps.io/dicv_app</a> — runs live Gibbs samplers in your browser; drag the sliders and watch <img src="https://latex.codecogs.com/png.latex?p_%7B%5Cmathrm%7BDIC%7D%7D"> collapse while <img src="https://latex.codecogs.com/png.latex?p_V"> stays put</li>
+<li>📦 <strong>R package:</strong> <a href="https://github.com/DoriaXiao/DIC_i">github.com/DoriaXiao/DIC_i</a>: <code>remotes::install_github("DoriaXiao/DIC_i")</code>, then <code>compute_dic_i(log_lik)</code> or <code>dic_i_from_cmdstanr(fit)</code></li>
+<li>🎛️ <strong>Interactive demo:</strong> <a href="https://doriaxiao.shinyapps.io/dicv_app/">doriaxiao.shinyapps.io/dicv_app</a>: runs live Gibbs samplers in your browser; drag the sliders and watch <img src="https://latex.codecogs.com/png.latex?p_%7B%5Cmathrm%7BDIC%7D%7D"> collapse while <img src="https://latex.codecogs.com/png.latex?p_V"> stays put</li>
 </ul>
 <p>If you’ve run into negative DIC penalties in your own work, I’d love to hear about it.</p>
 <hr>
@@ -177,17 +177,17 @@
 has just been published in <em><a href="https://onlinelibrary.wiley.com/doi/10.1111/sltb.70051">Suicide and Life-Threatening Behavior</a></em> :contentReference<span data-index="0">oaicite:0</span>.</p>
 <p>This three-year, five-wave longitudinal study followed <strong>1,387 Chinese college students</strong> to better understand how depression evolved during the pandemic. Using <strong>growth mixture modeling (GMM)</strong>, we identified <strong>five distinct trajectories</strong> of depressive symptoms:</p>
 <ul>
-<li><strong>Resilient (24%)</strong> — consistently low symptoms<br>
+<li><strong>Resilient (24%)</strong>: consistently low symptoms<br>
 </li>
-<li><strong>Moderate-remission (46%)</strong> — moderate but improving over time<br>
+<li><strong>Moderate-remission (46%)</strong>: moderate but improving over time<br>
 </li>
-<li><strong>Low-increasing (20%)</strong> — gradual worsening<br>
+<li><strong>Low-increasing (20%)</strong>: gradual worsening<br>
 </li>
-<li><strong>High-recovery (6%)</strong> — severe early, later recovered<br>
+<li><strong>High-recovery (6%)</strong>: severe early, later recovered<br>
 </li>
-<li><strong>Moderate-increasing (4%)</strong> — moderate but worsening</li>
+<li><strong>Moderate-increasing (4%)</strong>: moderate but worsening</li>
 </ul>
-<p>🔎 Importantly, these trajectories were not just statistical patterns — they <strong>predicted later risks of suicidal ideation and insomnia</strong>. Students in the increasing-symptom groups were at particularly high risk, underscoring the importance of <strong>early identification and targeted interventions</strong>.</p>
+<p>🔎 Importantly, these trajectories were not just statistical patterns: they <strong>predicted later risks of suicidal ideation and insomnia</strong>. Students in the increasing-symptom groups were at particularly high risk, underscoring the importance of <strong>early identification and targeted interventions</strong>.</p>
 <p>This study highlights the <strong>heterogeneity of mental health responses</strong> during COVID-19 and calls for more nuanced, trajectory-based approaches to supporting young people.</p>
 <hr>
 <p>📄 Full text available here: <a href="https://onlinelibrary.wiley.com/doi/10.1111/sltb.70051">https://onlinelibrary.wiley.com/doi/10.1111/sltb.70051</a></p>
@@ -211,7 +211,7 @@ has just been published in <em><a href="https://onlinelibrary.wiley.com/doi/10.1
 <p><img src="https://doriaxiao.github.io/assets/img/dissertation-cele1.png" class="img-fluid" alt="Dissertation Celebration1"> <img src="https://doriaxiao.github.io/assets/img/dissertation-cele2.png" class="img-fluid" alt="Dissertation Celebration2"></p>
 <p>Yesterday I had the honor of presenting my dissertation,<br>
 <strong>“When Growth Mixture Models Break,”</strong> as a talk in the <a href="https://events.berkeley.edu/educ/event/304585-bear-seminar-when-growth-mixture-models-break"><strong>BEAR Seminar</strong></a> at the School of Education, University of California, Berkeley.</p>
-<p>I am deeply grateful to the <strong>Social Research Methodologies (SRM) cluster</strong>—my mentors, colleagues, and friends—who have shaped and supported me throughout this journey.</p>
+<p>I am deeply grateful to the <strong>Social Research Methodologies (SRM) cluster</strong> (my mentors, colleagues, and friends), who have shaped and supported me throughout this journey.</p>
 <p>The surprise celebration, complete with an SRM-themed cake 🎂, flowers 🌹, and cap 🎓, made the day even more special.</p>
 <p>Proud to be an <strong>SRM Bear 🐻</strong>, and excited to continue this work as I begin the next chapter at <strong>Stanford</strong>!</p>
 
@@ -241,7 +241,7 @@ has just been published in <em><a href="https://onlinelibrary.wiley.com/doi/10.1
 <p>Growth Mixture Models (GMMs) are widely used to capture unobserved heterogeneity in longitudinal data. But they are fragile: nonidentifiability can cause classes to collapse or merge, and common information criteria (like AIC or traditional DIC) often fail under skewed or multimodal likelihoods.</p>
 <p>In this talk, I’ll discuss posterior pathologies such as minuscule-class behavior, twinlike-class degeneracy, and stuck chains, and show why plug-in deviance penalties sometimes become negative. I’ll introduce diagnostics (moving-SD checks, Distinguishability Index) and argue that variance-based penalties (DIC_pV), WAIC, and LOO-CV align more closely with the marginal likelihood and provide more reliable guidance for class enumeration.</p>
 <hr>
-<p>If you’re nearby—or joining remotely—I’d love to see you there!</p>
+<p>If you’re nearby (or joining remotely), I’d love to see you there!</p>
 
 
 <!-- -->

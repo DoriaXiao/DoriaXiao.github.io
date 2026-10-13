@@ -69,6 +69,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./assets/img/profile.jpg" rel="icon" type="image/jpeg">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -106,9 +108,179 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-talks-invited .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-group','listing-authors','listing-year','listing-title','listing-where','listing-links',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-group","listing-authors","listing-year","listing-title","listing-where","listing-links"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-talks-invited'] = new List('listing-talks-invited', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-talks-ncme .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-group','listing-authors','listing-year','listing-title','listing-where',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-group","listing-authors","listing-year","listing-title","listing-where"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-talks-ncme'] = new List('listing-talks-ncme', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-talks-aera .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-group','listing-authors','listing-year','listing-title','listing-where',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-group","listing-authors","listing-year","listing-title","listing-where"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-talks-aera'] = new List('listing-talks-aera', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-talks-imps .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-group','listing-authors','listing-year','listing-title','listing-where',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-group","listing-authors","listing-year","listing-title","listing-where"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-talks-imps'] = new List('listing-talks-imps', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-talks-other .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-group','listing-authors','listing-year','listing-title','listing-where',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-group","listing-authors","listing-year","listing-title","listing-where"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-talks-other'] = new List('listing-talks-other', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <!-- GoatCounter analytics: counts page views site-wide. -->
 <script data-goatcounter="https://doriaxiao.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -200,8 +372,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#invited-presentations" id="toc-invited-presentations" class="nav-link active" data-scroll-target="#invited-presentations">Invited Presentations</a></li>
+  <li><a href="#national-council-on-measurement-in-education-ncme" id="toc-national-council-on-measurement-in-education-ncme" class="nav-link" data-scroll-target="#national-council-on-measurement-in-education-ncme">National Council on Measurement in Education (NCME)</a></li>
+  <li><a href="#american-educational-research-association-aera" id="toc-american-educational-research-association-aera" class="nav-link" data-scroll-target="#american-educational-research-association-aera">American Educational Research Association (AERA)</a></li>
+  <li><a href="#international-meeting-of-the-psychometric-society-imps" id="toc-international-meeting-of-the-psychometric-society-imps" class="nav-link" data-scroll-target="#international-meeting-of-the-psychometric-society-imps">International Meeting of the Psychometric Society (IMPS)</a></li>
+  <li><a href="#other-conferences" id="toc-other-conferences" class="nav-link" data-scroll-target="#other-conferences">Other Conferences</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -225,23 +407,100 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<ul>
-<li><p><strong>ACM SIGCSE Technical Symposium — <em>What Do I Know about AI beyond Everyday Knowledge? Unveiling Misconceptions Using Item Response Theory Analyses and Cognitive Interviews</em></strong><br>
-Invited journal paper presentation · Sacramento, CA · February 2027</p></li>
-<li><p><strong>BEAR Seminar — <em>When Growth Mixture Models Break: Identifiability Failures and Misleading Model Evaluation</em></strong><br>
-UC Berkeley · September 9, 2025 · 2:00 p.m.<br>
-<a href="./posts/2025-09-09-bear-seminar-gmm-break/index.html">📄 Read blog post</a> · <a href="https://events.berkeley.edu/educ/event/304585-bear-seminar-when-growth-mixture-models-break">🔗 Event details</a></p></li>
-</ul>
-<p><strong>NCME (2025, 2024, 2023, 2022)</strong> — Topics include integrating ML and human rater scores (MFRM), ChatGPT transadaptation, Bayesian comparison of GMMs, and growth mixture class enumeration.<br>
-<strong>IMPS (2025, 2023)</strong> — Model evaluation failures and diagnostics in GMM; Bayesian identification and local identifiability.<br>
-<strong>RSS 2024</strong> — Bayesian approaches to identifiability and estimation of GMM.<br>
-<strong>StanCon 2024</strong> — Diagnostics and identification for GMM in Stan.<br>
-<strong>M3 2023</strong> — Marginal likelihood for GMM; dynamic process heterogeneity.<br>
-<strong>Other</strong> — AEFP 2022; SRCoS 2019; NEERO 2019; URS 2018.</p>
+<section id="invited-presentations" class="level2">
+<h2 class="anchored" data-anchor-id="invited-presentations">Invited Presentations</h2>
+<div id="listing-talks-invited" class="quarto-listing quarto-listing-container-custom">
+<div class="pub-list">
+<p class="pub-item">
+<strong>Xiao, X.</strong>, &amp; Cheng, Y. (2027, February). What do I know about AI beyond everyday knowledge? Unveiling misconceptions using item response theory analyses and cognitive interviews. Invited journal paper presentation, ACM SIGCSE Technical Symposium, Sacramento, CA.
+</p>
+<p class="pub-item">
+<strong>Xiao, X.</strong> (2025, September 9). When growth mixture models break: Identifiability failures and misleading model evaluation. BEAR Seminar, UC Berkeley, Berkeley, CA. · <a href="posts/2025-09-09-bear-seminar-gmm-break/index.html">Blog post</a> · <a href="https://events.berkeley.edu/educ/event/304585-bear-seminar-when-growth-mixture-models-break">Event details</a>
+</p>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</section>
+<section id="national-council-on-measurement-in-education-ncme" class="level2">
+<h2 class="anchored" data-anchor-id="national-council-on-measurement-in-education-ncme">National Council on Measurement in Education (NCME)</h2>
+<div id="listing-talks-ncme" class="quarto-listing quarto-listing-container-custom">
+<div class="pub-list">
+<p class="pub-item">
+<strong>Xiao, X.</strong>, Patz, R., &amp; Wilson, M. (2025). Integration of machine learning and human rater scores using the many-facet Rasch model. Denver, CO.
+</p>
+<p class="pub-item">
+<strong>Xiao, X.</strong>, Gochyyev, P., &amp; Wilson, M. (2025). Comparing the difficulty of selected-response and constructed-response items. Denver, CO.
+</p>
+<p class="pub-item">
+<strong>Xiao, X.</strong>, Razavi, P., &amp; Powers, S. (2024). Bridging bilingual gaps: An in-depth exploration of ChatGPT’s transadaptation capabilities. Philadelphia, PA.
+</p>
+<p class="pub-item">
+<strong>Xiao, X.</strong>, Patz, R., &amp; Wilson, M. (2024). Designing scoring reliability and instructional support into classroom-based math assessments. Philadelphia, PA.
+</p>
+<p class="pub-item">
+<strong>Xiao, X.</strong> (2023). Bayesian comparison of growth mixture models. Chicago, IL.
+</p>
+<p class="pub-item">
+<strong>Xiao, X.</strong> (2022). Bayesian growth mixture models for classifying and measuring individual trajectories. San Diego, CA.
+</p>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</section>
+<section id="american-educational-research-association-aera" class="level2">
+<h2 class="anchored" data-anchor-id="american-educational-research-association-aera">American Educational Research Association (AERA)</h2>
+<div id="listing-talks-aera" class="quarto-listing quarto-listing-container-custom">
+<div class="pub-list">
+<p class="pub-item">
+<strong>Xiao, X.</strong>, Rabe-Hesketh, S., &amp; Cheng, Y. (2023). Bayesian comparison of growth mixture models: To better pursue truth. Chicago, IL.
+</p>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</section>
+<section id="international-meeting-of-the-psychometric-society-imps" class="level2">
+<h2 class="anchored" data-anchor-id="international-meeting-of-the-psychometric-society-imps">International Meeting of the Psychometric Society (IMPS)</h2>
+<div id="listing-talks-imps" class="quarto-listing quarto-listing-container-custom">
+<div class="pub-list">
+<p class="pub-item">
+<strong>Xiao, X.</strong>, &amp; Rabe-Hesketh, S. (2025). When model evaluation fails in growth mixture models: Diagnostic and comparative perspective. Minneapolis, MN.
+</p>
+<p class="pub-item">
+<strong>Xiao, X.</strong>, &amp; Rabe-Hesketh, S. (2023). Bayesian model evaluation and local identifiability for growth mixture models. College Park, MD.
+</p>
+<p class="pub-item">
+<strong>Xiao, X.</strong>, Ji, F., &amp; Ernst, A. (2023). Sample heterogeneity in dynamic psychological processes. College Park, MD.
+</p>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</section>
+<section id="other-conferences" class="level2">
+<h2 class="anchored" data-anchor-id="other-conferences">Other Conferences</h2>
+<div id="listing-talks-other" class="quarto-listing quarto-listing-container-custom">
+<div class="pub-list">
+<p class="pub-item">
+<strong>Xiao, X.</strong>, Rabe-Hesketh, S., &amp; Skrondal, A. (2024). Bayesian approaches to identifiability and estimation of growth mixture models. Royal Statistical Society International Conference, Brighton, UK.
+</p>
+<p class="pub-item">
+<strong>Xiao, X.</strong>, Rabe-Hesketh, S., &amp; Skrondal, A. (2024). Bayesian identification, estimation, and diagnostic techniques for growth mixture models using Stan. StanCon, Oxford, UK.
+</p>
+<p class="pub-item">
+<strong>Xiao, X.</strong> (2023). Bayesian model evaluation using marginal likelihood for growth mixture models. Modern Modeling Methods (M3) Conference, Storrs, CT.
+</p>
+<p class="pub-item">
+<strong>Xiao, X.</strong>, Li, Y., &amp; Park, Y. (2022). Automating book-to-curriculum mapping using representation learning. Association for Education Finance &amp; Policy, Denver, CO.
+</p>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+<p>Earlier presentations: SRCoS 2019; NEERO 2019; URS 2018.</p>
+
 
 
 <!-- -->
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -698,21 +957,61 @@ UC Berkeley · September 9, 2025 · 2:00 p.m.<br>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Talks &amp; Presentations"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**ACM SIGCSE Technical Symposium — *What Do I Know about AI beyond Everyday Knowledge? Unveiling Misconceptions Using Item Response Theory Analyses and Cognitive Interviews***  </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  Invited journal paper presentation · Sacramento, CA · February 2027</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**BEAR Seminar — *When Growth Mixture Models Break: Identifiability Failures and Misleading Model Evaluation***  </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  UC Berkeley · September 9, 2025 · 2:00 p.m.  </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">[</span><span class="ot">📄 Read blog post</span><span class="co">](posts/2025-09-09-bear-seminar-gmm-break/index.qmd)</span> · <span class="co">[</span><span class="ot">🔗 Event details</span><span class="co">](https://events.berkeley.edu/educ/event/304585-bear-seminar-when-growth-mixture-models-break)</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>**NCME (2025, 2024, 2023, 2022)** — Topics include integrating ML and human rater scores (MFRM), ChatGPT transadaptation, Bayesian comparison of GMMs, and growth mixture class enumeration.  </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>**IMPS (2025, 2023)** — Model evaluation failures and diagnostics in GMM; Bayesian identification and local identifiability.  </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>**RSS 2024** — Bayesian approaches to identifiability and estimation of GMM.  </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>**StanCon 2024** — Diagnostics and identification for GMM in Stan.  </span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>**M3 2023** — Marginal likelihood for GMM; dynamic process heterogeneity.  </span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>**Other** — AEFP 2022; SRCoS 2019; NEERO 2019; URS 2018.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generated from data/talks.yml; edit that file, not this page.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  - id: talks-invited</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    contents: data/talks.yml</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    template: _publications.ejs</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    include: { group: "Invited Presentations" }</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    sort: false</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">  - id: talks-ncme</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    contents: data/talks.yml</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    template: _publications.ejs</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">    include: { group: "National Council on Measurement in Education (NCME)" }</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">    sort: false</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">  - id: talks-aera</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">    contents: data/talks.yml</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">    template: _publications.ejs</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">    include: { group: "American Educational Research Association (AERA)" }</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">    sort: false</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">  - id: talks-imps</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">    contents: data/talks.yml</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">    template: _publications.ejs</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">    include: { group: "International Meeting of the Psychometric Society (IMPS)" }</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">    sort: false</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">  - id: talks-other</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">    contents: data/talks.yml</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">    template: _publications.ejs</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">    include: { group: "Other Conferences" }</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">    sort: false</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Invited Presentations</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>::: {#talks-invited}</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## National Council on Measurement in Education (NCME)</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>::: {#talks-ncme}</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## American Educational Research Association (AERA)</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>::: {#talks-aera}</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## International Meeting of the Psychometric Society (IMPS)</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>::: {#talks-imps}</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="fu">## Other Conferences</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>::: {#talks-other}</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>Earlier presentations: SRCoS 2019; NEERO 2019; URS 2018.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
