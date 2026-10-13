@@ -25,41 +25,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -80,7 +45,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-63a534aae96ac0c81fb70f43bb444eee.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b9a1be048a53cf35226d9b00f5c891cd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -253,7 +218,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">When the DIC Goes Negative: A Parameterization-Invariant Fix</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<h1 class="title">When the DIC Goes Negative: A Parameterization-Invariant Fix</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Research</div>
     <div class="quarto-category">Bayesian</div>
@@ -375,8 +340,6 @@ window.Quarto = {
 <p><strong>Citation:</strong> Xiao, X., &amp; Rabe-Hesketh, S. (2026). A parameterization-invariant DIC. <em>arXiv preprint</em> <a href="https://arxiv.org/abs/2605.27844">arXiv:2605.27844</a>.</p>
 
 
-<!-- -->
-
 </section>
 
 </main> <!-- /main -->
@@ -465,57 +428,6 @@ window.Quarto = {
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -874,81 +786,7 @@ window.Quarto = {
     document.getElementById("quarto-content").appendChild(script);
   }
   loadGiscus();
-</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "When the DIC Goes Negative: A Parameterization-Invariant Fix"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2026-06-10</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Why the classic DIC breaks down in latent variable models, and how a simple plug-in-free variant (DIC_i) fixes it: new paper with Sophia Rabe-Hesketh, now on arXiv."</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Research, Bayesian, Model Selection, DIC, WAIC, Latent Variables]</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>If you have ever fit a factor analysis or mixture model in a Bayesian framework and asked for the DIC, you may have seen something absurd: a **negative effective number of parameters**. The software reports, with a straight face, that your 18-parameter model has −1,300 effective parameters.</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>In a new paper with <span class="co">[</span><span class="ot">Sophia Rabe-Hesketh</span><span class="co">](https://gse.berkeley.edu/sophia-rabe-hesketh)</span>, now on arXiv (<span class="co">[</span><span class="ot">arXiv:2605.27844</span><span class="co">](https://arxiv.org/abs/2605.27844)</span>), we explain exactly why this happens, and propose a one-line fix we call **DIC&lt;sub&gt;i&lt;/sub&gt;**, a *parameterization-invariant* DIC.</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## What goes wrong</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>The classic DIC (Spiegelhalter et al., 2002) needs two ingredients: the posterior mean of the deviance, $E<span class="co">[</span><span class="ot">D(\theta)</span><span class="co">]</span>$, and the deviance evaluated at the posterior mean of the parameters, the **plug-in deviance** $D(\bar\theta)$. The penalty is the gap between them:</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>$$p_{\mathrm{DIC}} = E<span class="co">[</span><span class="ot">D(\theta)</span><span class="co">]</span> - D(\bar\theta).$$</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>The plug-in step is the Achilles heel. In many latent variable models, the posterior is **multimodal for reasons that are completely benign**:</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>In factor analysis, flipping the signs of all loadings ($\lambda \to -\lambda$) leaves the likelihood unchanged. With symmetric priors, MCMC chains happily settle into opposite signs (*sign switching*).</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>In finite mixtures, relabeling the components leaves the likelihood unchanged (*label switching*).</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>In overfitted mixtures, an extra class can vanish in two different ways (zero weight, or merging with another class), which we call *parameterization switching*.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>In all three cases, averaging the draws gives a posterior mean $\bar\theta$ that sits **between the modes**, in a region of terrible fit. Two chains say $\lambda \approx +0.9$, two say $\lambda \approx -0.9$, the average says $\lambda \approx 0$: a parameter value nobody believes. Plugging that into the deviance makes $D(\bar\theta)$ explode, and the penalty goes hugely negative. The DIC isn't being subtle; it's being destroyed by an artifact of how we summarize the posterior.</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## The fix: stop plugging in</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Gelman, Hwang &amp; Vehtari (2014) suggested an alternative penalty that needs no plug-in at all: half the posterior **variance** of the deviance:</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>$$p_V = \tfrac{1}{2}\,\mathrm{Var}<span class="co">[</span><span class="ot">D(\theta)</span><span class="co">]</span>.$$</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Our proposal is to pair this penalty with the posterior **mean** deviance, and to never evaluate anything at a point estimate:</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>$$\mathrm{DIC}_i = E<span class="co">[</span><span class="ot">D(\theta)</span><span class="co">]</span> + p_V.$$</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>The subscript *i* stands for **invariant**: every ingredient is a functional of the deviance distribution, and the deviance is unchanged by sign flips, relabeling, or any reparameterization. The pathologies above can't touch it.</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>(A note to avoid confusion: $p_V$ itself is Gelman et al.'s penalty, not ours. Their criterion, which we call DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>p<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span>, keeps the plug-in deviance ($D(\bar\theta) + 2p_V$) and therefore inherits the same instability as the classic DIC. Amusingly, DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span> turns out to be exactly the average of the classic DIC and DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>p<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span>: when things break, those two explode in *opposite* directions, and their average stays put.)</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Does it work?</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>Theoretically: under standard regularity conditions, we show DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span> is **asymptotically equivalent to WAIC**. Empirically, across two large simulation studies (factor analysis and growth mixture models, 2,800 fitted models in total):</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> Classic $p_{\mathrm{DIC}}$ <span class="pp">|</span> $p_V$ (used in DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span>) <span class="pp">|</span> $p_{\mathrm{WAIC}}$ <span class="pp">|</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|---|</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Mean (true $q=18$) <span class="pp">|</span> **−1,307** <span class="pp">|</span> 19.0 <span class="pp">|</span> 17.4 <span class="pp">|</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> SD <span class="pp">|</span> 2,121 <span class="pp">|</span> 0.7 <span class="pp">|</span> 0.4 <span class="pp">|</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Min <span class="pp">|</span> −9,450 <span class="pp">|</span> 16.6 <span class="pp">|</span> 16.2 <span class="pp">|</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>The classic penalty is meaningless; $p_V$ sits right at the parameter count. DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span> tracks WAIC closely (their difference shrinks at the expected rate as the sample grows), and in mixture model selection DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span> picked the true number of classes in 94–100% of replicates, slightly *better* than WAIC's 84–96% at rejecting overfitted models.</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why not just use WAIC?</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>Often you should! But there are three honest reasons to want DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span> in your toolbox:</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**WAIC isn't always defined.** It requires the (marginal) likelihood to factorize into pointwise contributions. Spatial models, and models with crossed latent variables (e.g., item response models with person *and* item effects), don't factorize. DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span> only needs the total deviance at each draw.</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Speed and storage.** WAIC and LOO need the full draws × observations log-likelihood matrix. DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span> needs one number per draw. In our timing runs it was ~18× faster than WAIC and ~140× faster than LOO-CV.</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Software reality.** Programs like Mplus report the deviance draws but not pointwise likelihoods. Adding DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span> there is essentially free; adding WAIC is not.</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>Our practical recommendation: keep computing the classic DIC penalty as a *diagnostic*: if $p_{\mathrm{DIC}} &lt; 0$, your posterior means are not to be trusted (in our factor analysis simulations, a negative $p_{\mathrm{DIC}}$ identified between-chain sign switching in all 1,200 replicates, exactly). Then report DIC<span class="dt">&lt;</span><span class="kw">sub</span><span class="dt">&gt;</span>i<span class="dt">&lt;/</span><span class="kw">sub</span><span class="dt">&gt;</span>.</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## Try it</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>📄 **Paper:** <span class="co">[</span><span class="ot">arXiv:2605.27844</span><span class="co">](https://arxiv.org/abs/2605.27844)</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>📦 **R package:** <span class="co">[</span><span class="ot">github.com/DoriaXiao/DIC_i</span><span class="co">](https://github.com/DoriaXiao/DIC_i)</span>: <span class="in">`remotes::install_github("DoriaXiao/DIC_i")`</span>, then <span class="in">`compute_dic_i(log_lik)`</span> or <span class="in">`dic_i_from_cmdstanr(fit)`</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>🎛️ **Interactive demo:** <span class="co">[</span><span class="ot">doriaxiao.shinyapps.io/dicv_app</span><span class="co">](https://doriaxiao.shinyapps.io/dicv_app/)</span>: runs live Gibbs samplers in your browser; drag the sliders and watch $p_{\mathrm{DIC}}$ collapse while $p_V$ stays put</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>If you've run into negative DIC penalties in your own work, I'd love to hear about it.</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>**Citation:** Xiao, X., &amp; Rabe-Hesketh, S. (2026). A parameterization-invariant DIC. *arXiv preprint* <span class="co">[</span><span class="ot">arXiv:2605.27844</span><span class="co">](https://arxiv.org/abs/2605.27844)</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
-</div></div></div></div></div>
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
