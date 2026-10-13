@@ -21,19 +21,6 @@
 #   summary:    one sentence for the Software & Demos page
 
 - type: preprint
-  authors: ["Xiao, X.", "Domingue, B.", "Ram, N.", "Frank, M. C."]
-  year: "2026, June 7"
-  title: "Good kitty, bad bank? Rescoring miscalibrated CATs improves accuracy"
-  venue: PsyArXiv
-  url: https://osf.io/preprints/psyarxiv/gk368_v1
-  demo:
-    name: CAT Rescoring Explorer
-    url: https://huggingface.co/spaces/doriax/cat-rescoring-explorer
-    platform: Hugging Face
-  code: https://github.com/DoriaXiao/rescoring-cat
-  summary: "Explore how rescoring with improved item parameters recovers accuracy in miscalibrated CATs: scoring vs selection error, calibration noise and shifts, and test length."
-
-- type: preprint
   authors: ["Xiao, X.", "Rabe-Hesketh, S."]
   year: 2026
   title: "A parameterization-invariant DIC"
@@ -59,6 +46,22 @@
   title: "Creation and validation of the LEVANTE core tasks: Internationalized measures of learning and development for children ages 5-12 years"
   venue: PsyArXiv
   doi: 10.31234/osf.io/r4dhw_v1
+
+- type: journal
+  authors: ["Xiao, X.", "Domingue, B.", "Ram, N.", "Frank, M. C."]
+  year: in press
+  title: "Recovering accuracy from miscalibrated item banks: Scoring error is fixable, selection error is not"
+  venue: Educational and Psychological Measurement
+  doi: 10.1177/00131644261486854
+  links:
+    - text: "Preprint (submitted version: Good kitty, bad bank?)"
+      url: https://osf.io/preprints/psyarxiv/gk368_v1
+  demo:
+    name: CAT Rescoring Explorer
+    url: https://huggingface.co/spaces/doriax/cat-rescoring-explorer
+    platform: Hugging Face
+  code: https://github.com/DoriaXiao/rescoring-cat
+  summary: "Explore how rescoring with improved item parameters recovers accuracy in miscalibrated CATs: scoring vs selection error, calibration noise and shifts, and test length."
 
 - type: journal
   authors: ["Xiao, X.", "Cheng, Y."]
