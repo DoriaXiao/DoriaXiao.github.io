@@ -1,0 +1,106 @@
+# Talks and presentations. Used by talks.qmd and cv/cv.typ.
+# Same fields as publications.yml (authors, year, title) plus:
+#   group: section heading; groups appear in the order first used
+#   where: event and place (plain text)
+#   links: optional list of {text, url} (website only)
+
+- group: Invited Presentations
+  authors: ["Xiao, X.", "Cheng, Y."]
+  year: "2027, February"
+  title: "What do I know about AI beyond everyday knowledge? Unveiling misconceptions using item response theory analyses and cognitive interviews"
+  where: "Invited journal paper presentation, ACM SIGCSE Technical Symposium, Sacramento, CA."
+
+- group: Invited Presentations
+  authors: ["Xiao, X."]
+  year: "2025, September 9"
+  title: "When growth mixture models break: Identifiability failures and misleading model evaluation"
+  where: "BEAR Seminar, UC Berkeley, Berkeley, CA."
+  links:
+    - text: Blog post
+      url: posts/2025-09-09-bear-seminar-gmm-break/index.html
+    - text: Event details
+      url: https://events.berkeley.edu/educ/event/304585-bear-seminar-when-growth-mixture-models-break
+
+- group: National Council on Measurement in Education (NCME)
+  authors: ["Xiao, X.", "Patz, R.", "Wilson, M."]
+  year: 2025
+  title: "Integration of machine learning and human rater scores using the many-facet Rasch model"
+  where: "Denver, CO."
+
+- group: National Council on Measurement in Education (NCME)
+  authors: ["Xiao, X.", "Gochyyev, P.", "Wilson, M."]
+  year: 2025
+  title: "Comparing the difficulty of selected-response and constructed-response items"
+  where: "Denver, CO."
+
+- group: National Council on Measurement in Education (NCME)
+  authors: ["Xiao, X.", "Razavi, P.", "Powers, S."]
+  year: 2024
+  title: "Bridging bilingual gaps: An in-depth exploration of ChatGPT's transadaptation capabilities"
+  where: "Philadelphia, PA."
+
+- group: National Council on Measurement in Education (NCME)
+  authors: ["Xiao, X.", "Patz, R.", "Wilson, M."]
+  year: 2024
+  title: "Designing scoring reliability and instructional support into classroom-based math assessments"
+  where: "Philadelphia, PA."
+
+- group: National Council on Measurement in Education (NCME)
+  authors: ["Xiao, X."]
+  year: 2023
+  title: "Bayesian comparison of growth mixture models"
+  where: "Chicago, IL."
+
+- group: National Council on Measurement in Education (NCME)
+  authors: ["Xiao, X."]
+  year: 2022
+  title: "Bayesian growth mixture models for classifying and measuring individual trajectories"
+  where: "San Diego, CA."
+
+- group: American Educational Research Association (AERA)
+  authors: ["Xiao, X.", "Rabe-Hesketh, S.", "Cheng, Y."]
+  year: 2023
+  title: "Bayesian comparison of growth mixture models: To better pursue truth"
+  where: "Chicago, IL."
+
+- group: International Meeting of the Psychometric Society (IMPS)
+  authors: ["Xiao, X.", "Rabe-Hesketh, S."]
+  year: 2025
+  title: "When model evaluation fails in growth mixture models: Diagnostic and comparative perspective"
+  where: "Minneapolis, MN."
+
+- group: International Meeting of the Psychometric Society (IMPS)
+  authors: ["Xiao, X.", "Rabe-Hesketh, S."]
+  year: 2023
+  title: "Bayesian model evaluation and local identifiability for growth mixture models"
+  where: "College Park, MD."
+
+- group: International Meeting of the Psychometric Society (IMPS)
+  authors: ["Xiao, X.", "Ji, F.", "Ernst, A."]
+  year: 2023
+  title: "Sample heterogeneity in dynamic psychological processes"
+  where: "College Park, MD."
+
+- group: Other Conferences
+  authors: ["Xiao, X.", "Rabe-Hesketh, S.", "Skrondal, A."]
+  year: 2024
+  title: "Bayesian approaches to identifiability and estimation of growth mixture models"
+  where: "Royal Statistical Society International Conference, Brighton, UK."
+
+- group: Other Conferences
+  authors: ["Xiao, X.", "Rabe-Hesketh, S.", "Skrondal, A."]
+  year: 2024
+  title: "Bayesian identification, estimation, and diagnostic techniques for growth mixture models using Stan"
+  where: "StanCon, Oxford, UK."
+
+- group: Other Conferences
+  authors: ["Xiao, X."]
+  year: 2023
+  title: "Bayesian model evaluation using marginal likelihood for growth mixture models"
+  where: "Modern Modeling Methods (M3) Conference, Storrs, CT."
+
+- group: Other Conferences
+  authors: ["Xiao, X.", "Li, Y.", "Park, Y."]
+  year: 2022
+  title: "Automating book-to-curriculum mapping using representation learning"
+  where: "Association for Education Finance & Policy, Denver, CO."

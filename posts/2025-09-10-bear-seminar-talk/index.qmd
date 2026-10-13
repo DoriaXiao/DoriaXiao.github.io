@@ -10,7 +10,7 @@ categories: []
 Yesterday I had the honor of presenting my dissertation,  
 **“When Growth Mixture Models Break,”** as a talk in the [**BEAR Seminar**](https://events.berkeley.edu/educ/event/304585-bear-seminar-when-growth-mixture-models-break) at the School of Education, University of California, Berkeley.  
 
-I am deeply grateful to the **Social Research Methodologies (SRM) cluster**—my mentors, colleagues, and friends—who have shaped and supported me throughout this journey.  
+I am deeply grateful to the **Social Research Methodologies (SRM) cluster** (my mentors, colleagues, and friends), who have shaped and supported me throughout this journey.  
 
 The surprise celebration, complete with an SRM-themed cake 🎂, flowers 🌹, and cap 🎓, made the day even more special.  
 

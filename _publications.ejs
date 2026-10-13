@@ -1,5 +1,5 @@
 <%
-// Renders data/publications.yml as APA references.
+// Renders data/publications.yml and data/talks.yml as APA references.
 // Keep the formatting rules in sync with cv/cv.typ.
 // Each entry is built as one line of HTML: Quarto re-parses the template
 // output as Markdown, so line breaks would split an entry into paragraphs.
@@ -33,6 +33,7 @@ function formatEntry(it) {
   if (has("venue_post")) src += " " + esc(it.venue_post);
   else if (src) src += ".";
   if (src) parts.push(src);
+  if (has("where")) parts.push(esc(it.where));
   if (has("note")) parts.push(esc(it.note));
   if (has("doi")) parts.push(link("https://doi.org/" + it.doi, "https://doi.org/" + it.doi));
   else if (has("url")) parts.push(link(it.url, it.url));

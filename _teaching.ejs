@@ -1,0 +1,9 @@
+<%
+// Renders data/teaching.yml. Output stays on single lines because Quarto
+// re-parses template output as Markdown.
+const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+%>
+<% for (const item of items) { %>
+<p><strong><%= esc(item.org) %></strong></p>
+<ul><% for (const c of (item.courses || [])) { %><li><%= esc(c) %></li><% } %></ul>
+<% } %>

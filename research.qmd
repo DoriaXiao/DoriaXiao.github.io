@@ -24,9 +24,9 @@ A core focus is the stability and evaluation of latent variable models.
 
 At ACER, I work on the psychometrics of large-scale assessment programs.
 
-- **Scaling and linking** — establishing comparable scales across test forms, cycles, and instruments that were not designed to be compared.
-- **Technical evaluation** — independent replication and audit of operational scaling and reporting analyses.
-- **Automated scoring at operational scale** — the measurement conditions under which machine scores can carry part of an operational marking load, and the human oversight that has to sit around them.
+- **Scaling and linking**: establishing comparable scales across test forms, cycles, and instruments that were not designed to be compared.
+- **Technical evaluation**: independent replication and audit of operational scaling and reporting analyses.
+- **Automated scoring at operational scale**: the measurement conditions under which machine scores can carry part of an operational marking load, and the human oversight that has to sit around them.
 
 ### Cross-Cultural Measurement (LEVANTE)
 
@@ -37,4 +37,4 @@ At Stanford, I worked on the [**LEVANTE Project**](https://levante-network.org/)
 
 ### Adaptive Testing
 
-- **CAT fairness and robustness** — mitigating item calibration error and designing robust stopping rules for computer-adaptive testing.
+- **CAT fairness and robustness**: mitigating item calibration error and designing robust stopping rules for computer-adaptive testing.

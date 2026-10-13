@@ -3,7 +3,7 @@ title: "Contact"
 toc: true
 ---
 
-Feel free to reach out — email is the most reliable way to contact me.
+Feel free to reach out; email is the most reliable way to contact me.
 
 - 📧 Email (work): [doria.xiao@acer.org](mailto:doria.xiao@acer.org)
 - 📧 Email (alternate): [xiaoxg@berkeley.edu](mailto:xiaoxg@berkeley.edu)

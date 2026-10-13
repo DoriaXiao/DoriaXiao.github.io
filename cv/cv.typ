@@ -1,4 +1,4 @@
-// PDF CV built from data/cv.yml and data/publications.yml.
+// PDF CV built from data/*.yml (cv, publications, talks, teaching).
 // Build (from the repo root):
 //   quarto typst compile --root . cv/cv.typ assets/cv/Xingyao_CV.pdf
 // `quarto render` runs this automatically (see cv/build-cv.ts).
@@ -6,6 +6,8 @@
 
 #let cv = yaml("/data/cv.yml")
 #let pubs = yaml("/data/publications.yml")
+#let talks = yaml("/data/talks.yml")
+#let teaching = yaml("/data/teaching.yml")
 #let me = "Xiao, X."
 #let accent = rgb("#1a5276")
 
@@ -120,13 +122,15 @@
 }
 
 #section("Presentations")
-#for g in cv.talks {
-  subsection(g.group)
-  refs(g.items)
+#let talk-groups = ()
+#for t in talks { if t.group not in talk-groups { talk-groups.push(t.group) } }
+#for g in talk-groups {
+  subsection(g)
+  refs(talks.filter(t => t.group == g))
 }
 
 #section("Teaching Experience")
-#for t in cv.teaching {
+#for t in teaching {
   block(below: 0.6em, {
     strong(t.org)
     set list(indent: 0.6em, body-indent: 0.5em, spacing: 0.4em)

@@ -70,10 +70,12 @@ reactions + GoatCounter 阅读量已覆盖你需要的反馈信号。
 
 ## 日常更新：论文和 CV（单一数据源）
 
-论文列表和 CV 内容都放在 `data/` 里，网站和 PDF CV 都从这里生成：
+论文、报告、教学和 CV 内容都放在 `data/` 里，网站和 PDF CV 都从这里生成：
 
 - `data/publications.yml`：所有论文。Publications 页和 CV 的论文部分都读它。
-- `data/cv.yml`：CV 的其他部分（教育、经历、报告、教学、奖项、服务、技能）。
+- `data/talks.yml`：所有报告。Talks 页和 CV 的 Presentations 部分都读它。
+- `data/teaching.yml`：教学。Teaching 页和 CV 都读它。
+- `data/cv.yml`：CV 的其他部分（教育、经历、奖项、服务、技能）。
 
 加一篇论文：在 `data/publications.yml` 对应位置复制一条、改字段，然后
 
@@ -83,7 +85,7 @@ quarto publish gh-pages
 
 渲染前会自动运行 `cv/build-cv.ts`，用 Quarto 自带的 Typst 生成
 `assets/cv/Xingyao_CV.pdf`（不进 git）。CV 排版在 `cv/cv.typ`，网站引用格式在
-`_publications.ejs`，两者的格式规则需要保持一致。需要 Quarto 自带 Typst 0.12 或以上
+`_publications.ejs`（论文和报告共用），两者的格式规则需要保持一致。需要 Quarto 自带 Typst 0.12 或以上
 （`quarto typst --version` 查看）。
 
 只想预览 CV：`quarto typst compile --root . cv/cv.typ assets/cv/Xingyao_CV.pdf`
